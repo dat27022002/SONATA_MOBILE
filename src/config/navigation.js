@@ -1,8 +1,10 @@
-import Welcome from '../pages/Welcome/Welcome';
-import Login from '../pages/Login';
-import { Text, TouchableOpacity } from 'react-native';
+import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
+import Welcome from '../pages/Welcome/Welcome';
+import Login from '../pages/Login';
+import Home from '../pages/Home';
 
 const configHeaderTitle = {
     title: 'HJ POS',
@@ -39,6 +41,14 @@ const configNavigation = [
     {
         name: 'Welcome',
         component: Welcome,
+        options: {
+            ...configHeaderTitle,
+            headerLeft: customButtonGoToMenu,
+        },
+    },
+    {
+        name: 'Home',
+        component: Home,
         options: {
             ...configHeaderTitle,
             headerLeft: customButtonGoToMenu,

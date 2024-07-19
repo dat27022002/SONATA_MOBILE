@@ -5,7 +5,7 @@ const GlobalStyle = {
     primaryTextColor: '#000000',
     secondnaryTextColor: '#FFFFFF',
     thirdTextColor: '#ea5610',
-    lineColorL: '#999999',
+    lineColor: '#999999',
 };
 
 export default GlobalStyle;

@@ -20,7 +20,7 @@ const Login = ({ navigation, ...props }) => {
                 </View>
                 <TouchableOpacity
                     onPress={() => {
-                        navigation.navigate('Welcome');
+                        navigation.navigate('Home');
                     }}
                 >
                     <Text style={styles.btnLogin}>{t('login')}</Text>
