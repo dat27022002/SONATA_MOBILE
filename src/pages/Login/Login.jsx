@@ -10,7 +10,7 @@ import CheckBox from '@react-native-community/checkbox';
 
 import styles from './LoginStyles';
 
-const Login = (props) => {
+const Login = ({ navigation, ...props }) => {
     return (
         <View style={styles.container}>
             <View style={{ alignItems: 'center' }}>
@@ -32,7 +32,11 @@ const Login = (props) => {
                         style={styles.input}
                     />
                 </View>
-                <TouchableOpacity style={{}}>
+                <TouchableOpacity
+                    onPress={() => {
+                        navigation.navigate('Welcome');
+                    }}
+                >
                     <Text style={styles.btnLogin}>
                         Login
                     </Text>

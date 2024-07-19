@@ -5,8 +5,6 @@
 import React from 'react';
 import { AppRegistry } from 'react-native';
 import { name as appName } from './app.json';
-import Login from './src/pages/Login';
+import App from './App';
 
-AppRegistry.registerComponent(appName, () => () => (
-    <Login />
-));
+AppRegistry.registerComponent(appName, () => App);

@@ -1,16 +1,26 @@
-/* eslint-disable prettier/prettier */
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import {Text} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Welcome from './src/pages/Welcome/Welcome';
+import Login from './src/pages/Login';
+import configNavigation from './src/config/navigation';
 
-const App = props => {
-  return <Text>App</Text>;
-};
+const Stack = createNativeStackNavigator();
+
+function App() {
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName="Login">
+                {configNavigation.map((page) => (
+                    <Stack.Screen
+                        name={page.name}
+                        component={page.component}
+                        options={page.options}
+                    ></Stack.Screen>
+                ))}
+            </Stack.Navigator>
+        </NavigationContainer>
+    );
+}
 
 export default App;
