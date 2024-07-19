@@ -1,15 +1,16 @@
 import { StyleSheet } from 'react-native';
+import GlobalStyle from '../../config/GlobalStyle';
 
 const LoginStyles = StyleSheet.create({
     container: {
-        backgroundColor: '#444243',
+        backgroundColor: GlobalStyle.primaryBackgroudColor,
         width: '100%',
         height: '100%',
         justifyContent: 'center',
         alignItems: 'center',
     },
     label: {
-        color: '#FFFFFF',
+        color: GlobalStyle.secondnaryTextColor,
         fontSize: 40,
         fontWeight: '700',
         marginBottom: 110,
@@ -17,11 +18,11 @@ const LoginStyles = StyleSheet.create({
     },
     input: {
         borderBottomWidth: 1,
-        borderColor: '#FFFFFF',
+        borderColor: GlobalStyle.secondnaryTextColor,
         paddingVertical: 1,
         textAlign: 'center',
         marginBottom: 30,
-        color: '#FFFFFF',
+        color: GlobalStyle.secondnaryTextColor,
     },
     btnLogin: {
         fontWeight: '700',
@@ -29,7 +30,7 @@ const LoginStyles = StyleSheet.create({
         backgroundColor: '#ffaa01',
         borderRadius: 40,
         paddingVertical: 14,
-        color: '#333333',
+        color: GlobalStyle.primaryTextColor,
         marginTop: 15,
     },
     containerSave: {
@@ -39,7 +40,7 @@ const LoginStyles = StyleSheet.create({
     },
     textSaveID: {
         fontSize: 12,
-        color: '#FFFFFF',
+        color: GlobalStyle.secondnaryTextColor,
     },
 });
 
