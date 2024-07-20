@@ -13,10 +13,19 @@ const HeaderSecondnary = StyleSheet.create({
         alignItems: 'center',
         height: 50,
     },
-    iconReload: { color: GlobalStyle.lineColor, flex: 1, textAlign: 'right' },
+    iconReload: { color: GlobalStyle.lineColor, textAlign: 'right' },
+    containerIconRight: {
+        flex: 1,
+        justifyContent: 'center',
+    },
     lineSolidGray3: {
         borderBottomColor: GlobalStyle.lineColor,
         borderBottomWidth: 3,
+    },
+    lineDashedGray: {
+        borderBottomColor: GlobalStyle.lineColor,
+        borderBottomWidth: 0.5,
+        borderStyle: 'dashed',
     },
 });
 

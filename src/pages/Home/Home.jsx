@@ -24,7 +24,13 @@ const Home = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <HeaderSecondnary iconLeft={'location'} title={'hyojung'} iconRight={'reload'} line="lineSolidGray3" />
+            <HeaderSecondnary
+                iconLeft={'location'}
+                title={'hyojung'}
+                iconRight={'reload'}
+                line="lineSolidGray3"
+                ionicon
+            />
 
             <View style={styles.containerSummary}>
                 <IconImage url={imageRequire.MonthlySale} medium />

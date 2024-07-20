@@ -1,10 +1,8 @@
 import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
-import Welcome from '../pages/Welcome/Welcome';
-import Login from '../pages/Login';
-import Home from '../pages/Home';
+import Icon2 from 'react-native-vector-icons/FontAwesome6';
+import { Home, Login, Menu, Welcome } from '../pages';
 
 const configHeaderTitle = {
     title: 'HJ POS',
@@ -20,6 +18,19 @@ const configHeaderTitle = {
 };
 
 const customButtonGoToMenu = () => {
+    const navigation = useNavigation();
+    return (
+        <TouchableOpacity
+            onPress={() => {
+                navigation.navigate('Menu');
+            }}
+        >
+            <Icon2 name="house-chimney" size={20} color="#FFFFFF" />
+        </TouchableOpacity>
+    );
+};
+
+const customButtonGoToBack = () => {
     const navigation = useNavigation();
     return (
         <TouchableOpacity
@@ -52,6 +63,14 @@ const configNavigation = [
         options: {
             ...configHeaderTitle,
             headerLeft: customButtonGoToMenu,
+        },
+    },
+    {
+        name: 'Menu',
+        component: Menu,
+        options: {
+            ...configHeaderTitle,
+            headerLeft: customButtonGoToBack,
         },
     },
 ];
