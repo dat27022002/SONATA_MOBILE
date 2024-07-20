@@ -1,0 +1,27 @@
+const imageRequire = {
+    DaySale: require('../assets/IconImage/DaySale.png'),
+    MonthlySale: require('../assets/IconImage/MonthlySale.png'),
+    AddItem: require('../assets/IconImage/AddItem.png'),
+    BarcodeScan: require('../assets/IconImage/BarcodeScan.png'),
+    CashReceiptApproval: require('../assets/IconImage/CashReceiptApproval.png'),
+    ChangeAdminPassword: require('../assets/IconImage/ChangeAdminPassword.png'),
+    ChangeRefundPassword: require('../assets/IconImage/ChangeRefundPassword.png'),
+    CreditCardApproval: require('../assets/IconImage/CreditCardApproval.png'),
+    InventoryStatus: require('../assets/IconImage/InventoryStatus.png'),
+    ItemRank: require('../assets/IconImage/ItemRank.png'),
+    Language: require('../assets/IconImage/Language.png'),
+    Location: require('../assets/IconImage/Location.png'),
+    NFC: require('../assets/IconImage/NFC.png'),
+    OrderCancelList: require('../assets/IconImage/OrderCancelList.png'),
+    PrinterPaper: require('../assets/IconImage/PrinterPaper.png'),
+    RealTimeSale: require('../assets/IconImage/RealTimeSale.png'),
+    RefundHistory: require('../assets/IconImage/RefundHistory.png'),
+    SaleByItem: require('../assets/IconImage/SaleByItem.png'),
+    SaleByReceipt: require('../assets/IconImage/SaleByReceipt.png'),
+    ServiceCenter: require('../assets/IconImage/ServiceCenter.png'),
+    TableStatus: require('../assets/IconImage/TableStatus.png'),
+    TimeBase: require('../assets/IconImage/TimeBase.png'),
+    WeeklySale: require('../assets/IconImage/WeeklySale.png'),
+};
+
+export default imageRequire;

@@ -1,13 +1,15 @@
 import React from 'react';
-import { Image, View } from 'react-native';
+import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import styles from './HomeStyles';
 import GlobalStyle from '../../config/GlobalStyle';
 import TextDefaut from '../../components/TextDefaut';
 import HeaderSecondnary from '../../components/HeaderSecondnary';
+import IconImage from '../../components/IconImage';
+import imageRequire from '../../config/ImageRequire';
 
-const Login = ({ navigation }) => {
+const Home = ({ navigation }) => {
     const { t } = useTranslation();
 
     const paymentDetail = [
@@ -25,7 +27,7 @@ const Login = ({ navigation }) => {
             <HeaderSecondnary iconLeft={'location'} title={'hyojung'} iconRight={'reload'} line="lineSolidGray3" />
 
             <View style={styles.containerSummary}>
-                <Image source={require('../../assets/IconImage/MonthlySale.png')} style={{ width: 30, height: 30 }} />
+                <IconImage url={imageRequire.MonthlySale} medium />
                 <TextDefaut style={{ paddingLeft: 5 }} bold>
                     Monthly Sales
                 </TextDefaut>
@@ -36,7 +38,7 @@ const Login = ({ navigation }) => {
             </View>
 
             <View style={styles.containerSummary2}>
-                <Image source={require('../../assets/IconImage/DaySale.png')} style={{ width: 30, height: 30 }} />
+                <IconImage url={imageRequire.DaySale} medium />
                 <TextDefaut style={{ paddingLeft: 5 }} bold>
                     Daily Sales
                 </TextDefaut>
@@ -69,4 +71,4 @@ const Login = ({ navigation }) => {
     );
 };
 
-export default Login;
+export default Home;
