@@ -1,14 +1,13 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Image, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 import styles from './HomeStyles';
 import GlobalStyle from '../../config/GlobalStyle';
 import TextDefaut from '../../components/TextDefaut';
+import HeaderSecondnary from '../../components/HeaderSecondnary';
 
-const Login = ({ navigation, ...props }) => {
+const Login = ({ navigation }) => {
     const { t } = useTranslation();
 
     const paymentDetail = [
@@ -23,11 +22,7 @@ const Login = ({ navigation, ...props }) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.header}>
-                <Icon name="location" size={30} color={thirdTextColor} />
-                <TextDefaut style={{ paddingLeft: 10 }}>Hyojung</TextDefaut>
-                <Icon name="reload" size={25} style={styles.iconReload} />
-            </View>
+            <HeaderSecondnary iconLeft={'location'} title={'hyojung'} iconRight={'reload'} line="lineSolidGray3" />
 
             <View style={styles.containerSummary}>
                 <Image source={require('../../assets/IconImage/MonthlySale.png')} style={{ width: 30, height: 30 }} />

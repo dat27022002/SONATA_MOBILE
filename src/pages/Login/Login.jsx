@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import React from 'react';
 import { Text, TextInput, TouchableOpacity, View } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';

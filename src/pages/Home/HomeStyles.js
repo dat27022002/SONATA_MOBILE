@@ -32,7 +32,6 @@ const HomeStyles = StyleSheet.create({
         height: 90,
         borderBottomColor: GlobalStyle.lineColor,
         borderBottomWidth: 0.5,
-        borderStyle: 'dashed',
     },
     textDailyPayment: {
         paddingHorizontal: 20,
