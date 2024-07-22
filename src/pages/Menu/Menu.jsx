@@ -19,7 +19,7 @@ const Menu = ({ navigation }) => {
         >
             <View style={styles.containerItem}>
                 <IconImage url={item.icon} large />
-                <TextDefaut style={{ marginBottom: 20 }} small>
+                <TextDefaut style={{ marginBottom: 20 }} small textAlignCenter>
                     {item.name}
                 </TextDefaut>
             </View>

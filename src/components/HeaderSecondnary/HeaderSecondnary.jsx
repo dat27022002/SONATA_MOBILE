@@ -7,13 +7,26 @@ import GlobalStyle from '../../config/GlobalStyle';
 import styles from './HeaderSecondnaryStyle';
 import TextDefaut from '../TextDefaut';
 
-const HeaderSecondnary = ({ iconLeft, iconRight, title, line, ionicon, iconFontAwesome6, handleClickRightBtn }) => {
+const HeaderSecondnary = ({
+    iconLeft,
+    iconRight,
+    urlImage,
+    title,
+    line,
+    ionicon,
+    iconFontAwesome6,
+    handleClickRightBtn,
+}) => {
     let lineStyles = {};
     if (line === 'lineSolidGray3') lineStyles = styles.lineSolidGray3;
     if (line === 'lineDashedGray') lineStyles = styles.lineDashedGray;
     return (
         <View style={[styles.header, lineStyles]}>
-            {iconLeft ? <Icon name={iconLeft} size={30} color={GlobalStyle.thirdTextColor} /> : <Image />}
+            {iconLeft ? (
+                <Icon name={iconLeft} size={30} color={GlobalStyle.thirdTextColor} />
+            ) : (
+                <Image source={urlImage} />
+            )}
 
             <TextDefaut style={{ paddingLeft: 10 }}>{title}</TextDefaut>
             <TouchableOpacity style={styles.containerIconRight} onPress={handleClickRightBtn}>
