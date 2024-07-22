@@ -27,6 +27,10 @@ const HeaderSecondnary = StyleSheet.create({
         borderBottomWidth: 0.5,
         borderStyle: 'dashed',
     },
+    lineSolidOrange3: {
+        borderBottomColor: GlobalStyle.thirdTextColor,
+        borderBottomWidth: 3,
+    },
 });
 
 export default HeaderSecondnary;

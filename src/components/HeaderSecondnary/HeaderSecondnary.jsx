@@ -20,12 +20,13 @@ const HeaderSecondnary = ({
     let lineStyles = {};
     if (line === 'lineSolidGray3') lineStyles = styles.lineSolidGray3;
     if (line === 'lineDashedGray') lineStyles = styles.lineDashedGray;
+    if (line === 'lineSolidOrange3') lineStyles = styles.lineSolidOrange3;
     return (
         <View style={[styles.header, lineStyles]}>
             {iconLeft ? (
                 <Icon name={iconLeft} size={30} color={GlobalStyle.thirdTextColor} />
             ) : (
-                <Image source={urlImage} />
+                <Image source={urlImage} style={{ height: 30, width: 30 }} />
             )}
 
             <TextDefaut style={{ paddingLeft: 10 }}>{title}</TextDefaut>

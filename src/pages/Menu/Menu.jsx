@@ -11,10 +11,19 @@ import { listMenuConfig, listSupport, listMenuSearchData } from './constant';
 const Menu = ({ navigation }) => {
     const { t } = useTranslation();
 
+    const handleClickItemMenu = (screenName) => {
+        const routeNames = navigation.getState().routeNames;
+        if (routeNames.includes(screenName)) {
+            navigation.navigate(screenName);
+        } else {
+            Alert.alert('Item Pressed', `You pressed ${screenName}, but this page not exist`);
+        }
+    };
+
     const renderItem = ({ item }) => (
         <TouchableOpacity
             onPress={() => {
-                Alert.alert('Item Pressed', `You pressed ${item.name}`);
+                handleClickItemMenu(item.to);
             }}
         >
             <View style={styles.containerItem}>
