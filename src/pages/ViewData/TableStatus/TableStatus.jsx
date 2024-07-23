@@ -27,13 +27,13 @@ const TableStatus = () => {
             />
             <View>
                 <RowTableSummary title="Orderd tables">
-                    <TextDefaut style={{ flex: 1 }}>0</TextDefaut>
+                    <TextDefaut>0</TextDefaut>
                 </RowTableSummary>
                 <RowTableSummary title="Payment ammount">
-                    <TextDefaut style={{ flex: 1 }}>0</TextDefaut>
+                    <TextDefaut>0</TextDefaut>
                 </RowTableSummary>
                 <RowTableSummary title="Orderd tables">
-                    <TouchableOpacity style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
+                    <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
                         <TextDefaut>hyojung</TextDefaut>
                         <Icon name="search" color={GlobalStyle.primaryTextColor} style={{ paddingLeft: 3 }} />
                     </TouchableOpacity>

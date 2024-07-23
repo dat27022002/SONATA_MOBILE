@@ -2,7 +2,7 @@ import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon2 from 'react-native-vector-icons/FontAwesome6';
-import { Home, Login, Menu, Welcome, TableStatus } from '../pages';
+import { Home, Login, Menu, Welcome, TableStatus, DaySale } from '../pages';
 
 const configHeaderTitle = {
     title: 'HJ POS',
@@ -57,6 +57,11 @@ const customButtonGoToBack = () => {
     );
 };
 
+const configOptionsCommon = {
+    ...configHeaderTitle,
+    headerLeft: customButtonGoToHome,
+};
+
 const configNavigation = [
     {
         name: 'Login',
@@ -87,14 +92,8 @@ const configNavigation = [
             headerLeft: customButtonGoToHome,
         },
     },
-    {
-        name: 'TableStatus',
-        component: TableStatus,
-        options: {
-            ...configHeaderTitle,
-            headerLeft: customButtonGoToBack,
-        },
-    },
+    { name: 'TableStatus', component: TableStatus, options: configOptionsCommon },
+    { name: 'DaySale', component: DaySale, options: configOptionsCommon },
 ];
 
 export default configNavigation;

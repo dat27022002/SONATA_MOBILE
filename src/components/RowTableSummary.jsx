@@ -4,7 +4,7 @@ import { View } from 'react-native';
 import GlobalStyle from '../config/GlobalStyle';
 import TextDefaut from './TextDefaut';
 
-const RowTableSummary = ({ children, title }) => {
+const RowTableSummary = ({ children, title, sizeRowFirst, ...propsColum2 }) => {
     return (
         <View
             style={[
@@ -20,8 +20,10 @@ const RowTableSummary = ({ children, title }) => {
                 { borderStyle: 'dashed' },
             ]}
         >
-            <TextDefaut style={{ width: 150 }}>{title}</TextDefaut>
-            {children}
+            <TextDefaut style={{ width: sizeRowFirst ? sizeRowFirst : 150 }}>{title}</TextDefaut>
+            <View style={{ flex: 1, justifyContent: 'center' }} {...propsColum2}>
+                {children}
+            </View>
         </View>
     );
 };
