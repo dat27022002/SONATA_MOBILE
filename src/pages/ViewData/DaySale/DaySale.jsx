@@ -27,7 +27,11 @@ const DaySale = () => {
     const [isOpenEnd, setIsOpenEnd] = useState(false);
     const [endDate, setEndDate] = useState(todayFormat);
 
-    const listRowTableDetail = ['Table Name', 'First order', 'Last order', 'Payment amount'];
+    const dataTableDetail = [
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+    ];
 
     const handlePopupStartDate = () => {
         setIsOpenStart(!isOpenStart);
@@ -131,7 +135,7 @@ const DaySale = () => {
                 </View>
             </View>
 
-            <TableDetail listRow={listRowTableDetail}></TableDetail>
+            <TableDetail data={dataTableDetail} />
 
             <ModalDatePicker
                 isOpen={isOpenStart}

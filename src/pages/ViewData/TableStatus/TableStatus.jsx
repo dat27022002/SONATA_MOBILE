@@ -14,7 +14,13 @@ import TableDetail from '../../../components/TableDetail';
 const TableStatus = () => {
     const { t } = useTranslation();
 
-    const listRowTableDetail = ['Table Name', 'First order', 'Last order', 'Payment amount'];
+    // const listRowTableDetail = ['Table Name', 'First order', 'Last order', 'Payment amount'];
+
+    const dataTableDetail = [
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+    ];
 
     return (
         <View style={styles.container}>
@@ -40,11 +46,7 @@ const TableStatus = () => {
                 </RowTableSummary>
             </View>
 
-            <TableDetail listRow={listRowTableDetail}>
-                <View style={{ marginTop: 10 }}>
-                    <TextDefaut textAlignCenter> The running table does not exist</TextDefaut>
-                </View>
-            </TableDetail>
+            <TableDetail data={dataTableDetail} />
         </View>
     );
 };
