@@ -22,6 +22,7 @@ const imageRequire = {
     TableStatus: require('../assets/IconImage/TableStatus.png'),
     TimeBase: require('../assets/IconImage/TimeBase.png'),
     WeeklySale: require('../assets/IconImage/WeeklySale.png'),
+    sumaryDetail: require('../assets/IconImage/sumaryDetail.png'),
 };
 
 export default imageRequire;

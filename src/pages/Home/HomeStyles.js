@@ -9,7 +9,7 @@ const HomeStyles = StyleSheet.create({
     },
     header: {
         flexDirection: 'row',
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         alignItems: 'center',
         height: 50,
         borderBottomColor: GlobalStyle.lineColor,
@@ -18,7 +18,7 @@ const HomeStyles = StyleSheet.create({
     iconReload: { color: GlobalStyle.lineColor, flex: 1, textAlign: 'right' },
     containerSummary: {
         flexDirection: 'row',
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         alignItems: 'center',
         height: 90,
         borderBottomColor: GlobalStyle.lineColor,
@@ -27,14 +27,14 @@ const HomeStyles = StyleSheet.create({
     },
     containerSummary2: {
         flexDirection: 'row',
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         alignItems: 'center',
         height: 90,
         borderBottomColor: GlobalStyle.lineColor,
         borderBottomWidth: 0.5,
     },
     textDailyPayment: {
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         paddingTop: 50,
         paddingBottom: 10,
         borderBottomColor: GlobalStyle.lineColor,
@@ -42,7 +42,7 @@ const HomeStyles = StyleSheet.create({
     },
     itemPayment: {
         flexDirection: 'row',
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         height: 36,
         alignItems: 'center',
         justifyContent: 'space-between',

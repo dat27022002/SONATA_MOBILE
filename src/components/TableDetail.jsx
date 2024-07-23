@@ -9,7 +9,7 @@ const TableDetail = ({ children, listRow }) => {
         <View>
             <TextDefaut
                 style={{
-                    paddingHorizontal: 20,
+                    paddingHorizontal: GlobalStyle.paddingWidthLayout,
                     paddingTop: 30,
                     paddingBottom: 10,
                     borderBottomColor: GlobalStyle.thirdTextColor,
@@ -24,7 +24,7 @@ const TableDetail = ({ children, listRow }) => {
                 style={[
                     {
                         flexDirection: 'row',
-                        paddingHorizontal: 20,
+                        paddingHorizontal: GlobalStyle.paddingWidthLayout,
                         height: 30,
                         alignItems: 'center',
                         justifyContent: 'space-between',

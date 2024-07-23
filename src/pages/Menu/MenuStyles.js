@@ -20,11 +20,11 @@ const MenuStyles = StyleSheet.create({
     containertextConfig: {
         width: '100%',
         alignItems: 'flex-start',
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         marginTop: 20,
     },
     containerList: {
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         paddingBottom: 20,
         marginTop: 20,
         borderBottomColor: GlobalStyle.lineColor,
@@ -34,7 +34,7 @@ const MenuStyles = StyleSheet.create({
     support: {
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         marginTop: 20,
         width: '100%',
     },

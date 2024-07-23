@@ -12,6 +12,7 @@ import GlobalStyle from '../../../config/GlobalStyle';
 import RowTableSummary from '../../../components/RowTableSummary';
 import TableDetail from '../../../components/TableDetail';
 import ModalDatePicker from '../../../components/ModalDatePicker';
+import IconImage from '../../../components/IconImage';
 
 const DaySale = () => {
     const { t } = useTranslation();
@@ -82,12 +83,55 @@ const DaySale = () => {
                     </TouchableOpacity>
                 </RowTableSummary>
             </View>
+            <View
+                style={{
+                    marginVertical: GlobalStyle.paddingWidthLayout,
+                    alignItems: 'flex-end',
+                    paddingEnd: GlobalStyle.paddingWidthLayout,
+                }}
+            >
+                <TouchableOpacity
+                    onPress={() => {}}
+                    style={{
+                        backgroundColor: GlobalStyle.thirdTextColor,
+                        flexDirection: 'row',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        paddingVertical: 4,
+                        paddingHorizontal: 10,
+                        borderRadius: 6,
+                    }}
+                >
+                    <Icon name="search" color={GlobalStyle.secondnaryTextColor} size={15} />
+                    <TextDefaut large color={GlobalStyle.secondnaryTextColor}>
+                        Search
+                    </TextDefaut>
+                </TouchableOpacity>
+            </View>
 
-            <TableDetail listRow={listRowTableDetail}>
-                <View style={{ marginTop: 10 }}>
-                    <TextDefaut textAlignCenter> The running table does not exist</TextDefaut>
+            <View
+                style={{
+                    backgroundColor: '#eff8fd',
+                    paddingHorizontal: GlobalStyle.paddingWidthLayout,
+                    flexDirection: 'row',
+                    height: 50,
+                    alignItems: 'center',
+                    borderTopWidth: 1,
+                    borderBottomWidth: 1,
+                    borderColor: GlobalStyle.lineColor,
+                }}
+            >
+                <IconImage url={imageRequire.sumaryDetail} medium />
+                <TextDefaut bold> Day sales</TextDefaut>
+                <View style={{ flex: 1, alignItems: 'flex-end' }}>
+                    <TextDefaut color={GlobalStyle.thirdTextColor} large>
+                        0
+                    </TextDefaut>
+                    <TextDefaut>0</TextDefaut>
                 </View>
-            </TableDetail>
+            </View>
+
+            <TableDetail listRow={listRowTableDetail}></TableDetail>
 
             <ModalDatePicker
                 isOpen={isOpenStart}

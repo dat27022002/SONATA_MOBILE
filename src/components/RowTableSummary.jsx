@@ -10,7 +10,7 @@ const RowTableSummary = ({ children, title, sizeRowFirst, ...propsColum2 }) => {
             style={[
                 {
                     flexDirection: 'row',
-                    paddingHorizontal: 20,
+                    paddingHorizontal: GlobalStyle.paddingWidthLayout,
                     height: 36,
                     alignItems: 'center',
                     justifyContent: 'space-between',

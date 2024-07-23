@@ -9,7 +9,7 @@ const HeaderSecondnary = StyleSheet.create({
     },
     header: {
         flexDirection: 'row',
-        paddingHorizontal: 20,
+        paddingHorizontal: GlobalStyle.paddingWidthLayout,
         alignItems: 'center',
         height: 50,
     },
