@@ -11,6 +11,7 @@ const screenWidth = Dimensions.get('window').width;
 
 const BarChartCustom = ({ dataChart }) => {
     const [isChart, setIsChart] = useState(false);
+    const isData = dataChart.labels.length != 0;
     const chartConfig = {
         backgroundGradientFrom: GlobalStyle.secondnaryBackgroudColor,
         backgroundGradientTo: GlobalStyle.secondnaryBackgroudColor,
@@ -27,13 +28,17 @@ const BarChartCustom = ({ dataChart }) => {
             {/* btn open chart */}
             <View style={styles.viewBtnChart}>
                 <TouchableOpacity onPress={handleOpenChart} style={styles.btnChart}>
-                    <Icon name={isChart ? 'close' : 'pie-chart'} color={GlobalStyle.secondnaryTextColor} size={15} />
+                    <Icon
+                        name={isChart && isData ? 'close' : 'pie-chart'}
+                        color={GlobalStyle.secondnaryTextColor}
+                        size={15}
+                    />
                     <TextDefaut large color={GlobalStyle.secondnaryTextColor}>
-                        {isChart ? 'Close' : 'Chart'}
+                        {isChart && isData ? 'Close' : 'Chart'}
                     </TextDefaut>
                 </TouchableOpacity>
             </View>
-            {isChart && (
+            {isChart && isData && (
                 <ScrollView horizontal>
                     <BarChart
                         style={styles.graphStyle}

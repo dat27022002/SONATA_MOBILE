@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
-import styles from './DaySaleStyles';
+import styles from './MonthlySaleStyles';
 import HeaderSecondnary from '../../../components/HeaderSecondnary';
 import imageRequire from '../../../config/ImageRequire';
 import GlobalStyle from '../../../config/GlobalStyle';
@@ -16,7 +16,7 @@ import BarChartCustom from '../../../components/BarChartCustom';
 import BtnFilter from '../../../components/BtnFilter';
 import ViewContainer from '../../../components/ViewContainer';
 
-const DaySale = () => {
+const MonthlySale = () => {
     const { t } = useTranslation();
 
     const today = new Date();
@@ -26,15 +26,16 @@ const DaySale = () => {
     const [endDate, setEndDate] = useState(todayFormat);
 
     const dataTableDetail = [
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '13960' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '1960' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '1290' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+        { Month: '2024-07', Quantity: 1, 'Sales amount': '12960', Discount: '0' },
+        { Month: '2024-07', Quantity: 1, 'Sales amount': '960', Discount: '0' },
+        { Month: '2024-07', Quantity: 1, 'Sales amount': '1960', Discount: '0' },
+        { Month: '2024-07', Quantity: 1, 'Sales amount': '2960', Discount: '0' },
+        { Month: '2024-07', Quantity: 1, 'Sales amount': '14960', Discount: '0' },
     ];
+    const headerTable = ['Month', 'Quantity', 'Sales amount', 'Discount'];
 
     const dataChart = {
-        labels: dataTableDetail.map((item) => item.Date.substring(5)),
+        labels: dataTableDetail.map((item) => item.Month.substring(5)),
         datasets: [
             {
                 data: dataTableDetail.map((item) => item['Sales amount']),
@@ -48,8 +49,8 @@ const DaySale = () => {
     return (
         <ViewContainer>
             <HeaderSecondnary
-                urlImage={imageRequire.DaySale}
-                title={'Day sales list'}
+                urlImage={imageRequire.MonthlySale}
+                title={'Monthly sales list'}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
@@ -70,9 +71,9 @@ const DaySale = () => {
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Day sales'} saleAmount={0} quantity={0} />
+            <ViewSaleCurrent title={'Monthly sales list'} saleAmount={'16.073.760'} quantity={0} />
 
-            <TableDetail data={dataTableDetail} />
+            <TableDetail data={dataTableDetail} headerTable={headerTable} />
 
             {/* chart */}
             <BarChartCustom dataChart={dataChart} />
@@ -80,4 +81,4 @@ const DaySale = () => {
     );
 };
 
-export default DaySale;
+export default MonthlySale;

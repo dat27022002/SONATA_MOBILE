@@ -12,7 +12,7 @@ const TableDetail = StyleSheet.create({
     headerTable: {
         flexDirection: 'row',
         paddingHorizontal: 5,
-        paddingVertical: 2,
+        paddingVertical: 6,
         alignItems: 'center',
         justifyContent: 'space-around',
         borderBottomColor: GlobalStyle.lineColor,
