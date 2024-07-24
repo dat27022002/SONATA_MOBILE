@@ -9,7 +9,6 @@ const TableStatusStyles = StyleSheet.create({
     },
     dateRangePicker: { flexDirection: 'row', flex: 1, alignItems: 'center' },
     btnSearchStore: { flex: 1, flexDirection: 'row', alignItems: 'center' },
-    iconSearch: { paddingLeft: 3, color: GlobalStyle.primaryTextColor },
 });
 
 export default TableStatusStyles;

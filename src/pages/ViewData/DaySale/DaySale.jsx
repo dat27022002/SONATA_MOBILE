@@ -11,10 +11,10 @@ import TextDefaut from '../../../components/TextDefaut';
 import GlobalStyle from '../../../config/GlobalStyle';
 import RowTableSummary from '../../../components/RowTableSummary';
 import TableDetail from '../../../components/TableDetail';
-import IconImage from '../../../components/IconImage';
 import DateRangePicker from '../../../components/DateRangePicker';
 import BtnSearch from '../../../components/BtnSearch';
 import ViewSaleCurrent from '../../../components/ViewSaleCurrent';
+import BarChartCustom from '../../../components/BarChartCustom';
 
 const DaySale = () => {
     const { t } = useTranslation();
@@ -25,12 +25,25 @@ const DaySale = () => {
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
 
-    const handleSearch = () => {};
     const dataTableDetail = [
         { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '13960' },
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '1960' },
+        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '1290' },
         { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
     ];
+
+    const dataChart = {
+        labels: dataTableDetail.map((item) => item.Date.substring(5)),
+        datasets: [
+            {
+                data: dataTableDetail.map((item) => item['Sales amount']),
+                colors: dataTableDetail.map(() => () => GlobalStyle.thirdTextColor),
+            },
+        ],
+    };
+
+    const handleSearch = () => {};
 
     return (
         <View style={styles.container}>
@@ -63,6 +76,9 @@ const DaySale = () => {
             <ViewSaleCurrent title={'Day sales'} saleAmount={0} quantity={0} />
 
             <TableDetail data={dataTableDetail} />
+
+            {/* chart */}
+            <BarChartCustom dataChart={dataChart} />
         </View>
     );
 };

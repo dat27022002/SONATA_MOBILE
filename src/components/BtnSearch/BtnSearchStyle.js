@@ -3,7 +3,7 @@ import GlobalStyle from '../../config/GlobalStyle';
 
 const BtnSearch = StyleSheet.create({
     viewSearch: {
-        marginVertical: GlobalStyle.paddingWidthLayout,
+        marginVertical: 10,
         alignItems: 'flex-end',
         paddingEnd: GlobalStyle.paddingWidthLayout,
     },

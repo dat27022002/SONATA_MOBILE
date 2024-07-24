@@ -10,7 +10,8 @@ const ViewSummary = StyleSheet.create({
         alignItems: 'center',
         borderTopWidth: 1,
         borderBottomWidth: 1,
-        borderColor: GlobalStyle.lineColor,
+        borderTopColor: GlobalStyle.lineColor,
+        borderBottomColor: GlobalStyle.lineColor,
     },
     viewData: { flex: 1, alignItems: 'flex-end' },
 });
