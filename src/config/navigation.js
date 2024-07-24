@@ -20,6 +20,7 @@ import {
     RefundHistory,
     OrderCancelList,
     RealTimeSale,
+    InventoryStatus,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -123,6 +124,7 @@ const configNavigation = [
     { name: 'RefundHistory', component: RefundHistory, options: configOptionsCommon },
     { name: 'OrderCancelList', component: OrderCancelList, options: configOptionsCommon },
     { name: 'RealTimeSale', component: RealTimeSale, options: configOptionsCommon },
+    { name: 'InventoryStatus', component: InventoryStatus, options: configOptionsCommon },
 ];
 
 export default configNavigation;
