@@ -9,6 +9,7 @@ import WeeklySale from './ViewData/WeeklySale';
 import TimeBase from './ViewData/TimeBase';
 import SaleByReceipt from './ViewData/SaleByReceipt';
 import SaleByItem from './ViewData/SaleByItem';
+import ItemRank from './ViewData/ItemRank';
 
 export {
     Home,
@@ -22,4 +23,5 @@ export {
     TimeBase,
     SaleByReceipt,
     SaleByItem,
+    ItemRank,
 };

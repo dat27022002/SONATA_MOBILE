@@ -14,6 +14,7 @@ import {
     TimeBase,
     SaleByReceipt,
     SaleByItem,
+    ItemRank,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -111,6 +112,7 @@ const configNavigation = [
     { name: 'TimeBase', component: TimeBase, options: configOptionsCommon },
     { name: 'SaleByReceipt', component: SaleByReceipt, options: configOptionsCommon },
     { name: 'SaleByItem', component: SaleByItem, options: configOptionsCommon },
+    { name: 'ItemRank', component: ItemRank, options: configOptionsCommon },
 ];
 
 export default configNavigation;
