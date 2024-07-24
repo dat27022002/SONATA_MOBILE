@@ -10,6 +10,7 @@ import TimeBase from './ViewData/TimeBase';
 import SaleByReceipt from './ViewData/SaleByReceipt';
 import SaleByItem from './ViewData/SaleByItem';
 import ItemRank from './ViewData/ItemRank';
+import CreditCardApproval from './ViewData/CreditCardApproval';
 
 export {
     Home,
@@ -24,4 +25,5 @@ export {
     SaleByReceipt,
     SaleByItem,
     ItemRank,
+    CreditCardApproval,
 };

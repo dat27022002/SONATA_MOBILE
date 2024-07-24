@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './BtnFilterStyle';
 import TextDefaut from '../TextDefaut';
+import ModalSelect from '../ModalSelect';
 
-const BtnFilter = ({ handleFilter = () => {}, title }) => {
+const BtnFilter = ({ handleFilter = () => {}, title, listOptions = [], titleModal = '' }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        if (listOptions.length == 0) return;
+        setIsOpen(!isOpen);
+    };
     return (
-        <TouchableOpacity style={styles.btnSearchStore} onPress={handleFilter}>
-            <TextDefaut>{title}</TextDefaut>
-            <Icon name="search" style={styles.iconSearch} />
-        </TouchableOpacity>
+        <React.Fragment>
+            <TouchableOpacity style={styles.btnSearchStore} onPress={handleOpenModal}>
+                <TextDefaut>{title}</TextDefaut>
+                <Icon name="search" style={styles.iconSearch} />
+            </TouchableOpacity>
+            <ModalSelect
+                isOpen={isOpen}
+                setIsopen={setIsOpen}
+                listOption={listOptions}
+                handleFilter={handleFilter}
+                title={titleModal}
+            />
+        </React.Fragment>
     );
 };
 

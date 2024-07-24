@@ -10,6 +10,7 @@ import IconImage from './IconImage';
 import RowTableSummary from './RowTableSummary';
 import TextDefaut from './TextDefaut';
 import ViewContainer from './ViewContainer';
+import ModalSelect from './ModalSelect';
 export {
     BarChartCustom,
     BtnFilter,
@@ -23,4 +24,5 @@ export {
     IconImage,
     TextDefaut,
     RowTableSummary,
+    ModalSelect,
 };
