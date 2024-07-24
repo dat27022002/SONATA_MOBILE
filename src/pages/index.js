@@ -13,6 +13,7 @@ import ItemRank from './ViewData/ItemRank';
 import CreditCardApproval from './ViewData/CreditCardApproval';
 import CashReceiptApproval from './ViewData/CashReceiptApproval';
 import RefundHistory from './ViewData/RefundHistory';
+import OrderCancelList from './ViewData/OrderCancelList';
 
 export {
     Home,
@@ -30,4 +31,5 @@ export {
     CreditCardApproval,
     CashReceiptApproval,
     RefundHistory,
+    OrderCancelList,
 };
