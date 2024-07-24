@@ -17,6 +17,7 @@ import {
     ItemRank,
     CreditCardApproval,
     CashReceiptApproval,
+    RefundHistory,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -117,6 +118,7 @@ const configNavigation = [
     { name: 'ItemRank', component: ItemRank, options: configOptionsCommon },
     { name: 'CreditCardApproval', component: CreditCardApproval, options: configOptionsCommon },
     { name: 'CashReceiptApproval', component: CashReceiptApproval, options: configOptionsCommon },
+    { name: 'RefundHistory', component: RefundHistory, options: configOptionsCommon },
 ];
 
 export default configNavigation;

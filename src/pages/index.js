@@ -12,6 +12,7 @@ import SaleByItem from './ViewData/SaleByItem';
 import ItemRank from './ViewData/ItemRank';
 import CreditCardApproval from './ViewData/CreditCardApproval';
 import CashReceiptApproval from './ViewData/CashReceiptApproval';
+import RefundHistory from './ViewData/RefundHistory';
 
 export {
     Home,
@@ -28,4 +29,5 @@ export {
     ItemRank,
     CreditCardApproval,
     CashReceiptApproval,
+    RefundHistory,
 };

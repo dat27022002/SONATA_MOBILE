@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
-import styles from './SaleByItemStyles';
+import styles from './RefundHistoryStyles';
 import { GlobalStyle, imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
@@ -15,7 +15,7 @@ import {
     ViewContainer,
 } from '../../../components';
 
-const SaleByItem = () => {
+const RefundHistory = () => {
     const { t } = useTranslation();
 
     const today = new Date();
@@ -25,7 +25,7 @@ const SaleByItem = () => {
     const [endDate, setEndDate] = useState(todayFormat);
 
     const dataTableDetail = [];
-    const headerTable = ['Item', 'Quantity', 'Sales amount'];
+    const headerTable = ['Cancel date', 'Item', 'Quantity'];
 
     const dataChart = {
         labels: dataTableDetail.map((item) => item.Date.substring(5)),
@@ -42,8 +42,8 @@ const SaleByItem = () => {
     return (
         <ViewContainer>
             <HeaderSecondnary
-                urlImage={imageRequire.SaleByItem}
-                title={'Sale by item'}
+                urlImage={imageRequire.RefundHistory}
+                title={'Refund history'}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
@@ -64,9 +64,9 @@ const SaleByItem = () => {
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent="Sales history" />
+            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent="No refund" />
         </ViewContainer>
     );
 };
 
-export default SaleByItem;
+export default RefundHistory;
