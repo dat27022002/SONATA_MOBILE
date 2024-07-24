@@ -7,7 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import TextDefaut from '../TextDefaut';
 import ModalDatePicker from '../ModalDatePicker';
 
-const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate }) => {
+const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEndCalendar = false }) => {
     const { t } = useTranslation();
 
     const today = new Date();
@@ -46,11 +46,16 @@ const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate }) => {
                 <TextDefaut>{startDate}</TextDefaut>
             </TouchableOpacity>
             <Icon name="calendar" />
-            <TextDefaut>~</TextDefaut>
-            <TouchableOpacity onPress={handlePopupEndDate}>
-                <TextDefaut>{endDate}</TextDefaut>
-            </TouchableOpacity>
-            <Icon name="calendar" />
+            {!isNotEndCalendar && (
+                <React.Fragment>
+                    <TextDefaut>~</TextDefaut>
+                    <TouchableOpacity onPress={handlePopupEndDate}>
+                        <TextDefaut>{endDate}</TextDefaut>
+                    </TouchableOpacity>
+                    <Icon name="calendar" />
+                </React.Fragment>
+            )}
+
             <ModalDatePicker
                 isOpen={isOpenStart}
                 handleChangeDate={handleChangeDate}
@@ -58,13 +63,15 @@ const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate }) => {
                 dateSelected={startDate}
                 handleChangeDateUI={handleChangeStartDate}
             />
-            <ModalDatePicker
-                isOpen={isOpenEnd}
-                handleChangeDate={handleChangeDate}
-                handleOpenModal={handlePopupEndDate}
-                dateSelected={endDate}
-                handleChangeDateUI={handleChangeEndDate}
-            />
+            {!isNotEndCalendar && (
+                <ModalDatePicker
+                    isOpen={isOpenEnd}
+                    handleChangeDate={handleChangeDate}
+                    handleOpenModal={handlePopupEndDate}
+                    dateSelected={endDate}
+                    handleChangeDateUI={handleChangeEndDate}
+                />
+            )}
         </React.Fragment>
     );
 };

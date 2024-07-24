@@ -19,6 +19,7 @@ import {
     CashReceiptApproval,
     RefundHistory,
     OrderCancelList,
+    RealTimeSale,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -121,6 +122,7 @@ const configNavigation = [
     { name: 'CashReceiptApproval', component: CashReceiptApproval, options: configOptionsCommon },
     { name: 'RefundHistory', component: RefundHistory, options: configOptionsCommon },
     { name: 'OrderCancelList', component: OrderCancelList, options: configOptionsCommon },
+    { name: 'RealTimeSale', component: RealTimeSale, options: configOptionsCommon },
 ];
 
 export default configNavigation;
