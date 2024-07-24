@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
-import styles from './DaySaleStyles';
+import styles from './TimeBaseStyles';
 import { GlobalStyle, imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
@@ -17,7 +17,7 @@ import {
     ViewContainer,
 } from '../../../components';
 
-const DaySale = () => {
+const TimeBase = () => {
     const { t } = useTranslation();
 
     const today = new Date();
@@ -26,15 +26,8 @@ const DaySale = () => {
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
 
-    const dataTableDetail = [
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '13960' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '1960' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '1290' },
-        { Date: '2024-07-08', Quantity: 1, Guest: 2, 'Customer price': '12.960', 'Sales amount': '12960' },
-    ];
-
-    const headerTable = ['Date', 'Quantity', 'Guest', 'Customer price', 'Sales amount'];
+    const dataTableDetail = [];
+    const headerTable = ['Time', 'Quantity', 'Unit price', 'Sales amount'];
 
     const dataChart = {
         labels: dataTableDetail.map((item) => item.Date.substring(5)),
@@ -51,8 +44,8 @@ const DaySale = () => {
     return (
         <ViewContainer>
             <HeaderSecondnary
-                urlImage={imageRequire.DaySale}
-                title={'Day sales list'}
+                urlImage={imageRequire.TimeBase}
+                title={'Time-based sales'}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
@@ -83,4 +76,4 @@ const DaySale = () => {
     );
 };
 
-export default DaySale;
+export default TimeBase;
