@@ -2,7 +2,18 @@ import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon2 from 'react-native-vector-icons/FontAwesome6';
-import { Home, Login, Menu, Welcome, TableStatus, DaySale, MonthlySale, WeeklySale, TimeBase } from '../pages';
+import {
+    Home,
+    Login,
+    Menu,
+    Welcome,
+    TableStatus,
+    DaySale,
+    MonthlySale,
+    WeeklySale,
+    TimeBase,
+    SaleByReceipt,
+} from '../pages';
 
 const configHeaderTitle = {
     title: 'HJ POS',
@@ -97,6 +108,7 @@ const configNavigation = [
     { name: 'MonthlySale', component: MonthlySale, options: configOptionsCommon },
     { name: 'WeeklySale', component: WeeklySale, options: configOptionsCommon },
     { name: 'TimeBase', component: TimeBase, options: configOptionsCommon },
+    { name: 'SaleByReceipt', component: SaleByReceipt, options: configOptionsCommon },
 ];
 
 export default configNavigation;

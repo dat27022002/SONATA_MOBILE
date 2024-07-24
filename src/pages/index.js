@@ -7,5 +7,6 @@ import DaySale from './ViewData/DaySale';
 import MonthlySale from './ViewData/MonthlySale';
 import WeeklySale from './ViewData/WeeklySale';
 import TimeBase from './ViewData/TimeBase';
+import SaleByReceipt from './ViewData/SaleByReceipt';
 
-export { Home, Welcome, Login, Menu, TableStatus, DaySale, MonthlySale, WeeklySale, TimeBase };
+export { Home, Welcome, Login, Menu, TableStatus, DaySale, MonthlySale, WeeklySale, TimeBase, SaleByReceipt };
