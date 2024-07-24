@@ -13,6 +13,7 @@ import {
     WeeklySale,
     TimeBase,
     SaleByReceipt,
+    SaleByItem,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -109,6 +110,7 @@ const configNavigation = [
     { name: 'WeeklySale', component: WeeklySale, options: configOptionsCommon },
     { name: 'TimeBase', component: TimeBase, options: configOptionsCommon },
     { name: 'SaleByReceipt', component: SaleByReceipt, options: configOptionsCommon },
+    { name: 'SaleByItem', component: SaleByItem, options: configOptionsCommon },
 ];
 
 export default configNavigation;

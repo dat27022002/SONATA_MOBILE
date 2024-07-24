@@ -5,7 +5,7 @@ import GlobalStyle from '../../config/GlobalStyle';
 import TextDefaut from '../TextDefaut';
 import styles from './TableDetailStyle';
 
-const TableDetail = ({ data, headerTable = [] }) => {
+const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
     const isData = data.length == 0 ? false : true;
     const listRow = isData ? Object.keys(data[0]) : headerTable;
     const summary = isData ? Object.values(data[0]) : [];
@@ -62,7 +62,7 @@ const TableDetail = ({ data, headerTable = [] }) => {
                 </React.Fragment>
             ) : (
                 <View style={{ marginTop: 10 }}>
-                    <TextDefaut textAlignCustom={'center'}> The running table does not exist</TextDefaut>
+                    <TextDefaut textAlignCustom={'center'}> {noDataContent} does not exist</TextDefaut>
                 </View>
             )}
         </View>
