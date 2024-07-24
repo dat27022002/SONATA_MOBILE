@@ -11,6 +11,7 @@ import SaleByReceipt from './ViewData/SaleByReceipt';
 import SaleByItem from './ViewData/SaleByItem';
 import ItemRank from './ViewData/ItemRank';
 import CreditCardApproval from './ViewData/CreditCardApproval';
+import CashReceiptApproval from './ViewData/CashReceiptApproval';
 
 export {
     Home,
@@ -26,4 +27,5 @@ export {
     SaleByItem,
     ItemRank,
     CreditCardApproval,
+    CashReceiptApproval,
 };

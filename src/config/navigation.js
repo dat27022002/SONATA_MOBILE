@@ -16,6 +16,7 @@ import {
     SaleByItem,
     ItemRank,
     CreditCardApproval,
+    CashReceiptApproval,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -115,6 +116,7 @@ const configNavigation = [
     { name: 'SaleByItem', component: SaleByItem, options: configOptionsCommon },
     { name: 'ItemRank', component: ItemRank, options: configOptionsCommon },
     { name: 'CreditCardApproval', component: CreditCardApproval, options: configOptionsCommon },
+    { name: 'CashReceiptApproval', component: CashReceiptApproval, options: configOptionsCommon },
 ];
 
 export default configNavigation;
