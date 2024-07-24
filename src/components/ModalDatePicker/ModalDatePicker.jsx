@@ -8,7 +8,7 @@ import TextDefaut from '../TextDefaut';
 
 const ModalDatePicker = ({ isOpen, handleChangeDate, handleOpenModal, dateSelected, handleChangeDateUI }) => {
     return (
-        <Modal animationType="slide" transparent={true} visible={isOpen}>
+        <Modal animationType="fade" transparent={true} visible={isOpen}>
             <View style={styles.centerdView}>
                 <View style={styles.modalView}>
                     <DatePicker mode="calendar" selected={dateSelected} onSelectedChange={handleChangeDate} />
