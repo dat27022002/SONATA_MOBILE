@@ -10,7 +10,7 @@ import styles from './BarChartCustomStyle';
 const screenWidth = Dimensions.get('window').width;
 
 const BarChartCustom = ({ dataChart }) => {
-    const [isChart, setIsChart] = useState(true);
+    const [isChart, setIsChart] = useState(false);
     const chartConfig = {
         backgroundGradientFrom: GlobalStyle.secondnaryBackgroudColor,
         backgroundGradientTo: GlobalStyle.secondnaryBackgroudColor,

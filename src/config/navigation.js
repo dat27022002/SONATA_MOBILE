@@ -25,7 +25,7 @@ const customButtonGoToMenu = () => {
                 navigation.navigate('Menu');
             }}
         >
-            <Icon2 name="house-chimney" size={20} color="#FFFFFF" />
+            <Icon name="navicon" size={20} color="#FFFFFF" />
         </TouchableOpacity>
     );
 };
@@ -38,7 +38,7 @@ const customButtonGoToHome = () => {
                 navigation.goBack();
             }}
         >
-            <Icon name="navicon" size={20} color="#FFFFFF" />
+            <Icon2 name="house-chimney" size={20} color="#FFFFFF" />
         </TouchableOpacity>
     );
 };
@@ -59,7 +59,7 @@ const customButtonGoToBack = () => {
 
 const configOptionsCommon = {
     ...configHeaderTitle,
-    headerLeft: customButtonGoToHome,
+    headerLeft: customButtonGoToBack,
 };
 
 const configNavigation = [

@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './DaySaleStyles';
 import HeaderSecondnary from '../../../components/HeaderSecondnary';
 import imageRequire from '../../../config/ImageRequire';
-import TextDefaut from '../../../components/TextDefaut';
 import GlobalStyle from '../../../config/GlobalStyle';
 import RowTableSummary from '../../../components/RowTableSummary';
 import TableDetail from '../../../components/TableDetail';
@@ -15,6 +13,8 @@ import DateRangePicker from '../../../components/DateRangePicker';
 import BtnSearch from '../../../components/BtnSearch';
 import ViewSaleCurrent from '../../../components/ViewSaleCurrent';
 import BarChartCustom from '../../../components/BarChartCustom';
+import BtnFilter from '../../../components/BtnFilter';
+import ViewContainer from '../../../components/ViewContainer';
 
 const DaySale = () => {
     const { t } = useTranslation();
@@ -46,7 +46,7 @@ const DaySale = () => {
     const handleSearch = () => {};
 
     return (
-        <View style={styles.container}>
+        <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.DaySale}
                 title={'Day sales list'}
@@ -64,10 +64,7 @@ const DaySale = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <TouchableOpacity style={styles.btnSearchStore}>
-                        <TextDefaut>hyojung</TextDefaut>
-                        <Icon name="search" style={styles.iconSearch} />
-                    </TouchableOpacity>
+                    <BtnFilter />
                 </RowTableSummary>
             </View>
 
@@ -79,7 +76,7 @@ const DaySale = () => {
 
             {/* chart */}
             <BarChartCustom dataChart={dataChart} />
-        </View>
+        </ViewContainer>
     );
 };
 

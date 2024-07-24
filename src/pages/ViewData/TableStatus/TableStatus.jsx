@@ -3,13 +3,13 @@ import { TouchableOpacity, View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-import styles from './TableStatusStyles';
 import HeaderSecondnary from '../../../components/HeaderSecondnary';
 import imageRequire from '../../../config/ImageRequire';
 import TextDefaut from '../../../components/TextDefaut';
 import GlobalStyle from '../../../config/GlobalStyle';
 import RowTableSummary from '../../../components/RowTableSummary';
 import TableDetail from '../../../components/TableDetail';
+import ViewContainer from '../../../components/ViewContainer';
 
 const TableStatus = () => {
     const { t } = useTranslation();
@@ -23,7 +23,7 @@ const TableStatus = () => {
     ];
 
     return (
-        <View style={styles.container}>
+        <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.TableStatus}
                 title={'Table status'}
@@ -47,7 +47,7 @@ const TableStatus = () => {
             </View>
 
             <TableDetail data={dataTableDetail} />
-        </View>
+        </ViewContainer>
     );
 };
 
