@@ -3,9 +3,7 @@ import { View, FlatList, TouchableOpacity, Alert } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import styles from './MenuStyles';
-import TextDefaut from '../../components/TextDefaut';
-import HeaderSecondnary from '../../components/HeaderSecondnary';
-import IconImage from '../../components/IconImage';
+import { TextDefaut, HeaderSecondnary, IconImage } from '../../components';
 import { listMenuConfig, listSupport, listMenuSearchData } from './constant';
 
 const Menu = ({ navigation }) => {

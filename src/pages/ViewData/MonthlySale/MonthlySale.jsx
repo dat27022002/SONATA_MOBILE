@@ -4,17 +4,18 @@ import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './MonthlySaleStyles';
-import HeaderSecondnary from '../../../components/HeaderSecondnary';
-import imageRequire from '../../../config/ImageRequire';
-import GlobalStyle from '../../../config/GlobalStyle';
-import RowTableSummary from '../../../components/RowTableSummary';
-import TableDetail from '../../../components/TableDetail';
-import DateRangePicker from '../../../components/DateRangePicker';
-import BtnSearch from '../../../components/BtnSearch';
-import ViewSaleCurrent from '../../../components/ViewSaleCurrent';
-import BarChartCustom from '../../../components/BarChartCustom';
-import BtnFilter from '../../../components/BtnFilter';
-import ViewContainer from '../../../components/ViewContainer';
+import { GlobalStyle, imageRequire } from '../../../config';
+import {
+    HeaderSecondnary,
+    RowTableSummary,
+    TableDetail,
+    DateRangePicker,
+    BtnSearch,
+    ViewSaleCurrent,
+    BarChartCustom,
+    BtnFilter,
+    ViewContainer,
+} from '../../../components';
 
 const MonthlySale = () => {
     const { t } = useTranslation();

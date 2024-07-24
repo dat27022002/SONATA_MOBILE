@@ -1,15 +1,16 @@
 import React from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
-import HeaderSecondnary from '../../../components/HeaderSecondnary';
-import imageRequire from '../../../config/ImageRequire';
-import TextDefaut from '../../../components/TextDefaut';
-import RowTableSummary from '../../../components/RowTableSummary';
-import TableDetail from '../../../components/TableDetail';
-import ViewContainer from '../../../components/ViewContainer';
-import BtnFilter from '../../../components/BtnFilter';
+import { imageRequire } from '../../../config';
+import {
+    HeaderSecondnary,
+    RowTableSummary,
+    TableDetail,
+    BtnFilter,
+    ViewContainer,
+    TextDefaut,
+} from '../../../components';
 
 const TableStatus = () => {
     const { t } = useTranslation();

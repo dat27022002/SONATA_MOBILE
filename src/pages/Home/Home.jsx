@@ -3,11 +3,8 @@ import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import styles from './HomeStyles';
-import GlobalStyle from '../../config/GlobalStyle';
-import TextDefaut from '../../components/TextDefaut';
-import HeaderSecondnary from '../../components/HeaderSecondnary';
-import IconImage from '../../components/IconImage';
-import imageRequire from '../../config/ImageRequire';
+import { GlobalStyle, imageRequire } from '../../config';
+import { TextDefaut, HeaderSecondnary, IconImage } from '../../components';
 
 const Home = ({ navigation }) => {
     const { t } = useTranslation();
