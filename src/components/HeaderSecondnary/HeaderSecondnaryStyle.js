@@ -11,7 +11,7 @@ const HeaderSecondnary = StyleSheet.create({
         flexDirection: 'row',
         paddingHorizontal: GlobalStyle.paddingWidthLayout,
         alignItems: 'center',
-        height: 50,
+        height: 45,
     },
     iconReload: { color: GlobalStyle.lineColor, textAlign: 'right' },
     containerIconRight: {
@@ -22,6 +22,7 @@ const HeaderSecondnary = StyleSheet.create({
         borderBottomColor: GlobalStyle.lineColor,
         borderBottomWidth: 3,
     },
+    lineSolidGray: { borderBottomColor: GlobalStyle.lineColor, borderBottomWidth: 0.5 },
     lineDashedGray: {
         borderBottomColor: GlobalStyle.lineColor,
         borderBottomWidth: 0.5,

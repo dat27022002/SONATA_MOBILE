@@ -21,6 +21,7 @@ import {
     OrderCancelList,
     RealTimeSale,
     InventoryStatus,
+    BarcodeScan,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -125,6 +126,7 @@ const configNavigation = [
     { name: 'OrderCancelList', component: OrderCancelList, options: configOptionsCommon },
     { name: 'RealTimeSale', component: RealTimeSale, options: configOptionsCommon },
     { name: 'InventoryStatus', component: InventoryStatus, options: configOptionsCommon },
+    { name: 'BarcodeScan', component: BarcodeScan, options: configOptionsCommon },
 ];
 
 export default configNavigation;

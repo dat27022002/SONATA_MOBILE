@@ -16,6 +16,7 @@ import RefundHistory from './ViewData/RefundHistory';
 import OrderCancelList from './ViewData/OrderCancelList';
 import RealTimeSale from './ViewData/RealTimeSale';
 import InventoryStatus from './ViewData/InventoryStatus';
+import BarcodeScan from './KIOSKConfigure/BarcodeScan';
 
 export {
     Home,
@@ -36,4 +37,5 @@ export {
     OrderCancelList,
     RealTimeSale,
     InventoryStatus,
+    BarcodeScan,
 };

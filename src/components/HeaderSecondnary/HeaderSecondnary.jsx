@@ -9,7 +9,7 @@ import TextDefaut from '../TextDefaut';
 
 const HeaderSecondnary = ({
     iconLeft,
-    iconRight,
+    iconRight = false,
     urlImage,
     title,
     line,
@@ -19,6 +19,7 @@ const HeaderSecondnary = ({
 }) => {
     let lineStyles = {};
     if (line === 'lineSolidGray3') lineStyles = styles.lineSolidGray3;
+    if (line === 'lineSolidGray') lineStyles = styles.lineSolidGray;
     if (line === 'lineDashedGray') lineStyles = styles.lineDashedGray;
     if (line === 'lineSolidOrange3') lineStyles = styles.lineSolidOrange3;
     return (
@@ -30,10 +31,12 @@ const HeaderSecondnary = ({
             )}
 
             <TextDefaut style={{ paddingLeft: 10 }}>{title}</TextDefaut>
-            <TouchableOpacity style={styles.containerIconRight} onPress={handleClickRightBtn}>
-                {ionicon && <Icon name={iconRight} size={25} style={styles.iconReload} />}
-                {iconFontAwesome6 && <Icon2 name={iconRight} size={20} style={styles.iconReload} />}
-            </TouchableOpacity>
+            {iconRight && (
+                <TouchableOpacity style={styles.containerIconRight} onPress={handleClickRightBtn}>
+                    {ionicon && <Icon name={iconRight} size={25} style={styles.iconReload} />}
+                    {iconFontAwesome6 && <Icon2 name={iconRight} size={20} style={styles.iconReload} />}
+                </TouchableOpacity>
+            )}
         </View>
     );
 };

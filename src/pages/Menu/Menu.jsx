@@ -47,7 +47,7 @@ const Menu = ({ navigation }) => {
                 iconFontAwesome6
                 handleClickRightBtn={handleClickRightBtn}
             />
-            <View style={[styles.containerList, { height: 280 }]}>
+            <View style={[styles.containerList, { height: 285 }]}>
                 <FlatList
                     data={listMenuSearchData}
                     renderItem={renderItem}
@@ -60,7 +60,7 @@ const Menu = ({ navigation }) => {
                 <TextDefaut large>KIOSK Configure</TextDefaut>
             </View>
 
-            <View style={[styles.containerList, { height: 150 }]}>
+            <View style={[styles.containerList, { height: 155 }]}>
                 <FlatList
                     data={listMenuConfig}
                     renderItem={renderItem}
@@ -69,7 +69,7 @@ const Menu = ({ navigation }) => {
                 />
             </View>
             <View style={styles.support}>
-                <View style={{ height: 60 }}>
+                <View style={{ height: 70 }}>
                     <FlatList
                         data={listSupport}
                         renderItem={renderItem}
