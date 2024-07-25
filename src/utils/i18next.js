@@ -3,17 +3,15 @@ import { initReactI18next } from 'react-i18next';
 
 import translationEN from '../locales/translationEN.json';
 import translationVI from '../locales/translationVI.json';
+import translationKO from '../locales/translationKO.json';
 
 import 'intl-pluralrules';
 
 // the translations
 const resources = {
-    en: {
-        translation: translationEN,
-    },
-    vi: {
-        translation: translationVI,
-    },
+    en: { translation: translationEN },
+    vi: { translation: translationVI },
+    ko: { translation: translationKO },
 };
 
 i18n.use(initReactI18next).init({

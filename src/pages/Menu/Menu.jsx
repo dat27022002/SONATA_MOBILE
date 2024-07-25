@@ -1,21 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, FlatList, TouchableOpacity, Alert } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
 import styles from './MenuStyles';
-import { TextDefaut, HeaderSecondnary, IconImage } from '../../components';
+import { TextDefaut, HeaderSecondnary, IconImage, ModalSelect } from '../../components';
 import { listMenuConfig, listSupport, listMenuSearchData } from './constant';
+import { route, listLanguage } from '../../config';
 
 const Menu = ({ navigation }) => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
+
+    const [isModalLanguage, setIsModalLanguage] = useState(false);
 
     const handleClickItemMenu = (screenName) => {
         const routeNames = navigation.getState().routeNames;
+        if (screenName == route.Support.LANGUAGE) {
+            setIsModalLanguage(true);
+            return;
+        }
         if (routeNames.includes(screenName)) {
             navigation.navigate(screenName);
         } else {
             Alert.alert('Item Pressed', `You pressed ${screenName}, but this page not exist`);
         }
+    };
+
+    const handleChangeLanguage = (item) => {
+        i18n.changeLanguage(listLanguage[item]);
     };
 
     const renderItem = ({ item }) => (
@@ -78,6 +89,14 @@ const Menu = ({ navigation }) => {
                     />
                 </View>
             </View>
+
+            <ModalSelect
+                isOpen={isModalLanguage}
+                setIsopen={setIsModalLanguage}
+                listOption={Object.keys(listLanguage)}
+                title={'language'}
+                handleFilter={handleChangeLanguage}
+            />
         </View>
     );
 };

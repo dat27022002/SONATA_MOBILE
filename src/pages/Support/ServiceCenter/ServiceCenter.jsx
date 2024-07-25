@@ -8,7 +8,7 @@ import { GlobalStyle, imageRequire } from '../../../config';
 import { HeaderSecondnary, IconImage, TextDefaut, ViewContainer } from '../../../components';
 
 const ServiceCenter = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     const { lineColor } = GlobalStyle;
 
