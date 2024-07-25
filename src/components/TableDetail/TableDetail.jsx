@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 
 import GlobalStyle from '../../config/GlobalStyle';
 import TextDefaut from '../TextDefaut';
@@ -50,15 +50,17 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
                         ))}
                     </View>
                     {/* row data */}
-                    {dataDetail.map((row, index) => (
-                        <View key={index} style={styles.rowTable}>
-                            {row.map((item, index) => (
-                                <View key={index} style={{ flex: index == 0 ? 1.2 : 1 }}>
-                                    <Text style={styles.textRowHeader}>{item}</Text>
-                                </View>
-                            ))}
-                        </View>
-                    ))}
+                    <ScrollView style={styles.viewScroll}>
+                        {dataDetail.map((row, index) => (
+                            <View key={index} style={styles.rowTable}>
+                                {row.map((item, index) => (
+                                    <View key={index} style={{ flex: index == 0 ? 1.2 : 1 }}>
+                                        <Text style={styles.textRowHeader}>{item}</Text>
+                                    </View>
+                                ))}
+                            </View>
+                        ))}
+                    </ScrollView>
                 </React.Fragment>
             ) : (
                 <View style={{ marginTop: 10 }}>

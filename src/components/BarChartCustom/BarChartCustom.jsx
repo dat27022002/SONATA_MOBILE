@@ -43,7 +43,7 @@ const BarChartCustom = ({ dataChart }) => {
                     <BarChart
                         style={styles.graphStyle}
                         data={dataChart}
-                        width={dataChart.labels.length * 40 < screenWidth ? screenWidth : dataTableDetail.length * 40}
+                        width={dataChart.labels.length * 40 < screenWidth ? screenWidth : dataChart.labels.length * 40}
                         height={220}
                         chartConfig={chartConfig}
                         withCustomBarColorFromData

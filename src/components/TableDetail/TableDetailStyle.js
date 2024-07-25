@@ -34,6 +34,7 @@ const TableDetail = StyleSheet.create({
         fontSize: 12,
         fontWeight: 700,
     },
+    viewScroll: { height: 300 },
 });
 
 export default TableDetail;
