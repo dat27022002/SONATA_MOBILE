@@ -2,6 +2,7 @@ import { TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icon2 from 'react-native-vector-icons/FontAwesome6';
+import route from './route';
 import {
     Home,
     Login,
@@ -43,7 +44,7 @@ const customButtonGoToMenu = () => {
     return (
         <TouchableOpacity
             onPress={() => {
-                navigation.navigate('Menu');
+                navigation.navigate(route.MENU);
             }}
         >
             <Icon name="navicon" size={20} color="#FFFFFF" />
@@ -85,12 +86,12 @@ const configOptionsCommon = {
 
 const configNavigation = [
     {
-        name: 'Login',
+        name: route.LOGIN,
         component: Login,
         options: { headerShown: false },
     },
     {
-        name: 'Welcome',
+        name: route.WELCOME,
         component: Welcome,
         options: {
             ...configHeaderTitle,
@@ -98,7 +99,7 @@ const configNavigation = [
         },
     },
     {
-        name: 'Home',
+        name: route.HOME,
         component: Home,
         options: {
             ...configHeaderTitle,
@@ -106,29 +107,29 @@ const configNavigation = [
         },
     },
     {
-        name: 'Menu',
+        name: route.MENU,
         component: Menu,
         options: {
             ...configHeaderTitle,
             headerLeft: customButtonGoToHome,
         },
     },
-    { name: 'TableStatus', component: TableStatus, options: configOptionsCommon },
-    { name: 'DaySale', component: DaySale, options: configOptionsCommon },
-    { name: 'MonthlySale', component: MonthlySale, options: configOptionsCommon },
-    { name: 'WeeklySale', component: WeeklySale, options: configOptionsCommon },
-    { name: 'TimeBase', component: TimeBase, options: configOptionsCommon },
-    { name: 'SaleByReceipt', component: SaleByReceipt, options: configOptionsCommon },
-    { name: 'SaleByItem', component: SaleByItem, options: configOptionsCommon },
-    { name: 'ItemRank', component: ItemRank, options: configOptionsCommon },
-    { name: 'CreditCardApproval', component: CreditCardApproval, options: configOptionsCommon },
-    { name: 'CashReceiptApproval', component: CashReceiptApproval, options: configOptionsCommon },
-    { name: 'RefundHistory', component: RefundHistory, options: configOptionsCommon },
-    { name: 'OrderCancelList', component: OrderCancelList, options: configOptionsCommon },
-    { name: 'RealTimeSale', component: RealTimeSale, options: configOptionsCommon },
-    { name: 'InventoryStatus', component: InventoryStatus, options: configOptionsCommon },
-    { name: 'BarcodeScan', component: BarcodeScan, options: configOptionsCommon },
-    { name: 'ChangeRefundPassword', component: ChangeRefundPassword, options: configOptionsCommon },
+    { name: route.ViewData.TABLESTATUS, component: TableStatus, options: configOptionsCommon },
+    { name: route.ViewData.DAYSALE, component: DaySale, options: configOptionsCommon },
+    { name: route.ViewData.MONTHLYSALE, component: MonthlySale, options: configOptionsCommon },
+    { name: route.ViewData.WEEKLYSALE, component: WeeklySale, options: configOptionsCommon },
+    { name: route.ViewData.TIMEBASE, component: TimeBase, options: configOptionsCommon },
+    { name: route.ViewData.SALEBYRECEIPT, component: SaleByReceipt, options: configOptionsCommon },
+    { name: route.ViewData.SALEBYITEM, component: SaleByItem, options: configOptionsCommon },
+    { name: route.ViewData.ITEMRANK, component: ItemRank, options: configOptionsCommon },
+    { name: route.ViewData.CREDITCARDAPPROVAL, component: CreditCardApproval, options: configOptionsCommon },
+    { name: route.ViewData.CASHRECEIPTAPPROVAL, component: CashReceiptApproval, options: configOptionsCommon },
+    { name: route.ViewData.REFUNDHISTORY, component: RefundHistory, options: configOptionsCommon },
+    { name: route.ViewData.ORDERCANCELLIST, component: OrderCancelList, options: configOptionsCommon },
+    { name: route.ViewData.REALTIMESALE, component: RealTimeSale, options: configOptionsCommon },
+    { name: route.ViewData.INVENTORYSTATUS, component: InventoryStatus, options: configOptionsCommon },
+    { name: route.KIOSKConfigure.BARCODESCAN, component: BarcodeScan, options: configOptionsCommon },
+    { name: route.KIOSKConfigure.CHANGEREFUNDPASSWORD, component: ChangeRefundPassword, options: configOptionsCommon },
 ];
 
 export default configNavigation;

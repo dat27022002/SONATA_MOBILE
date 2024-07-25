@@ -4,6 +4,7 @@ import CheckBox from '@react-native-community/checkbox';
 import { useTranslation } from 'react-i18next';
 
 import styles from './LoginStyles';
+import { route } from '../../config';
 
 const Login = ({ navigation, ...props }) => {
     const { t } = useTranslation();
@@ -19,7 +20,7 @@ const Login = ({ navigation, ...props }) => {
                 </View>
                 <TouchableOpacity
                     onPress={() => {
-                        navigation.navigate('Home');
+                        navigation.navigate(route.HOME);
                     }}
                 >
                     <Text style={styles.btnLogin}>{t('login')}</Text>
