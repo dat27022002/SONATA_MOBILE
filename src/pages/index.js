@@ -18,7 +18,7 @@ import RealTimeSale from './ViewData/RealTimeSale';
 import InventoryStatus from './ViewData/InventoryStatus';
 import BarcodeScan from './KIOSKConfigure/BarcodeScan';
 import ChangeRefundPassword from './KIOSKConfigure/ChangeRefundPassword';
-
+import ChangeAdminPassword from './KIOSKConfigure/ChangeAdminPassword';
 export {
     Home,
     Welcome,
@@ -40,4 +40,5 @@ export {
     InventoryStatus,
     BarcodeScan,
     ChangeRefundPassword,
+    ChangeAdminPassword,
 };

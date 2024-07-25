@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { View, TextInput, Alert } from 'react-native';
 import { useTranslation } from 'react-i18next';
 
-import styles from './ChangeRefundPasswordStyles';
-import { GlobalStyle, imageRequire } from '../../../config';
+import styles from './ChangeAdminPasswordStyles';
+import { imageRequire } from '../../../config';
 import { HeaderSecondnary, TextDefaut, ViewContainer, ButtonCustom } from '../../../components';
 
-const ChangeRefundPassword = () => {
+const ChangeAdminPassword = () => {
     const { t } = useTranslation();
 
     const [formData, setFormData] = useState({ password: '', newPassword: '', newPasswordRepeat: '' });
@@ -22,8 +22,8 @@ const ChangeRefundPassword = () => {
     return (
         <ViewContainer>
             <HeaderSecondnary
-                urlImage={imageRequire.ChangeRefundPassword}
-                title={'Change refund password'}
+                urlImage={imageRequire.ChangeAdminPassword}
+                title={'Change admin password'}
                 line="lineSolidGray"
             />
             <View style={styles.viewForm}>
@@ -58,4 +58,4 @@ const ChangeRefundPassword = () => {
     );
 };
 
-export default ChangeRefundPassword;
+export default ChangeAdminPassword;

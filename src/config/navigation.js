@@ -24,6 +24,7 @@ import {
     InventoryStatus,
     BarcodeScan,
     ChangeRefundPassword,
+    ChangeAdminPassword,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -130,6 +131,7 @@ const configNavigation = [
     { name: route.ViewData.INVENTORYSTATUS, component: InventoryStatus, options: configOptionsCommon },
     { name: route.KIOSKConfigure.BARCODESCAN, component: BarcodeScan, options: configOptionsCommon },
     { name: route.KIOSKConfigure.CHANGEREFUNDPASSWORD, component: ChangeRefundPassword, options: configOptionsCommon },
+    { name: route.KIOSKConfigure.CHANGEADMINPASSWORD, component: ChangeAdminPassword, options: configOptionsCommon },
 ];
 
 export default configNavigation;

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import GlobalStyle from '../../../config/GlobalStyle';
 
-const ChangeRefundPasswordStyles = StyleSheet.create({
+const ChangeAdminPasswordStyles = StyleSheet.create({
     viewForm: { paddingHorizontal: 50, marginTop: 60 },
     textLabel: { marginBottom: 4 },
     input: {
@@ -16,4 +16,4 @@ const ChangeRefundPasswordStyles = StyleSheet.create({
     viewBtn: { alignItems: 'center', flex: 1, marginTop: 30 },
 });
 
-export default ChangeRefundPasswordStyles;
+export default ChangeAdminPasswordStyles;
