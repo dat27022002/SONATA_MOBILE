@@ -26,6 +26,7 @@ import {
     ChangeRefundPassword,
     ChangeAdminPassword,
     PrinterPaper,
+    ServiceCenter,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -134,6 +135,7 @@ const configNavigation = [
     { name: route.KIOSKConfigure.CHANGEREFUNDPASSWORD, component: ChangeRefundPassword, options: configOptionsCommon },
     { name: route.KIOSKConfigure.CHANGEADMINPASSWORD, component: ChangeAdminPassword, options: configOptionsCommon },
     { name: route.KIOSKConfigure.PRINTERPAPER, component: PrinterPaper, options: configOptionsCommon },
+    { name: route.Support.SERVICECENTER, component: ServiceCenter, options: configOptionsCommon },
 ];
 
 export default configNavigation;
