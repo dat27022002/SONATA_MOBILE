@@ -11,6 +11,7 @@ import RowTableSummary from './RowTableSummary';
 import TextDefaut from './TextDefaut';
 import ViewContainer from './ViewContainer';
 import ModalSelect from './ModalSelect';
+import ButtonCustom from './ButtonCustom';
 export {
     BarChartCustom,
     BtnFilter,
@@ -25,4 +26,5 @@ export {
     TextDefaut,
     RowTableSummary,
     ModalSelect,
+    ButtonCustom,
 };

@@ -22,6 +22,7 @@ import {
     RealTimeSale,
     InventoryStatus,
     BarcodeScan,
+    ChangeRefundPassword,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -127,6 +128,7 @@ const configNavigation = [
     { name: 'RealTimeSale', component: RealTimeSale, options: configOptionsCommon },
     { name: 'InventoryStatus', component: InventoryStatus, options: configOptionsCommon },
     { name: 'BarcodeScan', component: BarcodeScan, options: configOptionsCommon },
+    { name: 'ChangeRefundPassword', component: ChangeRefundPassword, options: configOptionsCommon },
 ];
 
 export default configNavigation;
