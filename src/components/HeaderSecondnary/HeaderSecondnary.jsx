@@ -1,7 +1,8 @@
 import React from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
+import { Image, TouchableOpacity, View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/FontAwesome6';
+import Icon3 from 'react-native-vector-icons/FontAwesome';
 
 import GlobalStyle from '../../config/GlobalStyle';
 import styles from './HeaderSecondnaryStyle';
@@ -15,7 +16,9 @@ const HeaderSecondnary = ({
     line,
     ionicon,
     iconFontAwesome6,
+    iconFontAwesome,
     handleClickRightBtn,
+    textRight = false,
 }) => {
     let lineStyles = {};
     if (line === 'lineSolidGray3') lineStyles = styles.lineSolidGray3;
@@ -35,8 +38,10 @@ const HeaderSecondnary = ({
                 <TouchableOpacity style={styles.containerIconRight} onPress={handleClickRightBtn}>
                     {ionicon && <Icon name={iconRight} size={25} style={styles.iconReload} />}
                     {iconFontAwesome6 && <Icon2 name={iconRight} size={20} style={styles.iconReload} />}
+                    {iconFontAwesome && <Icon3 name={iconRight} size={20} style={styles.iconReload} />}
                 </TouchableOpacity>
             )}
+            {textRight && <Text style={styles.textRight}>{textRight}</Text>}
         </View>
     );
 };

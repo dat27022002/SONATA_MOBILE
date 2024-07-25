@@ -32,6 +32,15 @@ const HeaderSecondnary = StyleSheet.create({
         borderBottomColor: GlobalStyle.thirdTextColor,
         borderBottomWidth: 3,
     },
+    textRight: {
+        backgroundColor: GlobalStyle.thirdTextColor,
+        paddingHorizontal: 7,
+        textAlign: 'center',
+        borderRadius: 4,
+        color: GlobalStyle.secondnaryTextColor,
+        fontSize: 16,
+        marginLeft: 4,
+    },
 });
 
 export default HeaderSecondnary;

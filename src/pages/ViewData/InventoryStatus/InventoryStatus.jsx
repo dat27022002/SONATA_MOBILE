@@ -10,7 +10,6 @@ import {
     HeaderSecondnary,
     RowTableSummary,
     TableDetail,
-    DateRangePicker,
     BtnSearch,
     ViewSaleCurrent,
     BarChartCustom,
@@ -22,12 +21,6 @@ import {
 const InventoryStatus = () => {
     const { t } = useTranslation();
 
-    const today = new Date();
-
-    const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
-    const [startDate, setStartDate] = useState(todayFormat);
-    const [endDate, setEndDate] = useState(todayFormat);
-
     const dataTableDetail = [
         { Item: 'Rượu good day', Barcode: 10062, Quantity: 96 },
         { Item: 'bia tiger', Barcode: 10009, Quantity: 97 },
@@ -35,7 +28,7 @@ const InventoryStatus = () => {
     const headerTable = ['Item', 'Barcode', 'Quantity'];
 
     const dataChart = {
-        labels: dataTableDetail.map((item) => item['Day of the week']),
+        labels: dataTableDetail.map((item) => item['Item']),
         datasets: [
             {
                 data: dataTableDetail.map((item) => item['Barcode']),

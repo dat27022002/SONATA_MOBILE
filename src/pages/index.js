@@ -19,6 +19,7 @@ import InventoryStatus from './ViewData/InventoryStatus';
 import BarcodeScan from './KIOSKConfigure/BarcodeScan';
 import ChangeRefundPassword from './KIOSKConfigure/ChangeRefundPassword';
 import ChangeAdminPassword from './KIOSKConfigure/ChangeAdminPassword';
+import PrinterPaper from './KIOSKConfigure/PrinterPaper';
 export {
     Home,
     Welcome,
@@ -41,4 +42,5 @@ export {
     BarcodeScan,
     ChangeRefundPassword,
     ChangeAdminPassword,
+    PrinterPaper,
 };

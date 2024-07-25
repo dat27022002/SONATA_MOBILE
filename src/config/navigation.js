@@ -25,6 +25,7 @@ import {
     BarcodeScan,
     ChangeRefundPassword,
     ChangeAdminPassword,
+    PrinterPaper,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -132,6 +133,7 @@ const configNavigation = [
     { name: route.KIOSKConfigure.BARCODESCAN, component: BarcodeScan, options: configOptionsCommon },
     { name: route.KIOSKConfigure.CHANGEREFUNDPASSWORD, component: ChangeRefundPassword, options: configOptionsCommon },
     { name: route.KIOSKConfigure.CHANGEADMINPASSWORD, component: ChangeAdminPassword, options: configOptionsCommon },
+    { name: route.KIOSKConfigure.PRINTERPAPER, component: PrinterPaper, options: configOptionsCommon },
 ];
 
 export default configNavigation;
