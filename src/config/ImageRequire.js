@@ -24,6 +24,8 @@ const imageRequire = {
     WeeklySale: require('../assets/IconImage/WeeklySale.png'),
     sumaryDetail: require('../assets/IconImage/sumaryDetail.png'),
     UP: require('../assets/IconImage/UP.png'),
+    noImageSmall: require('../assets/IconImage/noImageSmall.png'),
+    noImageLarge: require('../assets/IconImage/noImageLarge.png'),
 };
 
 export default imageRequire;

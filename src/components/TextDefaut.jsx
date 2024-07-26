@@ -16,7 +16,6 @@ const TextDefaut = ({ bold, color, small, large, xxlarge, children, textAlignCus
                 }}
             >
                 {children}
-                {}
             </Text>
         </View>
     );

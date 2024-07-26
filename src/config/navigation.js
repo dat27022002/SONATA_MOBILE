@@ -28,6 +28,7 @@ import {
     PrinterPaper,
     ServiceCenter,
     NFC,
+    AddItem,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -136,6 +137,7 @@ const configNavigation = [
     { name: route.KIOSKConfigure.CHANGEREFUNDPASSWORD, component: ChangeRefundPassword, options: configOptionsCommon },
     { name: route.KIOSKConfigure.CHANGEADMINPASSWORD, component: ChangeAdminPassword, options: configOptionsCommon },
     { name: route.KIOSKConfigure.PRINTERPAPER, component: PrinterPaper, options: configOptionsCommon },
+    { name: route.KIOSKConfigure.ADDITEM, component: AddItem, options: configOptionsCommon },
     { name: route.Support.SERVICECENTER, component: ServiceCenter, options: configOptionsCommon },
     { name: route.Support.NFC, component: NFC, options: configOptionsCommon },
 ];

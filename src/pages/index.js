@@ -20,6 +20,7 @@ import BarcodeScan from './KIOSKConfigure/BarcodeScan';
 import ChangeRefundPassword from './KIOSKConfigure/ChangeRefundPassword';
 import ChangeAdminPassword from './KIOSKConfigure/ChangeAdminPassword';
 import PrinterPaper from './KIOSKConfigure/PrinterPaper';
+import AddItem from './KIOSKConfigure/AddItem';
 import ServiceCenter from './Support/ServiceCenter';
 import NFC from './Support/NFC';
 export {
@@ -45,6 +46,7 @@ export {
     ChangeRefundPassword,
     ChangeAdminPassword,
     PrinterPaper,
+    AddItem,
     ServiceCenter,
     NFC,
 };

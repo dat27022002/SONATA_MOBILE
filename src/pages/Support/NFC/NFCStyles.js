@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { GlobalStyle } from '../../../config';
+import GlobalStyle from '../../../config/GlobalStyle';
 
 const NFCStyles = StyleSheet.create({
     viewBtn: {
