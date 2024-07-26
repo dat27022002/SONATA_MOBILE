@@ -21,6 +21,7 @@ const route = {
     },
     KIOSKConfigure: {
         ADDITEM: 'AddItem',
+        ITEMDETAIL: 'ItemDetail',
         PRINTERPAPER: 'PrinterPaper',
         CHANGEADMINPASSWORD: 'ChangeAdminPassword',
         CHANGEREFUNDPASSWORD: 'ChangeRefundPassword',

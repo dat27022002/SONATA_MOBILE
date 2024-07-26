@@ -15,9 +15,9 @@ const ItemMenuList = ({ item }) => {
             <TextDefaut>{item.name}</TextDefaut>
             <View style={styles.viewPriceAndEdit}>
                 <TextDefaut bold>{item.price}</TextDefaut>
-                <TouchableOpacity style={styles.viewBtnEdit}>
+                <View style={styles.viewBtnEdit}>
                     <Icon name="pencil" size={20} color={secondnaryTextColor} />
-                </TouchableOpacity>
+                </View>
             </View>
         </View>
     );

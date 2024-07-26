@@ -3104,6 +3104,7 @@ __metadata:
     react-i18next: ^15.0.0
     react-native: 0.74.3
     react-native-chart-kit: ^6.12.0
+    react-native-image-picker: ^7.1.2
     react-native-modern-datepicker: ^1.0.0-beta.91
     react-native-safe-area-context: ^4.10.8
     react-native-screens: ^3.32.0
@@ -8280,6 +8281,16 @@ __metadata:
     react-native: ">= 0.50.0"
     react-native-svg: "> 6.4.1"
   checksum: 04c225965c0ce3c71205a62bc92743e9188458d8f95c12481e43a2e53c425bd5db8274e57ab93c1cb95ffd3fb54950ca92c3d33e518a3505d7697c247b3b7e15
+  languageName: node
+  linkType: hard
+
+"react-native-image-picker@npm:^7.1.2":
+  version: 7.1.2
+  resolution: "react-native-image-picker@npm:7.1.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: af52328b7cb06c28549442f0d923cfa92dde8d5a968a642336df4c882f81adbf0e5e606a14de27f96883a76fa1e03230061c4080011c9107942edebc8e09c478
   languageName: node
   linkType: hard
 
