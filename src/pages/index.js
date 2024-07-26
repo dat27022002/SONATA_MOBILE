@@ -21,6 +21,7 @@ import ChangeRefundPassword from './KIOSKConfigure/ChangeRefundPassword';
 import ChangeAdminPassword from './KIOSKConfigure/ChangeAdminPassword';
 import PrinterPaper from './KIOSKConfigure/PrinterPaper';
 import ServiceCenter from './Support/ServiceCenter';
+import NFC from './Support/NFC';
 export {
     Home,
     Welcome,
@@ -45,4 +46,5 @@ export {
     ChangeAdminPassword,
     PrinterPaper,
     ServiceCenter,
+    NFC,
 };

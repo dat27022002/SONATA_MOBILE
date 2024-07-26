@@ -12,6 +12,7 @@ const ModalSelectStyle = StyleSheet.create({
         borderRadius: 5,
         overflow: 'hidden',
         width: '80%',
+        maxHeight: '80%',
         padding: 20,
         justifyContent: 'center',
         shadowColor: '#000',

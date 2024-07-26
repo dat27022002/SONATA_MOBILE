@@ -27,6 +27,7 @@ import {
     ChangeAdminPassword,
     PrinterPaper,
     ServiceCenter,
+    NFC,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -136,6 +137,7 @@ const configNavigation = [
     { name: route.KIOSKConfigure.CHANGEADMINPASSWORD, component: ChangeAdminPassword, options: configOptionsCommon },
     { name: route.KIOSKConfigure.PRINTERPAPER, component: PrinterPaper, options: configOptionsCommon },
     { name: route.Support.SERVICECENTER, component: ServiceCenter, options: configOptionsCommon },
+    { name: route.Support.NFC, component: NFC, options: configOptionsCommon },
 ];
 
 export default configNavigation;

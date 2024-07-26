@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, View, Modal, Text } from 'react-native';
+import { TouchableOpacity, View, Modal, Text, ScrollView } from 'react-native';
 
 import styles from './ModalSelectStyle';
 
@@ -17,13 +17,13 @@ const ModalSelect = ({ isOpen, setIsopen, listOption = [], handleFilter, title }
             <View style={styles.centerdView}>
                 <View style={styles.innerModal}>
                     <Text style={styles.textTitle}>{title}</Text>
-                    <View>
+                    <ScrollView>
                         {listOption.map((item, index) => (
                             <TouchableOpacity key={index} onPress={() => handleClickFilter(item)}>
                                 <Text style={styles.textOption}>{item}</Text>
                             </TouchableOpacity>
                         ))}
-                    </View>
+                    </ScrollView>
                     <View>
                         <TouchableOpacity style={styles.viewBtn} onPress={handleClickCancel}>
                             <Text style={styles.textBtn}>CANCEL</Text>
