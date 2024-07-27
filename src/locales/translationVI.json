@@ -1,4 +1,6 @@
 {
-    "login":"Đăng nhập",
-    "welcome":"Xin chào"
+    "Login": {
+        "Login": "Đăng nhập",
+        "welcome": "Welcome"
+    }
 }

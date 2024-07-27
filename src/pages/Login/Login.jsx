@@ -7,7 +7,8 @@ import styles from './LoginStyles';
 import { route } from '../../config';
 
 const Login = ({ navigation, ...props }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'Login' });
+    //const { t } = useTranslation('translation', { keyPrefix: 'Auth' });
 
     return (
         <View style={styles.container}>
@@ -23,7 +24,7 @@ const Login = ({ navigation, ...props }) => {
                         navigation.navigate(route.HOME);
                     }}
                 >
-                    <Text style={styles.btnLogin}>{t('login')}</Text>
+                    <Text style={styles.btnLogin}>{t('Login')}</Text>
                 </TouchableOpacity>
                 <View style={styles.containerSave}>
                     <CheckBox

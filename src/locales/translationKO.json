@@ -1,4 +1,6 @@
 {
-    "login":"로그인",
-    "welcome":"환영"
+    "Login": {
+        "Login": "Login",
+        "welcome": "Welcome"
+    }
 }

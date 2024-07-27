@@ -16,7 +16,13 @@ const MenuStyles = StyleSheet.create({
         justifyContent: 'start',
         spacing: 10,
     },
-    containerItem: { height: 60, width: 75, alignItems: 'center', marginHorizontal: 2, marginVertical: 3 },
+    containerItem: {
+        height: 60,
+        width: 75,
+        alignItems: 'center',
+        marginHorizontal: 2,
+        marginVertical: 3,
+    },
     containertextConfig: {
         width: '100%',
         alignItems: 'flex-start',
@@ -36,7 +42,6 @@ const MenuStyles = StyleSheet.create({
         justifyContent: 'flex-start',
         paddingHorizontal: GlobalStyle.paddingWidthLayout,
         marginTop: 20,
-        width: '100%',
     },
 });
 
