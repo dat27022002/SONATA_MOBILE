@@ -12,7 +12,7 @@ const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEn
 
     const today = new Date();
 
-    const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
+    const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
     const [date, setDate] = useState(todayFormat);
 
     const [isOpenStart, setIsOpenStart] = useState(false);
@@ -27,7 +27,7 @@ const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEn
     };
 
     const handleChangeDate = (date) => {
-        setDate(date);
+        setDate(date.replace(/\//g, '-'));
     };
 
     const handleChangeStartDate = () => {

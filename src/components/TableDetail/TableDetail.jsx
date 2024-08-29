@@ -11,6 +11,7 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
     const summary = isData ? Object.values(data[0]) : [];
     summary[0] = 'Total Amount';
     const dataDetail = data.map((item) => Object.values(item));
+    dataDetail.shift();
 
     const { thirdTextColor, primaryTextColor } = GlobalStyle;
 
