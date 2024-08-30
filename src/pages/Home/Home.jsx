@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './HomeStyles';
 import { GlobalStyle, imageRequire } from '../../config';
-import { TextDefaut, HeaderSecondnary, IconImage } from '../../components';
+import { TextDefaut, HeaderSecondnary, IconImage, Loading } from '../../components';
 import { getSummaeySaleDaily, paymentDetail, getSaleMonthlySummary, summaryMonthlySales } from './HomeLogic';
 
 const Home = ({ navigation }) => {
@@ -12,18 +12,24 @@ const Home = ({ navigation }) => {
 
     const [dailySalesSummary, setDailySalesSummary] = useState(paymentDetail);
     const [summaryMonthly, setSummaryMonthly] = useState(summaryMonthlySales);
+    const [loading, setLoading] = useState(false);
 
     const { primaryTextColor, thirdTextColor } = GlobalStyle;
 
     useEffect(() => {
+        setLoading(true);
         const today = new Date();
         const formattedDate = today.toISOString().split('T')[0];
-        console.log('today', formattedDate);
         getSummaeySaleDaily(formattedDate).then((result) => {
             setDailySalesSummary(result);
         });
 
-        getSaleMonthlySummary(2024, 8).then((result) => {
+        const currentDate = new Date(); // Lấy ngày hiện tại
+        const currentMonth = currentDate.getMonth() + 1; // Lấy tháng hiện tại (tháng bắt đầu từ 0, nên cần +1)
+        const currentYear = currentDate.getFullYear(); // Lấy năm hiện tại
+
+        getSaleMonthlySummary(currentYear, currentMonth).then((result) => {
+            setLoading(false);
             setSummaryMonthly(result);
         });
     }, []);
@@ -84,6 +90,8 @@ const Home = ({ navigation }) => {
                     </TextDefaut>
                 </View>
             ))}
+
+            {loading && <Loading />}
         </View>
     );
 };

@@ -16,20 +16,26 @@ import {
     BarChartCustom,
     BtnFilter,
     ViewContainer,
+    Loading,
 } from '../../../components';
 
 const DaySale = () => {
     const { t } = useTranslation();
 
     const today = new Date();
-
+    const today2 = new Date();
+    const firstDateWeek = new Date(today2.setDate(today2.getDate() - today2.getDay()));
     const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
-    const [startDate, setStartDate] = useState(todayFormat);
+    const firstDateWeekFormat = getFormatedDate(firstDateWeek, 'YYYY-MM-DD');
+
+    const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
     const [dataTableDetail, setDataTableDetail] = useState([]);
     const [dataTableDetailChart, setDataTableDetailChart] = useState([]);
+    const [loading, setLoading] = useState(false);
 
     const headerTable = ['Date', 'Quantity', 'Guest', 'Customer price', 'Sales amount'];
+    const rowsWidth = [1.2, -1, -1, -1, 1.5];
 
     const dataChart = {
         labels: dataTableDetailChart.slice(1).map((item) => item.Date.substring(5)),
@@ -46,9 +52,11 @@ const DaySale = () => {
     };
 
     const handleSearch = () => {
+        setLoading(true);
         axios
             .get(`https://sonata-gmfycwecdkcnafey.eastus-01.azurewebsites.net/api/My/${startDate}/${endDate}`)
             .then((response) => {
+                setLoading(false);
                 const data = response.data;
                 const result = data.reduce((acc, curr) => {
                     const date = curr.day.split('T')[0]; // Lấy ngày mà không lấy phần thời gian
@@ -88,7 +96,7 @@ const DaySale = () => {
 
                 setDataTableDetail(formatResultArray);
 
-                console.log('hello', JSON.stringify(resultArray, null, 2));
+                //console.log('hello', JSON.stringify(resultArray, null, 2));
             })
             .catch((error) => {
                 console.error('Error fetching data:', error);
@@ -126,10 +134,12 @@ const DaySale = () => {
 
             <ViewSaleCurrent title={'Day sales'} saleAmount={0} quantity={0} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} />
+            <TableDetail data={dataTableDetail} headerTable={headerTable} rowsWidth={rowsWidth} />
 
             {/* chart */}
             <BarChartCustom dataChart={dataChart} />
+
+            {loading && <Loading />}
         </ViewContainer>
     );
 };

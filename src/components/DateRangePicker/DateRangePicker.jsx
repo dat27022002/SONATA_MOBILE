@@ -7,12 +7,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import TextDefaut from '../TextDefaut';
 import ModalDatePicker from '../ModalDatePicker';
 
-const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEndCalendar = false }) => {
+const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEndCalendar = false, mode = '' }) => {
     const { t } = useTranslation();
 
     const today = new Date();
 
-    const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
+    const todayFormat = getFormatedDate(today, mode === 'monthYear' ? 'YYYY-MM' : 'YYYY-MM-DD');
     const [date, setDate] = useState(todayFormat);
 
     const [isOpenStart, setIsOpenStart] = useState(false);
@@ -27,7 +27,7 @@ const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEn
     };
 
     const handleChangeDate = (date) => {
-        setDate(date.replace(/\//g, '-'));
+        setDate(date.replace(/[\/ ]/g, '-'));
     };
 
     const handleChangeStartDate = () => {
@@ -62,6 +62,7 @@ const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEn
                 handleOpenModal={handlePopupStartDate}
                 dateSelected={startDate}
                 handleChangeDateUI={handleChangeStartDate}
+                mode={mode}
             />
             {!isNotEndCalendar && (
                 <ModalDatePicker
@@ -70,6 +71,7 @@ const DateRangePicker = ({ startDate, setStartDate, endDate, setEndDate, isNotEn
                     handleOpenModal={handlePopupEndDate}
                     dateSelected={endDate}
                     handleChangeDateUI={handleChangeEndDate}
+                    mode={mode}
                 />
             )}
         </React.Fragment>

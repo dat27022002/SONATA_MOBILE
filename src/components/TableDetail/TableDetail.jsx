@@ -5,7 +5,7 @@ import GlobalStyle from '../../config/GlobalStyle';
 import TextDefaut from '../TextDefaut';
 import styles from './TableDetailStyle';
 
-const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
+const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [] }) => {
     const isData = data.length == 0 ? false : true;
     const listRow = isData ? Object.keys(data[0]) : headerTable;
     const summary = isData ? Object.values(data[0]) : [];
@@ -14,6 +14,10 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
     dataDetail.shift();
 
     const { thirdTextColor, primaryTextColor } = GlobalStyle;
+
+    const styleRows = (index) => ({
+        flex: rowsWidth[index] > 0 ? rowsWidth[index] : 1,
+    });
 
     return (
         <View>
@@ -25,7 +29,7 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
             {/* header table */}
             <View style={styles.headerTable}>
                 {listRow.map((item, index) => (
-                    <View key={index} style={{ flex: index == 0 ? 1.2 : 1 }}>
+                    <View key={index} style={styleRows(index)}>
                         <Text style={styles.textRowHeader}>{item}</Text>
                     </View>
                 ))}
@@ -36,7 +40,7 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
                     {/* row summary */}
                     <View style={styles.rowTable}>
                         {summary.map((item, index) => (
-                            <View key={index} style={{ flex: index == 0 ? 1.2 : 1 }}>
+                            <View key={index} style={styleRows(index)}>
                                 <Text
                                     style={[
                                         styles.textSumary,
@@ -55,7 +59,7 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '' }) => {
                         {dataDetail.map((row, index) => (
                             <View key={index} style={styles.rowTable}>
                                 {row.map((item, index) => (
-                                    <View key={index} style={{ flex: index == 0 ? 1.2 : 1 }}>
+                                    <View key={index} style={styleRows(index)}>
                                         <Text style={styles.textRowHeader}>{item}</Text>
                                     </View>
                                 ))}

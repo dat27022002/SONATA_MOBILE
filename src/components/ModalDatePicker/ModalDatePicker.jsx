@@ -6,12 +6,17 @@ import GlobalStyle from '../../config/GlobalStyle';
 import styles from './ModalDatePickerStyle';
 import TextDefaut from '../TextDefaut';
 
-const ModalDatePicker = ({ isOpen, handleChangeDate, handleOpenModal, dateSelected, handleChangeDateUI }) => {
+const ModalDatePicker = ({ isOpen, handleChangeDate, handleOpenModal, dateSelected, handleChangeDateUI, mode }) => {
     return (
         <Modal animationType="fade" transparent={true} visible={isOpen}>
             <View style={styles.centerdView}>
                 <View style={styles.modalView}>
-                    <DatePicker mode="calendar" selected={dateSelected} onSelectedChange={handleChangeDate} />
+                    <DatePicker
+                        mode={mode || 'calendar'}
+                        selected={dateSelected}
+                        onSelectedChange={handleChangeDate}
+                        onMonthYearChange={handleChangeDate}
+                    />
                     <View style={styles.buttonContainer}>
                         <TouchableOpacity style={styles.button} onPress={handleOpenModal}>
                             <TextDefaut bold large color={GlobalStyle.thirdTextColor}>

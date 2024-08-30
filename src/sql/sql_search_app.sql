@@ -19,8 +19,7 @@ SELECT *
 FROM TblView 
 WHERE  RowNum >= @next  AND RowNum <= @to 
 
-
-
+-----------------
 WITH TblView AS ( 
     SELECT *, 
            ROW_NUMBER() OVER (ORDER BY 일자 desc) AS RowNum 
@@ -33,7 +32,7 @@ WHERE  RowNum >= 1  AND RowNum <= 10
 
 
 
---lấy doanh thu then tháng 
+--lấy doanh thu theo tháng 
 WITH TblView AS ( 
     SELECT *, 
            ROW_NUMBER() OVER (ORDER BY 일자 desc) AS RowNum 
@@ -43,18 +42,16 @@ WITH TblView AS (
 SELECT * 
 FROM TblView 
 WHERE  RowNum >= 1  AND RowNum <= 1000 
-
-
-
+----------------------
 WITH TblView AS ( 
     SELECT *, 
            ROW_NUMBER() OVER (ORDER BY 일자 desc) AS RowNum 
     FROM 매출전표 
-	WHERE  YEAR(일자) = @year AND MONTH(일자) = @month
+	WHERE  YEAR(일자) = @year AND MONTH(일자) = @month 
 )
 SELECT * 
 FROM TblView 
-WHERE  RowNum >= 1  AND RowNum <= 1000 
+WHERE  RowNum >= @next  AND RowNum <= @to 
 
 
 

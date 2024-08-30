@@ -70,8 +70,6 @@ export const summaryMonthlySales = { quantity: 0, revenue: 0 };
 export const getSaleMonthlySummary = async (year, month) => {
     const result = await getSalesByMonth(year.toString(), month.toString());
 
-    console.log('monthlySalesSummaryTemp', JSON.stringify(result.slice(0, 3), null, 2));
-
     summaryMonthlySales.quantity = 0;
     summaryMonthlySales.revenue = 0;
 
@@ -81,7 +79,7 @@ export const getSaleMonthlySummary = async (year, month) => {
         totalAmount: value.합계금액,
     }));
 
-    console.log('dailySalesSummaryTemp', JSON.stringify(result, null, 2));
+    //console.log('dailySalesSummaryTemp', JSON.stringify(result, null, 2));
 
     listSale.forEach((item) => {
         summaryMonthlySales.revenue += item.totalAmount;
