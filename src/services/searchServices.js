@@ -20,6 +20,8 @@ const getData = async (action, data) => {
     //     'end Time: ',
     //     new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }),
     // );
+    // console.log('formData: ', JSON.stringify(formData.slice(0, 4), null, 2));
+    // console.log('action: ', action);
     return res.data;
 };
 
