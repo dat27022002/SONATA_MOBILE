@@ -1,4 +1,6 @@
-﻿SELECT *
+﻿use H_HYOJUNG_VIETTEL
+
+SELECT *
 FROM 매출전표
 
 

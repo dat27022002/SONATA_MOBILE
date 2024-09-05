@@ -15,31 +15,50 @@ import {
     BarChartCustom,
     BtnFilter,
     ViewContainer,
+    Loading,
 } from '../../../components';
+import { getTimeBaseSales } from './TimeBaseLogic';
 
 const TimeBase = () => {
     const { t } = useTranslation();
 
     const today = new Date();
+    const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
 
-    const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [dataForChart, setDataForChart] = useState([]);
+    const [dataForTable, setDataForTable] = useState([]);
+    const [thisDaySales, setThisDaySales] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const dataTableDetail = [];
     const headerTable = ['Time', 'Quantity', 'Unit price', 'Sales amount'];
+    const rowsWidth = [1.2, -1, 1.4, 1.6];
 
     const dataChart = {
-        labels: dataTableDetail.map((item) => item.Date.substring(5)),
+        labels: dataForChart.map((item) => item.Time),
         datasets: [
             {
-                data: dataTableDetail.map((item) => item['Sales amount']),
-                colors: dataTableDetail.map(() => () => GlobalStyle.thirdTextColor),
+                data: dataForChart.map((item) => item['Sales amount']),
+                colors: dataForChart.map(() => () => GlobalStyle.thirdTextColor),
             },
         ],
     };
 
-    const handleSearch = () => {};
+    const handleSearch = () => {
+        setLoading(true);
+        getTimeBaseSales(startDate, endDate)
+            .then((result) => {
+                setLoading(false);
+                setDataForChart(result.dataChart);
+                setDataForTable(result.dataTable);
+                setThisDaySales(result.thisDaySales);
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
+    };
 
     return (
         <ViewContainer>
@@ -66,12 +85,14 @@ const TimeBase = () => {
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Day sales'} saleAmount={0} quantity={0} />
+            <ViewSaleCurrent title={'Day sales'} saleAmount={thisDaySales?.revenue} quantity={thisDaySales?.quantity} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} />
+            <TableDetail data={dataForTable} headerTable={headerTable} rowsWidth={rowsWidth} />
 
             {/* chart */}
             <BarChartCustom dataChart={dataChart} />
+
+            {loading && <Loading />}
         </ViewContainer>
     );
 };
