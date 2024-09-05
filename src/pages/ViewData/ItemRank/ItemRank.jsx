@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
@@ -14,31 +14,60 @@ import {
     BtnFilter,
     ViewContainer,
     BarChartCustom,
+    Loading,
 } from '../../../components';
+import { getItemRank } from './ItemRankLogic';
+
+const listStore = ['hyojung'];
 
 const ItemRank = () => {
     const { t } = useTranslation();
 
     const today = new Date();
-
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
+
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [store, setStore] = useState('hyojung');
 
-    const dataTableDetail = [];
+    const [dataForChart, setDataForChart] = useState([]);
+    const [dataForTable, setDataForTable] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const headerTable = ['Rank', 'Item', 'Quantity', 'Amount', 'Share'];
+    const rowsWidth = [0.5, 1.8, 0.8, 1.5, 0.8];
 
     const dataChart = {
-        labels: dataTableDetail.map((item) => item.Date.substring(5)),
+        labels: dataForChart.map((item) => item.Item),
         datasets: [
             {
-                data: dataTableDetail.map((item) => item['Sales amount']),
-                colors: dataTableDetail.map(() => () => GlobalStyle.thirdTextColor),
+                data: dataForChart.map((item) => item['Sales amount']),
+                colors: dataForChart.map(() => () => GlobalStyle.thirdTextColor),
             },
         ],
     };
 
-    const handleSearch = () => {};
+    const handleChooseStore = (value) => {
+        setStore(value);
+    };
+
+    const handleSearch = () => {
+        setLoading(true);
+        getItemRank(startDate, endDate, store)
+            .then((result) => {
+                setLoading(false);
+                setDataForTable(result.dataTable);
+                setDataForChart(result.dataChart);
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
+    };
+
+    useEffect(() => {
+        handleSearch();
+    }, []);
 
     return (
         <ViewContainer>
@@ -59,16 +88,28 @@ const ItemRank = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal="Store"
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent="Sales history" />
+            <TableDetail
+                data={dataForTable}
+                headerTable={headerTable}
+                noDataContent="Sales history"
+                rowsWidth={rowsWidth}
+            />
 
             {/* chart */}
             <BarChartCustom dataChart={dataChart} />
+
+            {loading && <Loading />}
         </ViewContainer>
     );
 };

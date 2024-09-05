@@ -9,7 +9,6 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [
     const isData = data.length == 0 ? false : true;
     const listRow = isData ? Object.keys(data[0]) : headerTable;
     const summary = isData ? Object.values(data[0]) : [];
-    summary[0] = 'Total Amount';
     const dataDetail = data.map((item) => Object.values(item));
     dataDetail.shift();
 

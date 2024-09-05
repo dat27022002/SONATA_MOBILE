@@ -19,6 +19,8 @@ import {
 } from '../../../components';
 import { getWeeklySales } from './WeeklySaleLogic';
 
+const listStore = ['hyojung'];
+
 const WeeklySale = () => {
     const { t } = useTranslation();
 
@@ -30,6 +32,8 @@ const WeeklySale = () => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [store, setStore] = useState('hyojung');
+
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
     const [thisWeekSales, setThisWeekSales] = useState([]);
@@ -46,6 +50,10 @@ const WeeklySale = () => {
                 colors: dataForChart.map(() => () => GlobalStyle.thirdTextColor),
             },
         ],
+    };
+
+    const handleChooseStore = (value) => {
+        setStore(value);
     };
 
     const handleSearch = () => {
@@ -86,7 +94,12 @@ const WeeklySale = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal="Store"
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
             </View>
 

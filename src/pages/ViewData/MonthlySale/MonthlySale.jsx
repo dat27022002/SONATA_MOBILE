@@ -19,6 +19,8 @@ import {
 } from '../../../components';
 import { getSummarySalesRangeMonth } from './MonthlySaleLogic';
 
+const listStore = ['hyojung'];
+
 const MonthlySale = () => {
     const { t } = useTranslation();
 
@@ -29,6 +31,8 @@ const MonthlySale = () => {
     const twoMonthsAgoFormat = getFormatedDate(twoMonthsAgo, 'YYYY-MM');
     const [startDate, setStartDate] = useState(twoMonthsAgoFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [store, setStore] = useState('hyojung');
+
     const [dataForChart, setdataForChart] = useState([]);
     const [dataForTable, setdataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -44,6 +48,10 @@ const MonthlySale = () => {
                 colors: dataForChart.map(() => () => GlobalStyle.thirdTextColor),
             },
         ],
+    };
+
+    const handleChooseStore = (value) => {
+        setStore(value);
     };
 
     const handleSearch = () => {
@@ -92,7 +100,12 @@ const MonthlySale = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal="Store"
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
             </View>
 

@@ -19,6 +19,8 @@ import {
     Loading,
 } from '../../../components';
 
+const listStore = ['hyojung'];
+
 const DaySale = () => {
     const { t } = useTranslation();
 
@@ -30,6 +32,8 @@ const DaySale = () => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [store, setStore] = useState('hyojung');
+
     const [dataTableDetail, setDataTableDetail] = useState([]);
     const [dataTableDetailChart, setDataTableDetailChart] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -45,6 +49,10 @@ const DaySale = () => {
                 colors: dataTableDetailChart.slice(1).map(() => () => GlobalStyle.thirdTextColor),
             },
         ],
+    };
+
+    const handleChooseStore = (value) => {
+        setStore(value);
     };
 
     const formatNumber = (number) => {
@@ -126,7 +134,12 @@ const DaySale = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal="Store"
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
             </View>
 
