@@ -55,6 +55,36 @@ SELECT *
 FROM TblView 
 WHERE  RowNum >= @next  AND RowNum <= @to 
 
+--lấy doanh thu theo tên sản phẩm
+DECLARE @startDate DATE = '2024-08-05';
+DECLARE @endDate DATE = '2024-09-05';
+DECLARE @next int= 1;
+DECLARE @to int = 100;
+
+WITH TblView AS ( 
+    SELECT 
+    s.품명 , 
+    SUM(m.매출금액) AS 매출금액, 
+    SUM(m.매출수량) AS 매출수량,
+	ROW_NUMBER() OVER (ORDER BY s.품명 asc) AS RowNum 
+FROM 
+    상품코드 s
+JOIN 
+    매출상품 m ON s.바코드 = m.바코드
+WHERE 
+    m.일자 BETWEEN @startDate AND @endDate
+GROUP BY 
+    s.품명
+)
+SELECT * 
+FROM TblView 
+WHERE  RowNum >= @next  AND RowNum <= @to
+
+
+
+
+
+
 
 
   

@@ -19,6 +19,8 @@ import {
 } from '../../../components';
 import { getTimeBaseSales } from './TimeBaseLogic';
 
+const listStore = ['hyojung'];
+
 const TimeBase = () => {
     const { t } = useTranslation();
 
@@ -27,6 +29,8 @@ const TimeBase = () => {
 
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [store, setStore] = useState('hyojung');
+
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
     const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
@@ -43,6 +47,10 @@ const TimeBase = () => {
                 colors: dataForChart.map(() => () => GlobalStyle.thirdTextColor),
             },
         ],
+    };
+
+    const handleChooseStore = (value) => {
+        setStore(value);
     };
 
     const handleSearch = () => {
@@ -83,7 +91,12 @@ const TimeBase = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal="Store"
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
             </View>
 

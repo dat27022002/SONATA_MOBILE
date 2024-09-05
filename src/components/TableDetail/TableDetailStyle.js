@@ -28,7 +28,7 @@ const TableDetail = StyleSheet.create({
         borderBottomWidth: 0.5,
         borderStyle: 'dashed',
     },
-    textRowHeader: { textAlign: 'right', color: GlobalStyle.primaryTextColor, fontSize: 12 },
+    textRowHeader: { textAlign: 'right', color: GlobalStyle.primaryTextColor, fontSize: 12, lineHeight: 14 },
     textSumary: {
         textAlign: 'right',
         fontSize: 12,

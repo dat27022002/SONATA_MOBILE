@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './SaleByReceiptStyles';
-import { GlobalStyle, imageRequire } from '../../../config';
+import { imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
     RowTableSummary,
@@ -18,6 +18,8 @@ import {
 } from '../../../components';
 import { getSalesByReceipt } from './SaleByReceiptLogic';
 
+const listStore = ['hyojung'];
+
 const SaleByReceipt = () => {
     const { t } = useTranslation();
 
@@ -26,14 +28,18 @@ const SaleByReceipt = () => {
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('');
+    const [store, setStore] = useState('hyojung');
 
     const [dataForTable, setDataForTable] = useState([]);
-    const [thisDaySales, setThisDaySales] = useState([]);
+    const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
     const [loading, setLoading] = useState(false);
 
     const headerTable = ['Receipt', 'Payment date', 'Sales amount'];
     const rowsWidth = [1, 1.8, 1.3];
+
+    const handleChooseStore = (value) => {
+        setStore(value);
+    };
 
     const handleSearch = () => {
         setLoading(true);
@@ -72,7 +78,12 @@ const SaleByReceipt = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal="Store"
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
                 <RowTableSummary title="Receipt" sizeRowFirst={100}></RowTableSummary>
             </View>

@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './SaleByItemStyles';
-import { GlobalStyle, imageRequire } from '../../../config';
+import { imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
     RowTableSummary,
@@ -13,31 +13,48 @@ import {
     BtnSearch,
     BtnFilter,
     ViewContainer,
+    Loading,
 } from '../../../components';
+import { getSalesByItem } from './SaleByItemLogic';
+
+const listStore = ['hyojung'];
 
 const SaleByItem = () => {
     const { t } = useTranslation();
 
     const today = new Date();
-
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
+
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [store, setStore] = useState('hyojung');
 
-    const dataTableDetail = [];
+    const [dataForTable, setDataForTable] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const headerTable = ['Item', 'Quantity', 'Sales amount'];
+    const rowsWidth = [1.8, -1, 1.5];
 
-    const dataChart = {
-        labels: dataTableDetail.map((item) => item.Date.substring(5)),
-        datasets: [
-            {
-                data: dataTableDetail.map((item) => item['Sales amount']),
-                colors: dataTableDetail.map(() => () => GlobalStyle.thirdTextColor),
-            },
-        ],
+    const handleChooseStore = (value) => {
+        setStore(value);
     };
 
-    const handleSearch = () => {};
+    const handleSearch = () => {
+        setLoading(true);
+        getSalesByItem(startDate, endDate, store)
+            .then((result) => {
+                setLoading(false);
+                setDataForTable(result.dataTable);
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
+    };
+
+    useEffect(() => {
+        handleSearch();
+    }, []);
 
     return (
         <ViewContainer>
@@ -58,13 +75,25 @@ const SaleByItem = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title="Store" sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal="Store"
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent="Sales history" />
+            <TableDetail
+                data={dataForTable}
+                headerTable={headerTable}
+                noDataContent="Sales history"
+                rowsWidth={rowsWidth}
+            />
+
+            {loading && <Loading />}
         </ViewContainer>
     );
 };
