@@ -1,5 +1,6 @@
 import { getSalesByRangeDate } from '../../../services/searchServices';
 import { salesRangeDates } from '../DataFake';
+import { calculateTodaySales } from '../ViewDataLogic';
 
 const listTime = [
     '09:00 ~ 09:59',
@@ -28,8 +29,8 @@ function getTimePeriod(date) {
 export const getTimeBaseSales = async (dateStart, dateEnd) => {
     //console.log(dateStart, ':', dateEnd);
 
-    //const response = await getSalesByRangeDate(dateStart, dateEnd, 'HYOJUNG');
-    const response = salesRangeDates;
+    const response = await getSalesByRangeDate(dateStart, dateEnd, 'HYOJUNG');
+    //const response = salesRangeDates;
 
     //case there no revenue
     if (response[0].Index == 0)
@@ -98,27 +99,10 @@ export const getTimeBaseSales = async (dateStart, dateEnd) => {
     //console.log('formatedResultTemp: ', JSON.stringify(formatedResultTemp, null, 2));
     resultTemp.shift(); //remove row total to draw chart
 
-    // Get today's date without time
-    const today = new Date();
-    const todayStr = today.toISOString().split('T')[0]; // Format YYYY-MM-DD
-
-    // Initialize totals
-    let totalAmountToday = 0;
-    let quantityToday = 0;
-
-    // Calculate totals for today
-    listSaleConvertEnglish.forEach((sale) => {
-        const saleDate = sale.date.split('T')[0]; // Format YYYY-MM-DD
-        if (saleDate === todayStr) {
-            totalAmountToday += sale.totalAmout;
-            quantityToday += 1; // Assuming each entry represents 1 sale
-        }
-    });
-
     const result = {
         dataTable: formatedResultTemp,
         dataChart: resultTemp,
-        thisDaySales: { revenue: totalAmountToday.toLocaleString('vi-VN'), quantity: quantityToday },
+        thisDaySales: calculateTodaySales(listSaleConvertEnglish),
     };
 
     //console.log('result: ', JSON.stringify(result, null, 2));

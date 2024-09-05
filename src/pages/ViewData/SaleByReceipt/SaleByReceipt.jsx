@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
@@ -12,10 +12,11 @@ import {
     DateRangePicker,
     BtnSearch,
     ViewSaleCurrent,
-    BarChartCustom,
     BtnFilter,
     ViewContainer,
+    Loading,
 } from '../../../components';
+import { getSalesByReceipt } from './SaleByReceiptLogic';
 
 const SaleByReceipt = () => {
     const { t } = useTranslation();
@@ -25,21 +26,32 @@ const SaleByReceipt = () => {
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
+    const [store, setStore] = useState('');
 
-    const dataTableDetail = [];
+    const [dataForTable, setDataForTable] = useState([]);
+    const [thisDaySales, setThisDaySales] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const headerTable = ['Receipt', 'Payment date', 'Sales amount'];
+    const rowsWidth = [1, 1.8, 1.3];
 
-    const dataChart = {
-        labels: dataTableDetail.map((item) => item.Date.substring(5)),
-        datasets: [
-            {
-                data: dataTableDetail.map((item) => item['Sales amount']),
-                colors: dataTableDetail.map(() => () => GlobalStyle.thirdTextColor),
-            },
-        ],
+    const handleSearch = () => {
+        setLoading(true);
+        getSalesByReceipt(startDate, endDate, store)
+            .then((result) => {
+                setLoading(false);
+                setDataForTable(result.dataTable);
+                setThisDaySales(result.thisDaySales);
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
     };
 
-    const handleSearch = () => {};
+    useEffect(() => {
+        handleSearch();
+    }, []);
 
     return (
         <ViewContainer>
@@ -67,12 +79,11 @@ const SaleByReceipt = () => {
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Day sales'} saleAmount={0} quantity={0} />
+            <ViewSaleCurrent title={'Day sales'} saleAmount={thisDaySales?.revenue} quantity={thisDaySales?.quantity} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} />
+            <TableDetail data={dataForTable} headerTable={headerTable} rowsWidth={rowsWidth} />
 
-            {/* chart */}
-            <BarChartCustom dataChart={dataChart} />
+            {loading && <Loading />}
         </ViewContainer>
     );
 };

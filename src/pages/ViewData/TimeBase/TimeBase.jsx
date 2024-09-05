@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
@@ -29,7 +29,7 @@ const TimeBase = () => {
     const [endDate, setEndDate] = useState(todayFormat);
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
-    const [thisDaySales, setThisDaySales] = useState([]);
+    const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
     const [loading, setLoading] = useState(false);
 
     const headerTable = ['Time', 'Quantity', 'Unit price', 'Sales amount'];
@@ -59,6 +59,10 @@ const TimeBase = () => {
                 console.log(err);
             });
     };
+
+    useEffect(() => {
+        handleSearch();
+    }, []);
 
     return (
         <ViewContainer>
