@@ -1,17 +1,18 @@
 import { getSalesByDate, getSalesByMonth } from '../../services/searchServices';
+import i18n from '../../utils/i18next';
 
-export const paymentDetail = [
-    { type: 'Cash', quantity: 0, revenue: 0 },
-    { type: 'Cash Receipts', quantity: 0, revenue: 0 },
-    { type: 'Credit Card', quantity: 0, revenue: 0 },
-    { type: 'Other Payments', quantity: 0, revenue: 0 },
-    { type: 'Total', quantity: 0, revenue: 0 },
+export const paymentDetail = () => [
+    { type: i18n.t('Home.Cash'), quantity: 0, revenue: 0 },
+    { type: i18n.t('Home.CashReceipts'), quantity: 0, revenue: 0 },
+    { type: i18n.t('Home.CreditCard'), quantity: 0, revenue: 0 },
+    { type: i18n.t('Home.OtherPayments'), quantity: 0, revenue: 0 },
+    { type: i18n.t('Home.Total'), quantity: 0, revenue: 0 },
 ];
 
 export const getSummaeySaleDaily = async (date) => {
     const result = await getSalesByDate(date);
 
-    const newDailySalesSummary = [...paymentDetail];
+    const newDailySalesSummary = [...paymentDetail()];
     newDailySalesSummary[0].quantity = 0;
     newDailySalesSummary[0].revenue = 0;
     newDailySalesSummary[1].quantity = 0;

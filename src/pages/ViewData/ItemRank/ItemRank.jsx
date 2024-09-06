@@ -21,7 +21,7 @@ import { getItemRank } from './ItemRankLogic';
 const listStore = ['hyojung'];
 
 const ItemRank = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
@@ -34,7 +34,7 @@ const ItemRank = () => {
     const [dataForTable, setDataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const headerTable = ['Rank', 'Item', 'Quantity', 'Amount', 'Share'];
+    const headerTable = [t('Rank'), t('Item'), t('Quantity'), t('Amount'), t('Share')];
     const rowsWidth = [0.5, 1.8, 0.8, 1.5, 0.8];
 
     const dataChart = {
@@ -73,13 +73,13 @@ const ItemRank = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.ItemRank}
-                title={'Item rank'}
+                title={t('ItemRank')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -87,11 +87,11 @@ const ItemRank = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter
                         title={store}
                         listOptions={listStore}
-                        titleModal="Store"
+                        titleModal={t('Store')}
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
@@ -102,7 +102,7 @@ const ItemRank = () => {
             <TableDetail
                 data={dataForTable}
                 headerTable={headerTable}
-                noDataContent="Sales history"
+                noDataContent={t('SalesHistory')}
                 rowsWidth={rowsWidth}
             />
 

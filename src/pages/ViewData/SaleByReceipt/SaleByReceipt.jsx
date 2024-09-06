@@ -21,7 +21,7 @@ import { getSalesByReceipt } from './SaleByReceiptLogic';
 const listStore = ['hyojung'];
 
 const SaleByReceipt = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
 
@@ -34,7 +34,7 @@ const SaleByReceipt = () => {
     const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
     const [loading, setLoading] = useState(false);
 
-    const headerTable = ['Receipt', 'Payment date', 'Sales amount'];
+    const headerTable = [t('Receipt'), t('PaymentDate'), t('SalesAmount')];
     const rowsWidth = [1, 1.8, 1.3];
 
     const handleChooseStore = (value) => {
@@ -63,13 +63,13 @@ const SaleByReceipt = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.SaleByReceipt}
-                title={'Sale by receipt'}
+                title={t('SalesByReceipt')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -77,20 +77,23 @@ const SaleByReceipt = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter
                         title={store}
                         listOptions={listStore}
-                        titleModal="Store"
+                        titleModal={t('Store')}
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Receipt" sizeRowFirst={100}></RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Day sales'} saleAmount={thisDaySales?.revenue} quantity={thisDaySales?.quantity} />
+            <ViewSaleCurrent
+                title={t('DaySales')}
+                saleAmount={thisDaySales?.revenue}
+                quantity={thisDaySales?.quantity}
+            />
 
             <TableDetail data={dataForTable} headerTable={headerTable} rowsWidth={rowsWidth} />
 

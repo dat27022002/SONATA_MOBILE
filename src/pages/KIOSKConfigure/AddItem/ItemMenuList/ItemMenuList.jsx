@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { Image, TouchableOpacity, View } from 'react-native';
+import { Image, View } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { TextDefaut } from '../../../../components';

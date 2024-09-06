@@ -8,16 +8,15 @@ import { route } from '../../config';
 
 const Login = ({ navigation, ...props }) => {
     const { t } = useTranslation('translation', { keyPrefix: 'Login' });
-    //const { t } = useTranslation('translation', { keyPrefix: 'Auth' });
 
     return (
         <View style={styles.container}>
             <View style={{ alignItems: 'center' }}>
                 <Text style={styles.label}>HJ POS</Text>
                 <View style={{ width: 250 }}>
-                    <TextInput placeholder="Company ID" placeholderTextColor="#9d9d9d" style={styles.input} />
-                    <TextInput placeholder="User ID" placeholderTextColor="#9d9d9d" style={styles.input} />
-                    <TextInput placeholder="Password" placeholderTextColor="#9d9d9d" style={styles.input} />
+                    <TextInput placeholder={t('CompanyID')} placeholderTextColor="#9d9d9d" style={styles.input} />
+                    <TextInput placeholder={t('UserID')} placeholderTextColor="#9d9d9d" style={styles.input} />
+                    <TextInput placeholder={t('Password')} placeholderTextColor="#9d9d9d" style={styles.input} />
                 </View>
                 <TouchableOpacity
                     onPress={() => {
@@ -33,7 +32,7 @@ const Login = ({ navigation, ...props }) => {
                             false: '#FFFFFF',
                         }}
                     />
-                    <Text style={styles.textSaveID}>Save ID and Password</Text>
+                    <Text style={styles.textSaveID}>{t('SaveIdAndPassword')}</Text>
                 </View>
             </View>
         </View>

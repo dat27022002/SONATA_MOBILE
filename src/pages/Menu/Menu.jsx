@@ -8,7 +8,7 @@ import { listMenuConfig, listSupport, listMenuSearchData } from './constant';
 import { route, listLanguage } from '../../config';
 
 const Menu = ({ navigation }) => {
-    const { t, i18n } = useTranslation();
+    const { t, i18n } = useTranslation('translation', { keyPrefix: 'Menu' });
 
     const [isModalLanguage, setIsModalLanguage] = useState(false);
 
@@ -60,7 +60,7 @@ const Menu = ({ navigation }) => {
             />
             <View style={[styles.containerList, { height: 285 }]}>
                 <FlatList
-                    data={listMenuSearchData}
+                    data={listMenuSearchData()}
                     renderItem={renderItem}
                     numColumns={4}
                     columnWrapperStyle={styles.row}
@@ -68,12 +68,12 @@ const Menu = ({ navigation }) => {
             </View>
 
             <View style={styles.containertextConfig}>
-                <TextDefaut large>KIOSK Configure</TextDefaut>
+                <TextDefaut large>{t('KIOSKConfigure')}</TextDefaut>
             </View>
 
             <View style={[styles.containerList, { height: 155 }]}>
                 <FlatList
-                    data={listMenuConfig}
+                    data={listMenuConfig()}
                     renderItem={renderItem}
                     numColumns={4}
                     columnWrapperStyle={styles.row}
@@ -82,7 +82,7 @@ const Menu = ({ navigation }) => {
             <View style={styles.support}>
                 <View style={{ height: 70 }}>
                     <FlatList
-                        data={listSupport}
+                        data={listSupport()}
                         renderItem={renderItem}
                         numColumns={4}
                         columnWrapperStyle={styles.row}

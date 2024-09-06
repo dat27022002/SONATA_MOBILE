@@ -19,13 +19,13 @@ import {
 } from '../../../components';
 
 const InventoryStatus = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const dataTableDetail = [
         { Item: 'Rượu good day', Barcode: 10062, Quantity: 96 },
         { Item: 'bia tiger', Barcode: 10009, Quantity: 97 },
     ];
-    const headerTable = ['Item', 'Barcode', 'Quantity'];
+    const headerTable = [t('Item'), t('Barcode'), t('Quantity')];
 
     const dataChart = {
         labels: dataTableDetail.map((item) => item['Item']),
@@ -43,26 +43,26 @@ const InventoryStatus = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.InventoryStatus}
-                title={'Inventory status'}
+                title={t('InventoryStatus')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter title={'hyojung'} />
                 </RowTableSummary>
-                <RowTableSummary title="Category" sizeRowFirst={100} style={styles.viewIncoudeLack}>
+                <RowTableSummary title={t('Category')} sizeRowFirst={100} style={styles.viewIncoudeLack}>
                     <CheckBox tintColors={{ true: GlobalStyle.thirdTextColor, false: GlobalStyle.thirdTextColor }} />
-                    <TextDefaut>Incoude Lack</TextDefaut>
+                    <TextDefaut>{t('IncludeLack')}</TextDefaut>
                 </RowTableSummary>
-                <RowTableSummary title="Item name" sizeRowFirst={100}></RowTableSummary>
-                <RowTableSummary title="Barcode" sizeRowFirst={100}></RowTableSummary>
+                <RowTableSummary title={t('ItemName')} sizeRowFirst={100}></RowTableSummary>
+                <RowTableSummary title={t('Barcode')} sizeRowFirst={100}></RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'This week sales'} saleAmount={'12.960'} quantity={0} />
+            <ViewSaleCurrent title={t('ThisWeekSales')} saleAmount={'12.960'} quantity={0} />
 
             <TableDetail data={dataTableDetail} headerTable={headerTable} />
 

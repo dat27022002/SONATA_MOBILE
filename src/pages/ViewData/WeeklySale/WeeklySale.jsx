@@ -22,7 +22,7 @@ import { getWeeklySales } from './WeeklySaleLogic';
 const listStore = ['hyojung'];
 
 const WeeklySale = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
     const today2 = new Date();
@@ -39,7 +39,7 @@ const WeeklySale = () => {
     const [thisWeekSales, setThisWeekSales] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const headerTable = ['Day of the week', 'Business day', 'Quantity', 'Sales amount', 'Ratio  '];
+    const headerTable = [t('DayOfTheWeek'), t('BusinessDay'), t('Quantity'), t('SalesAmount'), t('Ratio')];
     const rowsWidth = [-1, -1, -1, 1.5, -1];
 
     const dataChart = {
@@ -79,13 +79,13 @@ const WeeklySale = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.WeeklySale}
-                title={'Weekly sales list'}
+                title={t('WeeklySalesList')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -93,11 +93,11 @@ const WeeklySale = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter
                         title={store}
                         listOptions={listStore}
-                        titleModal="Store"
+                        titleModal={t('Store')}
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
@@ -106,7 +106,7 @@ const WeeklySale = () => {
             <BtnSearch handleSearch={handleSearch} />
 
             <ViewSaleCurrent
-                title={'This week sales'}
+                title={t('ThisWeekSales')}
                 saleAmount={thisWeekSales.revenue}
                 quantity={thisWeekSales.quantity}
             />

@@ -8,7 +8,7 @@ import styles from './ItemDetailStyles';
 import { GlobalStyle, imageRequire } from '../../../config';
 import { HeaderSecondnary, TextDefaut, ViewContainer, ButtonCustom } from '../../../components';
 const ItemDetail = ({ route }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'KIOSKConfigure' });
 
     const [imageUri, setImageUri] = useState(imageRequire.noImageLarge);
     const [isOpenActionImg, setIsOpenActionImg] = useState(false);
@@ -58,21 +58,21 @@ const ItemDetail = ({ route }) => {
             <Image source={imageUri} style={styles.img} />
             {/* inforItem */}
             <View style={styles.viewText}>
-                <TextDefaut style={styles.viewlabel}>Category</TextDefaut>
+                <TextDefaut style={styles.viewlabel}>{t('Category')}</TextDefaut>
                 <TextDefaut>{inforItem.name}</TextDefaut>
             </View>
             <View style={styles.viewText}>
-                <TextDefaut style={styles.viewlabel}>Item name</TextDefaut>
+                <TextDefaut style={styles.viewlabel}>{t('ItemName')}</TextDefaut>
                 <TextDefaut>{inforItem.name}</TextDefaut>
             </View>
             <View style={styles.viewText}>
-                <TextDefaut style={styles.viewlabel}>Price</TextDefaut>
+                <TextDefaut style={styles.viewlabel}>{t('Price')}</TextDefaut>
                 <TextDefaut>{inforItem.price}</TextDefaut>
             </View>
             {/* btn Add image */}
             <View style={styles.viewBtnAddImg}>
                 <ButtonCustom primary onClick={handleOpenPopup}>
-                    Add Image
+                    {t('AddImage')}
                 </ButtonCustom>
             </View>
             {/* popup Add image */}
@@ -82,19 +82,19 @@ const ItemDetail = ({ route }) => {
                         <TouchableOpacity style={styles.viewBtnActionToImg} onPress={handleCaptureImage}>
                             <Icon name="camera" style={styles.viewIcon} color={secondnaryTextColor} />
                             <TextDefaut large color={secondnaryTextColor}>
-                                Take pictures
+                                {t('TakePictures')}
                             </TextDefaut>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.viewBtnActionToImg} onPress={handleSelectImage}>
                             <Icon name="photo" style={styles.viewIcon} color={secondnaryTextColor} />
                             <TextDefaut large color={secondnaryTextColor}>
-                                Import from Album
+                                {t('ImportFromAlbum')}
                             </TextDefaut>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.viewBtnActionToImg} onPress={handleDeleteImage}>
                             <Icon name="leaf" style={styles.viewIcon} color={secondnaryTextColor} />
                             <TextDefaut large color={secondnaryTextColor}>
-                                Delete image
+                                {t('DeleteImage')}
                             </TextDefaut>
                         </TouchableOpacity>
                     </View>

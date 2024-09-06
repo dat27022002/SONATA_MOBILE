@@ -14,7 +14,7 @@ import {
 } from '../../../components';
 
 const NFC = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'Support' });
 
     const [table, setTable] = useState('Please select a table');
 
@@ -26,16 +26,16 @@ const NFC = () => {
 
     return (
         <ViewContainer>
-            <HeaderSecondnary urlImage={imageRequire.NFC} title={'UP order tag settings'} line="lineSolidOrange3" />
+            <HeaderSecondnary urlImage={imageRequire.NFC} title={t('UPOrderTagSettings')} line="lineSolidOrange3" />
             <View>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter title={'hyojung'} />
                 </RowTableSummary>
-                <RowTableSummary title="Table name" sizeRowFirst={100}>
+                <RowTableSummary title={t('TableName')} sizeRowFirst={100}>
                     <BtnFilter
                         title={table}
                         listOptions={listTable}
-                        titleModal="Table name"
+                        titleModal={t('TableName')}
                         handleFilter={handleChooseTable}
                     />
                 </RowTableSummary>
@@ -44,19 +44,17 @@ const NFC = () => {
             <View style={styles.viewBtn}>
                 <View style={styles.btnReset}>
                     <ButtonCustom primary padding20 bgPrimary>
-                        Reset
+                        {t('Reset')}
                     </ButtonCustom>
                 </View>
                 <ButtonCustom primary padding20>
-                    Save tag
+                    {t('SaveTag')}
                 </ButtonCustom>
             </View>
 
             <View style={styles.viewInstruction}>
-                <TextDefaut style={styles.title}>How to set up NFC</TextDefaut>
-                <TextDefaut>
-                    {'Settings > Connection > NFC & Contactless Payments > \nEnabled settings / Basic mode'}
-                </TextDefaut>
+                <TextDefaut style={styles.title}>{t('HowToSetUpNFC')}</TextDefaut>
+                <TextDefaut>{t('SettingConnectionNFC')}</TextDefaut>
             </View>
         </ViewContainer>
     );

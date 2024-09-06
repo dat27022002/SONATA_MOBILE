@@ -10,7 +10,7 @@ import ItemMenuList from './ItemMenuList';
 import ItemMenuCard from './ItemMenuCard';
 
 const AddItem = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'KIOSKConfigure' });
 
     const [typeMenuSelected, setTypeMenuSelected] = useState(0);
     const [formatList, setFormatList] = useState(true);
@@ -61,7 +61,7 @@ const AddItem = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.AddItem}
-                title={'KIOSK Item'}
+                title={t('KIOSKItem')}
                 iconRight={formatList ? 'grid' : 'list'}
                 line="lineSolidGray"
                 ionicon

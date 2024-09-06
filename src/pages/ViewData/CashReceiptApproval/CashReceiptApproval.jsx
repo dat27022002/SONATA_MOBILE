@@ -18,7 +18,7 @@ import {
 } from '../../../components';
 
 const CashReceiptApproval = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
 
@@ -29,7 +29,7 @@ const CashReceiptApproval = () => {
     const [POS, setPOS] = useState('All');
 
     const dataTableDetail = [];
-    const headerTable = ['Payment date', 'Card', 'Type', 'Sales amount'];
+    const headerTable = [t('PaymentDate'), t('Card'), t('Type'), t('SalesAmount')];
 
     const dataChart = {
         labels: dataTableDetail.map((item) => item.Date.substring(5)),
@@ -58,13 +58,13 @@ const CashReceiptApproval = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.CashReceiptApproval}
-                title={'Cash receipt approval'}
+                title={t('CashReceiptApproval')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -72,20 +72,20 @@ const CashReceiptApproval = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter title={'hyojung'} />
                 </RowTableSummary>
-                <RowTableSummary title="Type" sizeRowFirst={100}>
+                <RowTableSummary title={t('Type')} sizeRowFirst={100}>
                     <BtnFilter title={type} listOptions={listTypes} titleModal="Type" handleFilter={handleChooseType} />
                 </RowTableSummary>
-                <RowTableSummary title="POS" sizeRowFirst={100}>
+                <RowTableSummary title={t('POS')} sizeRowFirst={100}>
                     <BtnFilter title={POS} listOptions={listPOSs} titleModal="POS" handleFilter={handleChoosePOS} />
                 </RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Day sales'} saleAmount={0} quantity={0} />
+            <ViewSaleCurrent title={t('DaySales')} saleAmount={0} quantity={0} />
 
             <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent="No" />
 

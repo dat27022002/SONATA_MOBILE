@@ -1,6 +1,16 @@
 import { getSalesByRangeDate } from '../../../services/searchServices';
+import i18n from '../../../utils/i18next';
 
-const weekDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const weekDaysLanguage = () => [
+    i18n.t('Sun'),
+    i18n.t('Mon'),
+    i18n.t('Tue'),
+    i18n.t('Wed'),
+    i18n.t('Thu'),
+    i18n.t('Fri'),
+    i18n.t('Sat'),
+];
+const weekDays = weekDaysLanguage();
 
 // Hàm lấy ngày đầu tuần và cuối tuần
 function getWeekRange() {

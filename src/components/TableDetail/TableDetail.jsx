@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { ScrollView, Text, View } from 'react-native';
 
 import GlobalStyle from '../../config/GlobalStyle';
@@ -6,6 +7,8 @@ import TextDefaut from '../TextDefaut';
 import styles from './TableDetailStyle';
 
 const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [] }) => {
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
     const isData = data.length == 0 ? false : true;
     const listRow = isData ? Object.keys(data[0]) : headerTable;
     const summary = isData ? Object.values(data[0]) : [];
@@ -22,7 +25,7 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [
         <View>
             {/* title */}
             <TextDefaut style={styles.title} bold>
-                Details
+                {t('Details')}
             </TextDefaut>
 
             {/* header table */}
@@ -68,7 +71,9 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [
                 </React.Fragment>
             ) : (
                 <View style={{ marginTop: 10 }}>
-                    <TextDefaut textAlignCustom={'center'}> {noDataContent} does not exist</TextDefaut>
+                    <TextDefaut textAlignCustom={'center'}>
+                        {noDataContent} {t('doesNotExist')}
+                    </TextDefaut>
                 </View>
             )}
         </View>

@@ -22,7 +22,7 @@ import { getTimeBaseSales } from './TimeBaseLogic';
 const listStore = ['hyojung'];
 
 const TimeBase = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
     const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
@@ -36,7 +36,7 @@ const TimeBase = () => {
     const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
     const [loading, setLoading] = useState(false);
 
-    const headerTable = ['Time', 'Quantity', 'Unit price', 'Sales amount'];
+    const headerTable = [t('Time'), t('Quantity'), t('UnitPrice'), t('SalesAmount')];
     const rowsWidth = [1.2, -1, 1.4, 1.6];
 
     const dataChart = {
@@ -76,13 +76,13 @@ const TimeBase = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.TimeBase}
-                title={'Time-based sales'}
+                title={t('TimeBasedSales')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -90,11 +90,11 @@ const TimeBase = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter
                         title={store}
                         listOptions={listStore}
-                        titleModal="Store"
+                        titleModal={t('Store')}
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
@@ -102,7 +102,11 @@ const TimeBase = () => {
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Day sales'} saleAmount={thisDaySales?.revenue} quantity={thisDaySales?.quantity} />
+            <ViewSaleCurrent
+                title={t('DaySales')}
+                saleAmount={thisDaySales?.revenue}
+                quantity={thisDaySales?.quantity}
+            />
 
             <TableDetail data={dataForTable} headerTable={headerTable} rowsWidth={rowsWidth} />
 

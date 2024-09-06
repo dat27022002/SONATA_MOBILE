@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { View, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
 import { BarChart } from 'react-native-chart-kit';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -10,6 +11,8 @@ import styles from './BarChartCustomStyle';
 const screenWidth = Dimensions.get('window').width;
 
 const BarChartCustom = ({ dataChart }) => {
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
     const [isChart, setIsChart] = useState(false);
     const isData = dataChart.labels.length != 0;
     const chartConfig = {
@@ -34,7 +37,7 @@ const BarChartCustom = ({ dataChart }) => {
                         size={15}
                     />
                     <TextDefaut large color={GlobalStyle.secondnaryTextColor}>
-                        {isChart && isData ? 'Close' : 'Chart'}
+                        {isChart && isData ? t('Close') : t('Chart')}
                     </TextDefaut>
                 </TouchableOpacity>
             </View>

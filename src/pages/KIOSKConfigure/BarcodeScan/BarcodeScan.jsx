@@ -8,17 +8,17 @@ import { GlobalStyle, imageRequire } from '../../../config';
 import { HeaderSecondnary, ViewContainer } from '../../../components';
 
 const BarcodeScan = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'KIOSKConfigure' });
 
     const { thirdTextColor, secondnaryTextColor } = GlobalStyle;
 
     return (
         <ViewContainer>
-            <HeaderSecondnary urlImage={imageRequire.BarcodeScan} title={'Barcode scan'} line="lineSolidGray" />
+            <HeaderSecondnary urlImage={imageRequire.BarcodeScan} title={t('BarcodeScan')} line="lineSolidGray" />
             <View style={styles.viewBarcodeMain}>
-                <Text style={styles.textRefundSolid}>Refund</Text>
+                <Text style={styles.textRefundSolid}>{t('Refund')}</Text>
                 <Icon name="barcode" color={secondnaryTextColor} size={100} />
-                <Text style={styles.textInstruction}>Let me machin scan the barcode</Text>
+                <Text style={styles.textInstruction}>{t('LetMeMachinScanTheBarcode')}</Text>
             </View>
 
             <View style={styles.line}></View>
@@ -28,7 +28,7 @@ const BarcodeScan = () => {
                     <View style={styles.viewIconBarcode}>
                         <Icon name="barcode" color={thirdTextColor} />
                     </View>
-                    <Text style={styles.textRefund}>Refund</Text>
+                    <Text style={styles.textRefund}>{t('Refund')}</Text>
                 </View>
             </View>
         </ViewContainer>

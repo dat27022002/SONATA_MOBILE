@@ -13,28 +13,28 @@ import {
 } from '../../../components';
 
 const TableStatus = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const dataTableDetail = [];
-    const headerTable = ['Table Name', 'First order', 'Last order', 'Payment amount'];
+    const headerTable = [t('TableName'), t('FirstOrder'), t('LastOrder'), t('PaymentAmount')];
 
     return (
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.TableStatus}
-                title={'Table status'}
+                title={t('TableStatus')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Orderd tables">
+                <RowTableSummary title={t('OrderTables')}>
                     <TextDefaut>0</TextDefaut>
                 </RowTableSummary>
-                <RowTableSummary title="Payment ammount">
+                <RowTableSummary title={t('PaymentAmount')}>
                     <TextDefaut>0</TextDefaut>
                 </RowTableSummary>
-                <RowTableSummary title="Orderd tables">
+                <RowTableSummary title={t('Store')}>
                     <BtnFilter title={'hyojung'} />
                 </RowTableSummary>
             </View>

@@ -18,7 +18,7 @@ import {
 } from '../../../components';
 
 const RealTimeSale = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
 
@@ -27,7 +27,7 @@ const RealTimeSale = () => {
     const [endDate, setEndDate] = useState(todayFormat);
 
     const dataTableDetail = [];
-    const headerTable = ['Store name', 'Payment', 'Table'];
+    const headerTable = [t('StoreName'), t('Payment'), t('Table')];
 
     const dataChart = {
         labels: dataTableDetail.map((item) => item.Date.substring(5)),
@@ -45,13 +45,13 @@ const RealTimeSale = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.RealTimeSale}
-                title={'Real time sale'}
+                title={t('RealTimeSales')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -60,16 +60,16 @@ const RealTimeSale = () => {
                         isNotEndCalendar={true}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter title={'hyojung'} />
                 </RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Total sales'} saleAmount={0} quantity={0} />
+            <ViewSaleCurrent title={t('TotalSales')} saleAmount={0} quantity={0} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent="Sales history" />
+            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent={t('SalesHistory')} />
 
             {/* chart */}
             <BarChartCustom dataChart={dataChart} />

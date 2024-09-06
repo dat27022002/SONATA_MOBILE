@@ -16,7 +16,7 @@ import {
 } from '../../../components';
 
 const RefundHistory = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
 
@@ -25,7 +25,7 @@ const RefundHistory = () => {
     const [endDate, setEndDate] = useState(todayFormat);
 
     const dataTableDetail = [];
-    const headerTable = ['Cancel date', 'Item', 'Quantity'];
+    const headerTable = [t('CancelDate'), t('Item'), t('Quantity')];
 
     const dataChart = {
         labels: dataTableDetail.map((item) => item.Date.substring(5)),
@@ -43,13 +43,13 @@ const RefundHistory = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.RefundHistory}
-                title={'Refund history'}
+                title={t('RefundHistory')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -57,14 +57,14 @@ const RefundHistory = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter title={'hyojung'} />
                 </RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent="No refund" />
+            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent={t('NoRefund')} />
         </ViewContainer>
     );
 };

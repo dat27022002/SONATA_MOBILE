@@ -8,9 +8,9 @@ import { TextDefaut, HeaderSecondnary, IconImage, Loading } from '../../componen
 import { getSummaeySaleDaily, paymentDetail, getSaleMonthlySummary, summaryMonthlySales } from './HomeLogic';
 
 const Home = ({ navigation }) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'Home' });
 
-    const [dailySalesSummary, setDailySalesSummary] = useState(paymentDetail);
+    const [dailySalesSummary, setDailySalesSummary] = useState(paymentDetail());
     const [summaryMonthly, setSummaryMonthly] = useState(summaryMonthlySales);
     const [loading, setLoading] = useState(false);
 
@@ -47,7 +47,7 @@ const Home = ({ navigation }) => {
             <View style={styles.containerSummary}>
                 <IconImage url={imageRequire.MonthlySale} medium />
                 <TextDefaut style={{ paddingLeft: 5 }} bold>
-                    Monthly Sales
+                    {t('MonthlySales')}
                 </TextDefaut>
                 <View style={{ alignItems: 'flex-end', flex: 1 }}>
                     <TextDefaut color={thirdTextColor}>{summaryMonthly.revenue}</TextDefaut>
@@ -59,7 +59,7 @@ const Home = ({ navigation }) => {
             <View style={styles.containerSummary2}>
                 <IconImage url={imageRequire.DaySale} medium />
                 <TextDefaut style={{ paddingLeft: 5 }} bold>
-                    Daily Sales
+                    {t('DailySale')}
                 </TextDefaut>
                 <View style={{ alignItems: 'flex-end', flex: 1 }}>
                     <TextDefaut color={thirdTextColor}>{dailySalesSummary[4].revenue}</TextDefaut>
@@ -68,7 +68,7 @@ const Home = ({ navigation }) => {
             </View>
 
             <TextDefaut style={styles.textDailyPayment} bold>
-                Daily payment detail
+                {t('DailyPaymnetDetail')}
             </TextDefaut>
             {/* Daily payment detail */}
             {dailySalesSummary.map((payment, index) => (

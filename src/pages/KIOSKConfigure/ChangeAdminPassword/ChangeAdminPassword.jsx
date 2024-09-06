@@ -7,7 +7,7 @@ import { imageRequire } from '../../../config';
 import { HeaderSecondnary, TextDefaut, ViewContainer, ButtonCustom } from '../../../components';
 
 const ChangeAdminPassword = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'KIOSKConfigure' });
 
     const [formData, setFormData] = useState({ password: '', newPassword: '', newPasswordRepeat: '' });
 
@@ -23,25 +23,25 @@ const ChangeAdminPassword = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.ChangeAdminPassword}
-                title={'Change admin password'}
+                title={t('ChangeAdminPassword')}
                 line="lineSolidGray"
             />
             <View style={styles.viewForm}>
-                <TextDefaut style={styles.textLabel}>Password</TextDefaut>
+                <TextDefaut style={styles.textLabel}>{t('Password')}</TextDefaut>
                 <TextInput
                     style={styles.input}
                     value={formData.password}
                     onChangeText={(text) => handleChange('password', text)}
                     secureTextEntry
                 />
-                <TextDefaut style={styles.textLabel}>New password</TextDefaut>
+                <TextDefaut style={styles.textLabel}>{t('NewPassword')}</TextDefaut>
                 <TextInput
                     style={styles.input}
                     value={formData.newPassword}
                     onChangeText={(text) => handleChange('newPassword', text)}
                     secureTextEntry
                 />
-                <TextDefaut style={styles.textLabel}>Re-enter new password</TextDefaut>
+                <TextDefaut style={styles.textLabel}>{t('ReenterNewPassword')}</TextDefaut>
                 <TextInput
                     style={styles.input}
                     value={formData.newPasswordRepeat}
@@ -51,7 +51,7 @@ const ChangeAdminPassword = () => {
             </View>
             <View style={styles.viewBtn}>
                 <ButtonCustom primary medium onClick={onSubmit}>
-                    Change Password
+                    {t('ChangePassword')}
                 </ButtonCustom>
             </View>
         </ViewContainer>

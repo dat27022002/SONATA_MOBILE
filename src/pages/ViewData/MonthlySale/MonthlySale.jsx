@@ -22,7 +22,7 @@ import { getSummarySalesRangeMonth } from './MonthlySaleLogic';
 const listStore = ['hyojung'];
 
 const MonthlySale = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
     const today2 = new Date();
@@ -37,7 +37,7 @@ const MonthlySale = () => {
     const [dataForTable, setdataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const headerTable = ['Month', 'Quantity', 'Sales amount', 'Discount'];
+    const headerTable = [t('Month'), t('Quantity'), t('SalesAmount'), t('Discount')];
     const rowsWidth = [1.2, -1, 1.6, 1.6];
 
     const dataChart = {
@@ -84,7 +84,7 @@ const MonthlySale = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.MonthlySale}
-                title={'Monthly sales list'}
+                title={t('MonthlySalesList')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
@@ -112,7 +112,7 @@ const MonthlySale = () => {
             <BtnSearch handleSearch={handleSearch} />
 
             <ViewSaleCurrent
-                title={'Monthly sales list'}
+                title={t('MonthlySalesList')}
                 saleAmount={dataForTable.length ? dataForTable[0]['Sales amount'] : 0}
                 quantity={dataForTable.length ? dataForTable[0]?.Quantity : 0}
             />

@@ -7,20 +7,20 @@ import { imageRequire } from '../../../config';
 import { HeaderSecondnary, TextDefaut, ViewContainer } from '../../../components';
 
 const PrinterPaper = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'KIOSKConfigure' });
 
     return (
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.PrinterPaper}
-                title={'Print paper notification'}
+                title={t('PrintPaperNotification')}
                 line="lineSolidGray"
                 iconFontAwesome
                 iconRight="bell-o"
                 textRight="0"
             />
             <View style={styles.containter}>
-                <TextDefaut>No notification history</TextDefaut>
+                <TextDefaut>{t('NoNotificationHistory')}</TextDefaut>
             </View>
         </ViewContainer>
     );

@@ -22,7 +22,7 @@ import { getDailySales } from './DailySaleLogic';
 const listStore = ['hyojung'];
 
 const DaySale = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
     const today2 = new Date();
@@ -39,7 +39,7 @@ const DaySale = () => {
     const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
     const [loading, setLoading] = useState(false);
 
-    const headerTable = ['Date', 'Quantity', 'Guest', 'Customer price', 'Sales amount'];
+    const headerTable = [t('Date'), t('Quantity'), t('Guest'), t('CustomerPrice'), t('SalesAmount')];
     const rowsWidth = [1.2, -1, -1, -1, 1.5];
 
     const dataChart = {
@@ -79,13 +79,13 @@ const DaySale = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.DaySale}
-                title={'Day sales list'}
+                title={t('DaySalesList')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -93,11 +93,11 @@ const DaySale = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter
                         title={store}
                         listOptions={listStore}
-                        titleModal="Store"
+                        titleModal={t('Store')}
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
@@ -105,7 +105,7 @@ const DaySale = () => {
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={'Day sales'} saleAmount={thisDaySales.revenue} quantity={thisDaySales.quantity} />
+            <ViewSaleCurrent title={t('DaySales')} saleAmount={thisDaySales.revenue} quantity={thisDaySales.quantity} />
 
             <TableDetail data={dataForTable} headerTable={headerTable} rowsWidth={rowsWidth} />
 

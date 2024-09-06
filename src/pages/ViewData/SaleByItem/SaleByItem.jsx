@@ -20,7 +20,7 @@ import { getSalesByItem } from './SaleByItemLogic';
 const listStore = ['hyojung'];
 
 const SaleByItem = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
@@ -32,7 +32,7 @@ const SaleByItem = () => {
     const [dataForTable, setDataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const headerTable = ['Item', 'Quantity', 'Sales amount'];
+    const headerTable = [t('Item'), t('Quantity'), t('SalesAmount')];
     const rowsWidth = [1.8, -1, 1.5];
 
     const handleChooseStore = (value) => {
@@ -60,13 +60,13 @@ const SaleByItem = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.SaleByItem}
-                title={'Sale by item'}
+                title={t('SaleByItem')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
             />
             <View>
-                <RowTableSummary title="Term" sizeRowFirst={100} style={styles.dateRangePicker}>
+                <RowTableSummary title={t('Term')} sizeRowFirst={100} style={styles.dateRangePicker}>
                     <DateRangePicker
                         startDate={startDate}
                         setStartDate={setStartDate}
@@ -74,11 +74,11 @@ const SaleByItem = () => {
                         setEndDate={setEndDate}
                     />
                 </RowTableSummary>
-                <RowTableSummary title="Store" sizeRowFirst={100}>
+                <RowTableSummary title={t('Store')} sizeRowFirst={100}>
                     <BtnFilter
                         title={store}
                         listOptions={listStore}
-                        titleModal="Store"
+                        titleModal={t('Store')}
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
@@ -89,7 +89,7 @@ const SaleByItem = () => {
             <TableDetail
                 data={dataForTable}
                 headerTable={headerTable}
-                noDataContent="Sales history"
+                noDataContent={t('SalesHistory')}
                 rowsWidth={rowsWidth}
             />
 

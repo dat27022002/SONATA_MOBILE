@@ -8,7 +8,7 @@ import { GlobalStyle, imageRequire } from '../../../config';
 import { HeaderSecondnary, IconImage, TextDefaut, ViewContainer } from '../../../components';
 
 const ServiceCenter = () => {
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation('translation', { keyPrefix: 'Support' });
 
     const { lineColor } = GlobalStyle;
 
@@ -71,14 +71,14 @@ const ServiceCenter = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.ServiceCenter}
-                title={'ServiceCenter Information'}
+                title={t('ServiceCenterInformation')}
                 line="lineSolidGray3"
             />
 
             {/* A/S Inquiry */}
             <View style={styles.container1}>
-                <TextDefaut large>A/S Inquiry</TextDefaut>
-                <TextDefaut color={lineColor}>You can get an AS through your agent</TextDefaut>
+                <TextDefaut large>{t('ASInquiry')}</TextDefaut>
+                <TextDefaut color={lineColor}>{t('YouCanGetAnASThroughYourAgent')}</TextDefaut>
                 <View style={styles.viewHotline}>
                     <Icon name="call" color={lineColor} size={30} />
                     <TouchableOpacity onPress={() => handleCall('1566-4534')}>
@@ -89,7 +89,7 @@ const ServiceCenter = () => {
 
             {/* Card company contact */}
             <View style={styles.container1}>
-                <TextDefaut large>Card company contact</TextDefaut>
+                <TextDefaut large>{t('CardCompanyContact')}</TextDefaut>
                 <FlatList
                     data={listNumberPhone}
                     renderItem={renderItemPhoneNumber}
@@ -101,7 +101,7 @@ const ServiceCenter = () => {
             {/* Manual */}
             <View style={styles.container2}>
                 <TextDefaut large style={styles.textTitle}>
-                    Manual
+                    {t('Manual')}
                 </TextDefaut>
                 <FlatList
                     data={listWebsite}
