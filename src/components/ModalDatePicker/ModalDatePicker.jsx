@@ -13,6 +13,7 @@ const ModalDatePicker = ({ isOpen, handleChangeDate, handleOpenModal, dateSelect
                 <View style={styles.modalView}>
                     <DatePicker
                         mode={mode || 'calendar'}
+                        current={dateSelected}
                         selected={dateSelected}
                         onSelectedChange={handleChangeDate}
                         onMonthYearChange={handleChangeDate}

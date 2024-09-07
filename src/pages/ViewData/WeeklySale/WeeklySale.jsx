@@ -79,7 +79,7 @@ const WeeklySale = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.WeeklySale}
-                title={t('WeeklySalesList')}
+                title={t('WeeklySales')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon

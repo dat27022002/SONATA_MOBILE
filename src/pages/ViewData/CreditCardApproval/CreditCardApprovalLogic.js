@@ -2,6 +2,15 @@ import { getSalesByRangeDate } from '../../../services/searchServices';
 import { salesRangeDates } from '../DataFake';
 import { calculateTodaySales } from '../ViewDataLogic';
 
+const getTypeCard = (value) => {
+    if (!isNaN(value)) {
+        if (value === 10) return 'ETC';
+        if (value === 11) return 'Visa';
+        if (value === 12) return 'Master Card';
+    }
+    return 'Unknown';
+};
+
 export const getCreditCardApproval = async (dateStart, dateEnd, store) => {
     //console.log(dateStart, ':', dateEnd);
 
@@ -12,79 +21,55 @@ export const getCreditCardApproval = async (dateStart, dateEnd, store) => {
     if (response[0].Index == 0)
         return {
             dataTable: [],
-            dataChart: [],
             thisDaySales: { revenue: 0, quantity: 0 },
         };
     //console.log('getSalesByRangeDate: ', JSON.stringify(response.slice(0, 4), null, 2));
 
-    const listSaleConvertEnglish = response.map((value) => ({
+    const responseFilter = response.filter((value) => value.신용카드 > 0);
+
+    const listSaleConvertEnglish = responseFilter.map((value) => ({
         date: value.일자,
-        totalAmout: value.합계금액,
+        totalAmount: value.합계금액,
+        card: value.받은돈,
+        POS: value.포스번호,
     }));
-    //console.log('getSalesByRangeDate: ', JSON.stringify(listSaleConvertEnglish.slice(0, 4), null, 2));
+    //console.log('listSaleConvertEnglish: ', JSON.stringify(listSaleConvertEnglish, null, 2));
 
-    const summarySalesDaily = listSaleConvertEnglish.reduce((acc, curr) => {
-        const date = curr.date.split('T')[0]; // Lấy ngày mà không lấy phần thời gian
-        if (!acc[date]) {
-            acc[date] = { Date: date, Quantity: 0, Guest: 0, 'Customer price': 0, 'Sales amount': 0 };
-        }
-        acc[date]['Quantity'] += 1;
-        acc[date]['Guest'] += 1;
-        acc[date]['Sales amount'] += curr.totalAmout;
-        return acc;
-    }, {});
-    // console.log('summarySalesDaily: ', JSON.stringify(summarySalesDaily, null, 2));
-
-    //convert object to array
-    const summarySalesDailyArr = Object.values(summarySalesDaily).map((item) => ({
-        Date: item['Date'],
-        Quantity: item['Quantity'],
-        Guest: item['Guest'],
-        'Customer price': 0,
-        'Sales amount': item['Sales amount'],
+    const tempResult = listSaleConvertEnglish.map((value) => ({
+        paymentDate: value.date.replace('T', ' '),
+        card: getTypeCard(value.card),
+        totalAmount: value.totalAmount,
     }));
-    //console.log('summarySalesDailyArr: ', JSON.stringify(summarySalesDailyArr, null, 2));
-
-    // Sắp xếp theo thứ tự các thứ
-    summarySalesDailyArr.sort((a, b) => new Date(a.Date) - new Date(b.Date));
-    //console.log('summarySalesDailyArr: ', JSON.stringify(summarySalesDailyArr, null, 2));
 
     // Tính tổng Quantity và Sales amount
-    const totalQuantity = summarySalesDailyArr.reduce((acc, item) => acc + item.Quantity, 0);
-    const totalSalesAmount = summarySalesDailyArr.reduce((acc, item) => acc + item['Sales amount'], 0);
+    const totalSalesAmount = tempResult.reduce((acc, item) => acc + item.totalAmount, 0);
 
     // Tạo một đối tượng cho tổng
     const totalRow = {
-        Date: 'Total Amount',
-        Quantity: totalQuantity,
-        Guest: totalQuantity,
-        'Customer price': 0,
-        'Sales amount': totalSalesAmount,
+        paymentDate: 'Total Amount',
+        card: '',
+        totalAmount: totalSalesAmount,
     };
 
     // Thêm hàng tổng vào đầu mảng
-    summarySalesDailyArr.unshift(totalRow);
-    //console.log('summarySalesDailyArr: ', JSON.stringify(summarySalesDailyArr, null, 2));
+    tempResult.unshift(totalRow);
+    //console.log('tempResult: ', JSON.stringify(tempResult, null, 2));
 
-    const formatedSummaryDaysWeeklyArr = summarySalesDailyArr.map((item) => ({
-        Date: item['Date'],
-        Quantity: item['Quantity'],
-        Guest: item['Guest'],
-        'Customer price': 0,
-        'Sales amount': item['Sales amount'].toLocaleString('vi-VN'),
+    const formatedResult = tempResult.map((value) => ({
+        paymentDate: value.paymentDate,
+        card: value.card,
+        totalAmount: value.totalAmount.toLocaleString('vi-VN'),
     }));
+    //console.log('formatedResult: ', JSON.stringify(formatedResult, null, 2));
 
-    summarySalesDailyArr.shift(); //remove row total to draw chart
-
-    // //tính toán tổng doanh thu cho tuần hiện tại
+    //tính toán tổng doanh thu cho tuần hiện tại
 
     const result = {
-        dataTable: formatedSummaryDaysWeeklyArr,
-        dataChart: summarySalesDailyArr,
+        dataTable: formatedResult,
         thisDaySales: calculateTodaySales(listSaleConvertEnglish),
     };
 
-    console.log('result: ', JSON.stringify(result, null, 2));
+    // console.log('result: ', JSON.stringify(result, null, 2));
 
     return result;
 };

@@ -10,7 +10,7 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const isData = data.length == 0 ? false : true;
-    const listRow = isData ? Object.keys(data[0]) : headerTable;
+    const listRow = headerTable;
     const summary = isData ? Object.values(data[0]) : [];
     const dataDetail = data.map((item) => Object.values(item));
     dataDetail.shift();

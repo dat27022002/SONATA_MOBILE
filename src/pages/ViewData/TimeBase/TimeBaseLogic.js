@@ -6,6 +6,7 @@ const listTime = [
     '09:00 ~ 09:59',
     '10:00 ~ 10:59',
     '11:00 ~ 11:59',
+    '12:00 ~ 12:59',
     '15:00 ~ 15:59',
     '16:00 ~ 16:59',
     '17:00 ~ 17:59',
@@ -45,7 +46,7 @@ export const getTimeBaseSales = async (dateStart, dateEnd) => {
         date: value.수정일,
         totalAmout: value.합계금액,
     }));
-    //console.log('getSalesByRangeDate: ', JSON.stringify(listSaleConvertEnglish.slice(0, 20), null, 2));
+    console.log('getSalesByRangeDate: ', JSON.stringify(listSaleConvertEnglish.slice(0, 20), null, 2));
 
     const resultTemp = listTime.map((time) => ({
         Time: time,

@@ -32,12 +32,14 @@ const CreditCardApproval = () => {
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
     const [store, setStore] = useState('hyojung');
+    const [type, setType] = useState('All');
+    const [POS, setPOS] = useState('All');
 
     const [dataForTable, setDataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const headerTable = [t('PaymentDate'), t('Card'), t('Type'), t('SalesAmount')];
-    const rowsWidth = [1.2, -1, -1, 1];
+    const headerTable = [t('PaymentDate'), t('Card'), t('SalesAmount')];
+    const rowsWidth = [1.2, 1, 1.5];
 
     listTypes = ['All', 'Approval', 'Cancel approval'];
     listPOSs = ['All', 'POS1', 'POS2', 'POS3'];
@@ -97,14 +99,14 @@ const CreditCardApproval = () => {
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
-                <RowTableSummary title={t('Type')} sizeRowFirst={100}>
+                {/* <RowTableSummary title={t('Type')} sizeRowFirst={100}>
                     <BtnFilter
                         title={type}
                         listOptions={listTypes}
                         titleModal={t('Type')}
                         handleFilter={handleChooseType}
                     />
-                </RowTableSummary>
+                </RowTableSummary> */}
                 <RowTableSummary title={t('POS')} sizeRowFirst={100}>
                     <BtnFilter
                         title={POS}
