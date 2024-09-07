@@ -36,6 +36,362 @@ export const salesRangeDates = [
         TEMPLATECODE: '1/8899',
         INVOICESERIES: 'K23MMJ',
         StoreCode2: '00001',
+        일자: '2024-09-06T00:00:00',
+        포스번호: 1,
+        전표번호: 120436,
+        전표구분: '매출',
+        사원코드: '1001',
+        시: 12,
+        분: 4,
+        총수량: 5,
+        금액: 10693070,
+        할인: 0,
+        할인율: 0,
+        소계할인: 0,
+        소계할인율: 0.0,
+        공급가액: 10693070,
+        세액: 106930,
+        면세: 0,
+        합계금액: 10800000,
+        비고: '',
+        현금: 0,
+        현금영수증: 0,
+        신용카드: 10800000,
+        포인트: 0,
+        타사상품권: 0,
+        자사상품권: 0,
+        외상: 0,
+        사용: 0,
+        기타지불: 0,
+        고객카드: '240905142835782',
+        보너스점수: 0,
+        보너스적용: 'YES',
+        거래처코드: '240905142835782',
+        상호: 'hoang',
+        전잔액: 0,
+        입금액: 0,
+        총잔액: 0,
+        계산서발행: false,
+        거래순번: 0,
+        받은돈: 12,
+        거스름: {},
+        등록자: '1001',
+        등록일: '2024-09-06T12:04:38',
+        수정자: '1001',
+        수정일: '2024-09-06T12:04:49',
+        upload: {},
+        bLock: {},
+        dLockDate: {},
+        INVOICE_NO: {},
+        TRANSACTION_ID: {},
+        RESERVATION_CODE: {},
+        QR_CODE: 0,
+        RowNum: 1,
+    },
+    {
+        StoreCode1: '00001',
+        점포구분: '판매점',
+        거래형태: '직영점',
+        상호1: 'TEST',
+        대표자: 'test',
+        대표자ID: '',
+        전화번호: '02432006317',
+        팩스번호: '02432006317',
+        EMAIL: 'caove@gmail.com',
+        HOMEPAGE: 'HYOJUNG',
+        점포총면적: 0,
+        매장면적: 0,
+        주차대수: 0,
+        종업원수: 0,
+        은행명: 'Ngân hàng Shinhan bank',
+        계좌번호: '0987654454',
+        예금주: '',
+        거래시작일: '2015-06-29T00:00:00',
+        거래종료일: '2015-06-29T00:00:00',
+        사업자번호1: '010',
+        사업자번호2: '01',
+        사업자번호3: '09106-509',
+        우편번호: '',
+        주소: 'Lô T1.3A, tầng 1 tòa nhà 34T Khu đô thị mới Trung Hòa – Nhân Chính, đường Hoàng Đạo Thúy, Phường Trung Hoà, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam',
+        상세주소: '',
+        업태: '',
+        종목: '',
+        조회순: 0,
+        거래등급: 0,
+        BRAND_ID: '',
+        BRAND_NAME: '',
+        VIETTEL_ID: '0100109106-509',
+        VIETTEL_PW: '2wsxCDE#',
+        TEMPLATECODE: '1/8899',
+        INVOICESERIES: 'K23MMJ',
+        StoreCode2: '00001',
+        일자: '2024-09-06T00:00:00',
+        포스번호: 1,
+        전표번호: 120500,
+        전표구분: '매출',
+        사원코드: '1001',
+        시: 12,
+        분: 5,
+        총수량: 6,
+        금액: 12831684,
+        할인: 1283168,
+        할인율: 0,
+        소계할인: 0,
+        소계할인율: 0.0,
+        공급가액: 11548516,
+        세액: 115485,
+        면세: 0,
+        합계금액: 11664001,
+        비고: '',
+        현금: 0,
+        현금영수증: 0,
+        신용카드: 11664001,
+        포인트: 0,
+        타사상품권: 0,
+        자사상품권: 0,
+        외상: 0,
+        사용: 0,
+        기타지불: 0,
+        고객카드: '240905142835782',
+        보너스점수: 0,
+        보너스적용: 'YES',
+        거래처코드: '240905142835782',
+        상호: 'hoang',
+        전잔액: 0,
+        입금액: 0,
+        총잔액: 0,
+        계산서발행: false,
+        거래순번: 0,
+        받은돈: 10,
+        거스름: {},
+        등록자: '1001',
+        등록일: '2024-09-06T12:05:02',
+        수정자: '1001',
+        수정일: '2024-09-06T12:05:16',
+        upload: {},
+        bLock: {},
+        dLockDate: {},
+        INVOICE_NO: {},
+        TRANSACTION_ID: {},
+        RESERVATION_CODE: {},
+        QR_CODE: 0,
+        RowNum: 2,
+    },
+    {
+        StoreCode1: '00001',
+        점포구분: '판매점',
+        거래형태: '직영점',
+        상호1: 'TEST',
+        대표자: 'test',
+        대표자ID: '',
+        전화번호: '02432006317',
+        팩스번호: '02432006317',
+        EMAIL: 'caove@gmail.com',
+        HOMEPAGE: 'HYOJUNG',
+        점포총면적: 0,
+        매장면적: 0,
+        주차대수: 0,
+        종업원수: 0,
+        은행명: 'Ngân hàng Shinhan bank',
+        계좌번호: '0987654454',
+        예금주: '',
+        거래시작일: '2015-06-29T00:00:00',
+        거래종료일: '2015-06-29T00:00:00',
+        사업자번호1: '010',
+        사업자번호2: '01',
+        사업자번호3: '09106-509',
+        우편번호: '',
+        주소: 'Lô T1.3A, tầng 1 tòa nhà 34T Khu đô thị mới Trung Hòa – Nhân Chính, đường Hoàng Đạo Thúy, Phường Trung Hoà, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam',
+        상세주소: '',
+        업태: '',
+        종목: '',
+        조회순: 0,
+        거래등급: 0,
+        BRAND_ID: '',
+        BRAND_NAME: '',
+        VIETTEL_ID: '0100109106-509',
+        VIETTEL_PW: '2wsxCDE#',
+        TEMPLATECODE: '1/8899',
+        INVOICESERIES: 'K23MMJ',
+        StoreCode2: '00001',
+        일자: '2024-09-06T00:00:00',
+        포스번호: 1,
+        전표번호: 120536,
+        전표구분: '매출',
+        사원코드: '1001',
+        시: 12,
+        분: 5,
+        총수량: 5,
+        금액: 10693070,
+        할인: 0,
+        할인율: 0,
+        소계할인: 0,
+        소계할인율: 0.0,
+        공급가액: 10693070,
+        세액: 106931,
+        면세: 0,
+        합계금액: 10800000,
+        비고: '',
+        현금: 10800000,
+        현금영수증: 0,
+        신용카드: 0,
+        포인트: 0,
+        타사상품권: 0,
+        자사상품권: 0,
+        외상: 0,
+        사용: 0,
+        기타지불: 0,
+        고객카드: '240905142835782',
+        보너스점수: 0,
+        보너스적용: 'YES',
+        거래처코드: '240905142835782',
+        상호: 'hoang',
+        전잔액: 0,
+        입금액: 0,
+        총잔액: 0,
+        계산서발행: false,
+        거래순번: 0,
+        받은돈: {},
+        거스름: {},
+        등록자: '1001',
+        등록일: '2024-09-06T12:05:37',
+        수정자: '1001',
+        수정일: '2024-09-06T12:05:51',
+        upload: {},
+        bLock: {},
+        dLockDate: {},
+        INVOICE_NO: {},
+        TRANSACTION_ID: {},
+        RESERVATION_CODE: {},
+        QR_CODE: 0,
+        RowNum: 3,
+    },
+    {
+        StoreCode1: '00001',
+        점포구분: '판매점',
+        거래형태: '직영점',
+        상호1: 'TEST',
+        대표자: 'test',
+        대표자ID: '',
+        전화번호: '02432006317',
+        팩스번호: '02432006317',
+        EMAIL: 'caove@gmail.com',
+        HOMEPAGE: 'HYOJUNG',
+        점포총면적: 0,
+        매장면적: 0,
+        주차대수: 0,
+        종업원수: 0,
+        은행명: 'Ngân hàng Shinhan bank',
+        계좌번호: '0987654454',
+        예금주: '',
+        거래시작일: '2015-06-29T00:00:00',
+        거래종료일: '2015-06-29T00:00:00',
+        사업자번호1: '010',
+        사업자번호2: '01',
+        사업자번호3: '09106-509',
+        우편번호: '',
+        주소: 'Lô T1.3A, tầng 1 tòa nhà 34T Khu đô thị mới Trung Hòa – Nhân Chính, đường Hoàng Đạo Thúy, Phường Trung Hoà, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam',
+        상세주소: '',
+        업태: '',
+        종목: '',
+        조회순: 0,
+        거래등급: 0,
+        BRAND_ID: '',
+        BRAND_NAME: '',
+        VIETTEL_ID: '0100109106-509',
+        VIETTEL_PW: '2wsxCDE#',
+        TEMPLATECODE: '1/8899',
+        INVOICESERIES: 'K23MMJ',
+        StoreCode2: '00001',
+        일자: '2024-08-31T00:00:00',
+        포스번호: 1,
+        전표번호: 223042,
+        전표구분: '매출',
+        사원코드: '1001',
+        시: 22,
+        분: 30,
+        총수량: 2,
+        금액: 200000,
+        할인: 0,
+        할인율: 0,
+        소계할인: 0,
+        소계할인율: 0.0,
+        공급가액: 200000,
+        세액: 16000,
+        면세: 0,
+        합계금액: 216000,
+        비고: '',
+        현금: 216000,
+        현금영수증: 0,
+        신용카드: 0,
+        포인트: 0,
+        타사상품권: 0,
+        자사상품권: 0,
+        외상: 0,
+        사용: 0,
+        기타지불: 0,
+        고객카드: '',
+        보너스점수: 0,
+        보너스적용: 'YES',
+        거래처코드: '00000',
+        상호: '',
+        전잔액: 0,
+        입금액: 0,
+        총잔액: 0,
+        계산서발행: false,
+        거래순번: 0,
+        받은돈: {},
+        거스름: {},
+        등록자: '1001',
+        등록일: '2024-08-31T22:30:43',
+        수정자: '1001',
+        수정일: '2024-08-31T22:31:35',
+        upload: {},
+        bLock: {},
+        dLockDate: {},
+        INVOICE_NO: {},
+        TRANSACTION_ID: {},
+        RESERVATION_CODE: {},
+        QR_CODE: 0,
+        RowNum: 4,
+    },
+    {
+        StoreCode1: '00001',
+        점포구분: '판매점',
+        거래형태: '직영점',
+        상호1: 'TEST',
+        대표자: 'test',
+        대표자ID: '',
+        전화번호: '02432006317',
+        팩스번호: '02432006317',
+        EMAIL: 'caove@gmail.com',
+        HOMEPAGE: 'HYOJUNG',
+        점포총면적: 0,
+        매장면적: 0,
+        주차대수: 0,
+        종업원수: 0,
+        은행명: 'Ngân hàng Shinhan bank',
+        계좌번호: '0987654454',
+        예금주: '',
+        거래시작일: '2015-06-29T00:00:00',
+        거래종료일: '2015-06-29T00:00:00',
+        사업자번호1: '010',
+        사업자번호2: '01',
+        사업자번호3: '09106-509',
+        우편번호: '',
+        주소: 'Lô T1.3A, tầng 1 tòa nhà 34T Khu đô thị mới Trung Hòa – Nhân Chính, đường Hoàng Đạo Thúy, Phường Trung Hoà, Quận Cầu Giấy, Thành phố Hà Nội, Việt Nam',
+        상세주소: '',
+        업태: '',
+        종목: '',
+        조회순: 0,
+        거래등급: 0,
+        BRAND_ID: '',
+        BRAND_NAME: '',
+        VIETTEL_ID: '0100109106-509',
+        VIETTEL_PW: '2wsxCDE#',
+        TEMPLATECODE: '1/8899',
+        INVOICESERIES: 'K23MMJ',
+        StoreCode2: '00001',
         일자: '2024-08-29T00:00:00',
         포스번호: 1,
         전표번호: 95108,
@@ -86,7 +442,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 1,
+        RowNum: 5,
     },
     {
         StoreCode1: '00001',
@@ -175,7 +531,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 2,
+        RowNum: 6,
     },
     {
         StoreCode1: '00001',
@@ -264,7 +620,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 3,
+        RowNum: 7,
     },
     {
         StoreCode1: '00001',
@@ -353,7 +709,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 4,
+        RowNum: 8,
     },
     {
         StoreCode1: '00001',
@@ -442,7 +798,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 5,
+        RowNum: 9,
     },
     {
         StoreCode1: '00001',
@@ -531,7 +887,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 6,
+        RowNum: 10,
     },
     {
         StoreCode1: '00001',
@@ -620,7 +976,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 7,
+        RowNum: 11,
     },
     {
         StoreCode1: '00001',
@@ -709,7 +1065,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 8,
+        RowNum: 12,
     },
     {
         StoreCode1: '00001',
@@ -798,7 +1154,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 9,
+        RowNum: 13,
     },
     {
         StoreCode1: '00001',
@@ -887,7 +1243,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 10,
+        RowNum: 14,
     },
     {
         StoreCode1: '00001',
@@ -976,7 +1332,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 11,
+        RowNum: 15,
     },
     {
         StoreCode1: '00001',
@@ -1065,7 +1421,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 12,
+        RowNum: 16,
     },
     {
         StoreCode1: '00001',
@@ -1154,7 +1510,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 13,
+        RowNum: 17,
     },
     {
         StoreCode1: '00001',
@@ -1243,7 +1599,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 14,
+        RowNum: 18,
     },
     {
         StoreCode1: '00001',
@@ -1332,7 +1688,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 15,
+        RowNum: 19,
     },
     {
         StoreCode1: '00001',
@@ -1421,7 +1777,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 16,
+        RowNum: 20,
     },
     {
         StoreCode1: '00001',
@@ -1510,7 +1866,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 17,
+        RowNum: 21,
     },
     {
         StoreCode1: '00001',
@@ -1599,7 +1955,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 18,
+        RowNum: 22,
     },
     {
         StoreCode1: '00001',
@@ -1688,7 +2044,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 19,
+        RowNum: 23,
     },
     {
         StoreCode1: '00001',
@@ -1777,7 +2133,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 20,
+        RowNum: 24,
     },
     {
         StoreCode1: '00001',
@@ -1866,7 +2222,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 21,
+        RowNum: 25,
     },
     {
         StoreCode1: '00001',
@@ -1955,7 +2311,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 22,
+        RowNum: 26,
     },
     {
         StoreCode1: '00001',
@@ -2044,7 +2400,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 23,
+        RowNum: 27,
     },
     {
         StoreCode1: '00001',
@@ -2133,7 +2489,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 24,
+        RowNum: 28,
     },
     {
         StoreCode1: '00001',
@@ -2222,7 +2578,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 25,
+        RowNum: 29,
     },
     {
         StoreCode1: '00001',
@@ -2311,7 +2667,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 26,
+        RowNum: 30,
     },
     {
         StoreCode1: '00001',
@@ -2400,7 +2756,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 27,
+        RowNum: 31,
     },
     {
         StoreCode1: '00001',
@@ -2489,7 +2845,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 28,
+        RowNum: 32,
     },
     {
         StoreCode1: '00001',
@@ -2578,7 +2934,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 29,
+        RowNum: 33,
     },
     {
         StoreCode1: '00001',
@@ -2667,7 +3023,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 30,
+        RowNum: 34,
     },
     {
         StoreCode1: '00001',
@@ -2756,7 +3112,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 31,
+        RowNum: 35,
     },
     {
         StoreCode1: '00001',
@@ -2845,7 +3201,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 32,
+        RowNum: 36,
     },
     {
         StoreCode1: '00001',
@@ -2934,7 +3290,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 33,
+        RowNum: 37,
     },
     {
         StoreCode1: '00001',
@@ -3023,7 +3379,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 34,
+        RowNum: 38,
     },
     {
         StoreCode1: '00001',
@@ -3112,7 +3468,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 35,
+        RowNum: 39,
     },
     {
         StoreCode1: '00001',
@@ -3201,7 +3557,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 36,
+        RowNum: 40,
     },
     {
         StoreCode1: '00001',
@@ -3290,7 +3646,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 37,
+        RowNum: 41,
     },
     {
         StoreCode1: '00001',
@@ -3379,7 +3735,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 38,
+        RowNum: 42,
     },
     {
         StoreCode1: '00001',
@@ -3468,7 +3824,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 39,
+        RowNum: 43,
     },
     {
         StoreCode1: '00001',
@@ -3557,7 +3913,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 40,
+        RowNum: 44,
     },
     {
         StoreCode1: '00001',
@@ -3646,7 +4002,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 41,
+        RowNum: 45,
     },
     {
         StoreCode1: '00001',
@@ -3735,7 +4091,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 42,
+        RowNum: 46,
     },
     {
         StoreCode1: '00001',
@@ -3824,7 +4180,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 43,
+        RowNum: 47,
     },
     {
         StoreCode1: '00001',
@@ -3913,7 +4269,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 44,
+        RowNum: 48,
     },
     {
         StoreCode1: '00001',
@@ -4002,7 +4358,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 45,
+        RowNum: 49,
     },
     {
         StoreCode1: '00001',
@@ -4091,7 +4447,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 46,
+        RowNum: 50,
     },
     {
         StoreCode1: '00001',
@@ -4180,7 +4536,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 47,
+        RowNum: 51,
     },
     {
         StoreCode1: '00001',
@@ -4269,7 +4625,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 48,
+        RowNum: 52,
     },
     {
         StoreCode1: '00001',
@@ -4358,7 +4714,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 49,
+        RowNum: 53,
     },
     {
         StoreCode1: '00001',
@@ -4447,7 +4803,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 50,
+        RowNum: 54,
     },
     {
         StoreCode1: '00001',
@@ -4536,7 +4892,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 51,
+        RowNum: 55,
     },
     {
         StoreCode1: '00001',
@@ -4625,7 +4981,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 52,
+        RowNum: 56,
     },
     {
         StoreCode1: '00001',
@@ -4714,7 +5070,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 53,
+        RowNum: 57,
     },
     {
         StoreCode1: '00001',
@@ -4803,7 +5159,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 54,
+        RowNum: 58,
     },
     {
         StoreCode1: '00001',
@@ -4892,7 +5248,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 55,
+        RowNum: 59,
     },
     {
         StoreCode1: '00001',
@@ -4981,7 +5337,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 56,
+        RowNum: 60,
     },
     {
         StoreCode1: '00001',
@@ -5070,7 +5426,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 57,
+        RowNum: 61,
     },
     {
         StoreCode1: '00001',
@@ -5159,7 +5515,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 58,
+        RowNum: 62,
     },
     {
         StoreCode1: '00001',
@@ -5248,7 +5604,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 59,
+        RowNum: 63,
     },
     {
         StoreCode1: '00001',
@@ -5337,7 +5693,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 60,
+        RowNum: 64,
     },
     {
         StoreCode1: '00001',
@@ -5426,7 +5782,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 61,
+        RowNum: 65,
     },
     {
         StoreCode1: '00001',
@@ -5515,7 +5871,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 62,
+        RowNum: 66,
     },
     {
         StoreCode1: '00001',
@@ -5604,7 +5960,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 63,
+        RowNum: 67,
     },
     {
         StoreCode1: '00001',
@@ -5693,7 +6049,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 64,
+        RowNum: 68,
     },
     {
         StoreCode1: '00001',
@@ -5782,7 +6138,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 65,
+        RowNum: 69,
     },
     {
         StoreCode1: '00001',
@@ -5871,7 +6227,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 66,
+        RowNum: 70,
     },
     {
         StoreCode1: '00001',
@@ -5960,7 +6316,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 67,
+        RowNum: 71,
     },
     {
         StoreCode1: '00001',
@@ -6049,7 +6405,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 68,
+        RowNum: 72,
     },
     {
         StoreCode1: '00001',
@@ -6138,7 +6494,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 69,
+        RowNum: 73,
     },
     {
         StoreCode1: '00001',
@@ -6227,7 +6583,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 70,
+        RowNum: 74,
     },
     {
         StoreCode1: '00001',
@@ -6316,7 +6672,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 71,
+        RowNum: 75,
     },
     {
         StoreCode1: '00001',
@@ -6405,7 +6761,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 72,
+        RowNum: 76,
     },
     {
         StoreCode1: '00001',
@@ -6494,7 +6850,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 73,
+        RowNum: 77,
     },
     {
         StoreCode1: '00001',
@@ -6583,7 +6939,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 74,
+        RowNum: 78,
     },
     {
         StoreCode1: '00001',
@@ -6672,7 +7028,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 75,
+        RowNum: 79,
     },
     {
         StoreCode1: '00001',
@@ -6761,7 +7117,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 76,
+        RowNum: 80,
     },
     {
         StoreCode1: '00001',
@@ -6850,7 +7206,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 77,
+        RowNum: 81,
     },
     {
         StoreCode1: '00001',
@@ -6939,7 +7295,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 78,
+        RowNum: 82,
     },
     {
         StoreCode1: '00001',
@@ -7028,7 +7384,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 79,
+        RowNum: 83,
     },
     {
         StoreCode1: '00001',
@@ -7117,7 +7473,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 80,
+        RowNum: 84,
     },
     {
         StoreCode1: '00001',
@@ -7206,7 +7562,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 81,
+        RowNum: 85,
     },
     {
         StoreCode1: '00001',
@@ -7295,7 +7651,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 82,
+        RowNum: 86,
     },
     {
         StoreCode1: '00001',
@@ -7384,7 +7740,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 83,
+        RowNum: 87,
     },
     {
         StoreCode1: '00001',
@@ -7473,7 +7829,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 84,
+        RowNum: 88,
     },
     {
         StoreCode1: '00001',
@@ -7562,7 +7918,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 85,
+        RowNum: 89,
     },
     {
         StoreCode1: '00001',
@@ -7651,7 +8007,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 86,
+        RowNum: 90,
     },
     {
         StoreCode1: '00001',
@@ -7740,7 +8096,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 87,
+        RowNum: 91,
     },
     {
         StoreCode1: '00001',
@@ -7829,7 +8185,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 88,
+        RowNum: 92,
     },
     {
         StoreCode1: '00001',
@@ -7918,7 +8274,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 89,
+        RowNum: 93,
     },
     {
         StoreCode1: '00001',
@@ -8007,7 +8363,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 90,
+        RowNum: 94,
     },
     {
         StoreCode1: '00001',
@@ -8096,7 +8452,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 91,
+        RowNum: 95,
     },
     {
         StoreCode1: '00001',
@@ -8185,7 +8541,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 92,
+        RowNum: 96,
     },
     {
         StoreCode1: '00001',
@@ -8274,7 +8630,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 93,
+        RowNum: 97,
     },
     {
         StoreCode1: '00001',
@@ -8363,7 +8719,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 94,
+        RowNum: 98,
     },
     {
         StoreCode1: '00001',
@@ -8452,7 +8808,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 95,
+        RowNum: 99,
     },
     {
         StoreCode1: '00001',
@@ -8541,7 +8897,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 96,
+        RowNum: 100,
     },
     {
         StoreCode1: '00001',
@@ -8630,7 +8986,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 97,
+        RowNum: 101,
     },
     {
         StoreCode1: '00001',
@@ -8719,7 +9075,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 98,
+        RowNum: 102,
     },
     {
         StoreCode1: '00001',
@@ -8808,7 +9164,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 99,
+        RowNum: 103,
     },
     {
         StoreCode1: '00001',
@@ -8897,7 +9253,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 100,
+        RowNum: 104,
     },
     {
         StoreCode1: '00001',
@@ -8986,7 +9342,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 101,
+        RowNum: 105,
     },
     {
         StoreCode1: '00001',
@@ -9075,7 +9431,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 102,
+        RowNum: 106,
     },
     {
         StoreCode1: '00001',
@@ -9164,7 +9520,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 103,
+        RowNum: 107,
     },
     {
         StoreCode1: '00001',
@@ -9253,7 +9609,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 104,
+        RowNum: 108,
     },
     {
         StoreCode1: '00001',
@@ -9342,7 +9698,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 105,
+        RowNum: 109,
     },
     {
         StoreCode1: '00001',
@@ -9431,7 +9787,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 106,
+        RowNum: 110,
     },
     {
         StoreCode1: '00001',
@@ -9520,7 +9876,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 107,
+        RowNum: 111,
     },
     {
         StoreCode1: '00001',
@@ -9609,7 +9965,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 108,
+        RowNum: 112,
     },
     {
         StoreCode1: '00001',
@@ -9698,7 +10054,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 109,
+        RowNum: 113,
     },
     {
         StoreCode1: '00001',
@@ -9787,7 +10143,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 110,
+        RowNum: 114,
     },
     {
         StoreCode1: '00001',
@@ -9876,7 +10232,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 111,
+        RowNum: 115,
     },
     {
         StoreCode1: '00001',
@@ -9965,7 +10321,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 112,
+        RowNum: 116,
     },
     {
         StoreCode1: '00001',
@@ -10054,7 +10410,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 113,
+        RowNum: 117,
     },
     {
         StoreCode1: '00001',
@@ -10143,7 +10499,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 114,
+        RowNum: 118,
     },
     {
         StoreCode1: '00001',
@@ -10232,7 +10588,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 115,
+        RowNum: 119,
     },
     {
         StoreCode1: '00001',
@@ -10321,7 +10677,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 116,
+        RowNum: 120,
     },
     {
         StoreCode1: '00001',
@@ -10410,7 +10766,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 117,
+        RowNum: 121,
     },
     {
         StoreCode1: '00001',
@@ -10499,7 +10855,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 118,
+        RowNum: 122,
     },
     {
         StoreCode1: '00001',
@@ -10588,7 +10944,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 119,
+        RowNum: 123,
     },
     {
         StoreCode1: '00001',
@@ -10677,7 +11033,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 120,
+        RowNum: 124,
     },
     {
         StoreCode1: '00001',
@@ -10766,7 +11122,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 121,
+        RowNum: 125,
     },
     {
         StoreCode1: '00001',
@@ -10855,7 +11211,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 122,
+        RowNum: 126,
     },
     {
         StoreCode1: '00001',
@@ -10944,7 +11300,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 123,
+        RowNum: 127,
     },
     {
         StoreCode1: '00001',
@@ -11033,7 +11389,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 124,
+        RowNum: 128,
     },
     {
         StoreCode1: '00001',
@@ -11122,7 +11478,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 125,
+        RowNum: 129,
     },
     {
         StoreCode1: '00001',
@@ -11211,7 +11567,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 126,
+        RowNum: 130,
     },
     {
         StoreCode1: '00001',
@@ -11300,7 +11656,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 127,
+        RowNum: 131,
     },
     {
         StoreCode1: '00001',
@@ -11389,7 +11745,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 128,
+        RowNum: 132,
     },
     {
         StoreCode1: '00001',
@@ -11478,7 +11834,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 129,
+        RowNum: 133,
     },
     {
         StoreCode1: '00001',
@@ -11567,7 +11923,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 130,
+        RowNum: 134,
     },
     {
         StoreCode1: '00001',
@@ -11656,7 +12012,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 131,
+        RowNum: 135,
     },
     {
         StoreCode1: '00001',
@@ -11745,7 +12101,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 132,
+        RowNum: 136,
     },
     {
         StoreCode1: '00001',
@@ -11834,7 +12190,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 133,
+        RowNum: 137,
     },
     {
         StoreCode1: '00001',
@@ -11923,7 +12279,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 134,
+        RowNum: 138,
     },
     {
         StoreCode1: '00001',
@@ -12012,7 +12368,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 135,
+        RowNum: 139,
     },
     {
         StoreCode1: '00001',
@@ -12101,7 +12457,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 136,
+        RowNum: 140,
     },
     {
         StoreCode1: '00001',
@@ -12190,7 +12546,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 137,
+        RowNum: 141,
     },
     {
         StoreCode1: '00001',
@@ -12279,7 +12635,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 138,
+        RowNum: 142,
     },
     {
         StoreCode1: '00001',
@@ -12368,7 +12724,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 139,
+        RowNum: 143,
     },
     {
         StoreCode1: '00001',
@@ -12457,7 +12813,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 140,
+        RowNum: 144,
     },
     {
         StoreCode1: '00001',
@@ -12546,7 +12902,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 141,
+        RowNum: 145,
     },
     {
         StoreCode1: '00001',
@@ -12635,7 +12991,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 142,
+        RowNum: 146,
     },
     {
         StoreCode1: '00001',
@@ -12724,7 +13080,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 143,
+        RowNum: 147,
     },
     {
         StoreCode1: '00001',
@@ -12813,7 +13169,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 144,
+        RowNum: 148,
     },
     {
         StoreCode1: '00001',
@@ -12902,7 +13258,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 145,
+        RowNum: 149,
     },
     {
         StoreCode1: '00001',
@@ -12991,7 +13347,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 146,
+        RowNum: 150,
     },
     {
         StoreCode1: '00001',
@@ -13080,7 +13436,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 147,
+        RowNum: 151,
     },
     {
         StoreCode1: '00001',
@@ -13169,7 +13525,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 148,
+        RowNum: 152,
     },
     {
         StoreCode1: '00001',
@@ -13258,7 +13614,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 149,
+        RowNum: 153,
     },
     {
         StoreCode1: '00001',
@@ -13347,7 +13703,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 150,
+        RowNum: 154,
     },
     {
         StoreCode1: '00001',
@@ -13436,7 +13792,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 151,
+        RowNum: 155,
     },
     {
         StoreCode1: '00001',
@@ -13525,7 +13881,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 152,
+        RowNum: 156,
     },
     {
         StoreCode1: '00001',
@@ -13614,7 +13970,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 153,
+        RowNum: 157,
     },
     {
         StoreCode1: '00001',
@@ -13703,7 +14059,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 154,
+        RowNum: 158,
     },
     {
         StoreCode1: '00001',
@@ -13792,7 +14148,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 155,
+        RowNum: 159,
     },
     {
         StoreCode1: '00001',
@@ -13881,7 +14237,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 156,
+        RowNum: 160,
     },
     {
         StoreCode1: '00001',
@@ -13970,7 +14326,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 157,
+        RowNum: 161,
     },
     {
         StoreCode1: '00001',
@@ -14059,7 +14415,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 158,
+        RowNum: 162,
     },
     {
         StoreCode1: '00001',
@@ -14148,7 +14504,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 159,
+        RowNum: 163,
     },
     {
         StoreCode1: '00001',
@@ -14237,7 +14593,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 160,
+        RowNum: 164,
     },
     {
         StoreCode1: '00001',
@@ -14326,7 +14682,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 161,
+        RowNum: 165,
     },
     {
         StoreCode1: '00001',
@@ -14415,7 +14771,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 162,
+        RowNum: 166,
     },
     {
         StoreCode1: '00001',
@@ -14504,7 +14860,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 163,
+        RowNum: 167,
     },
     {
         StoreCode1: '00001',
@@ -14593,7 +14949,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 164,
+        RowNum: 168,
     },
     {
         StoreCode1: '00001',
@@ -14682,7 +15038,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 165,
+        RowNum: 169,
     },
     {
         StoreCode1: '00001',
@@ -14771,7 +15127,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 166,
+        RowNum: 170,
     },
     {
         StoreCode1: '00001',
@@ -14860,7 +15216,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 167,
+        RowNum: 171,
     },
     {
         StoreCode1: '00001',
@@ -14949,7 +15305,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 168,
+        RowNum: 172,
     },
     {
         StoreCode1: '00001',
@@ -15038,7 +15394,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 169,
+        RowNum: 173,
     },
     {
         StoreCode1: '00001',
@@ -15127,7 +15483,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 170,
+        RowNum: 174,
     },
     {
         StoreCode1: '00001',
@@ -15216,7 +15572,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 171,
+        RowNum: 175,
     },
     {
         StoreCode1: '00001',
@@ -15305,7 +15661,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 172,
+        RowNum: 176,
     },
     {
         StoreCode1: '00001',
@@ -15394,7 +15750,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 173,
+        RowNum: 177,
     },
     {
         StoreCode1: '00001',
@@ -15483,7 +15839,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 174,
+        RowNum: 178,
     },
     {
         StoreCode1: '00001',
@@ -15572,7 +15928,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 175,
+        RowNum: 179,
     },
     {
         StoreCode1: '00001',
@@ -15661,7 +16017,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 176,
+        RowNum: 180,
     },
     {
         StoreCode1: '00001',
@@ -15750,7 +16106,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 177,
+        RowNum: 181,
     },
     {
         StoreCode1: '00001',
@@ -15839,7 +16195,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 178,
+        RowNum: 182,
     },
     {
         StoreCode1: '00001',
@@ -15928,7 +16284,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 179,
+        RowNum: 183,
     },
     {
         StoreCode1: '00001',
@@ -16017,7 +16373,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 180,
+        RowNum: 184,
     },
     {
         StoreCode1: '00001',
@@ -16106,7 +16462,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 181,
+        RowNum: 185,
     },
     {
         StoreCode1: '00001',
@@ -16195,7 +16551,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 182,
+        RowNum: 186,
     },
     {
         StoreCode1: '00001',
@@ -16284,7 +16640,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 183,
+        RowNum: 187,
     },
     {
         StoreCode1: '00001',
@@ -16373,7 +16729,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 184,
+        RowNum: 188,
     },
     {
         StoreCode1: '00001',
@@ -16462,7 +16818,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 185,
+        RowNum: 189,
     },
     {
         StoreCode1: '00001',
@@ -16551,7 +16907,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 186,
+        RowNum: 190,
     },
     {
         StoreCode1: '00001',
@@ -16640,7 +16996,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 187,
+        RowNum: 191,
     },
     {
         StoreCode1: '00001',
@@ -16729,7 +17085,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 188,
+        RowNum: 192,
     },
     {
         StoreCode1: '00001',
@@ -16818,7 +17174,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 189,
+        RowNum: 193,
     },
     {
         StoreCode1: '00001',
@@ -16907,7 +17263,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 190,
+        RowNum: 194,
     },
     {
         StoreCode1: '00001',
@@ -16996,7 +17352,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 191,
+        RowNum: 195,
     },
     {
         StoreCode1: '00001',
@@ -17085,7 +17441,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 192,
+        RowNum: 196,
     },
     {
         StoreCode1: '00001',
@@ -17174,7 +17530,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 193,
+        RowNum: 197,
     },
     {
         StoreCode1: '00001',
@@ -17263,7 +17619,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 194,
+        RowNum: 198,
     },
     {
         StoreCode1: '00001',
@@ -17352,7 +17708,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 195,
+        RowNum: 199,
     },
     {
         StoreCode1: '00001',
@@ -17441,7 +17797,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 196,
+        RowNum: 200,
     },
     {
         StoreCode1: '00001',
@@ -17530,7 +17886,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 197,
+        RowNum: 201,
     },
     {
         StoreCode1: '00001',
@@ -17619,7 +17975,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 198,
+        RowNum: 202,
     },
     {
         StoreCode1: '00001',
@@ -17708,7 +18064,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 199,
+        RowNum: 203,
     },
     {
         StoreCode1: '00001',
@@ -17797,7 +18153,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 200,
+        RowNum: 204,
     },
     {
         StoreCode1: '00001',
@@ -17886,7 +18242,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 201,
+        RowNum: 205,
     },
     {
         StoreCode1: '00001',
@@ -17975,7 +18331,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 202,
+        RowNum: 206,
     },
     {
         StoreCode1: '00001',
@@ -18064,7 +18420,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 203,
+        RowNum: 207,
     },
     {
         StoreCode1: '00001',
@@ -18153,7 +18509,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 204,
+        RowNum: 208,
     },
     {
         StoreCode1: '00001',
@@ -18242,7 +18598,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 205,
+        RowNum: 209,
     },
     {
         StoreCode1: '00001',
@@ -18331,7 +18687,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 206,
+        RowNum: 210,
     },
     {
         StoreCode1: '00001',
@@ -18420,7 +18776,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 207,
+        RowNum: 211,
     },
     {
         StoreCode1: '00001',
@@ -18509,7 +18865,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 208,
+        RowNum: 212,
     },
     {
         StoreCode1: '00001',
@@ -18598,7 +18954,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 209,
+        RowNum: 213,
     },
     {
         StoreCode1: '00001',
@@ -18687,7 +19043,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 210,
+        RowNum: 214,
     },
     {
         StoreCode1: '00001',
@@ -18776,7 +19132,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 211,
+        RowNum: 215,
     },
     {
         StoreCode1: '00001',
@@ -18865,7 +19221,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 212,
+        RowNum: 216,
     },
     {
         StoreCode1: '00001',
@@ -18954,7 +19310,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 213,
+        RowNum: 217,
     },
     {
         StoreCode1: '00001',
@@ -19043,7 +19399,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 214,
+        RowNum: 218,
     },
     {
         StoreCode1: '00001',
@@ -19132,7 +19488,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 215,
+        RowNum: 219,
     },
     {
         StoreCode1: '00001',
@@ -19221,7 +19577,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 216,
+        RowNum: 220,
     },
     {
         StoreCode1: '00001',
@@ -19310,7 +19666,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 217,
+        RowNum: 221,
     },
     {
         StoreCode1: '00001',
@@ -19399,7 +19755,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 218,
+        RowNum: 222,
     },
     {
         StoreCode1: '00001',
@@ -19488,7 +19844,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 219,
+        RowNum: 223,
     },
     {
         StoreCode1: '00001',
@@ -19577,7 +19933,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 220,
+        RowNum: 224,
     },
     {
         StoreCode1: '00001',
@@ -19666,7 +20022,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 221,
+        RowNum: 225,
     },
     {
         StoreCode1: '00001',
@@ -19755,7 +20111,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 222,
+        RowNum: 226,
     },
     {
         StoreCode1: '00001',
@@ -19844,7 +20200,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 223,
+        RowNum: 227,
     },
     {
         StoreCode1: '00001',
@@ -19933,7 +20289,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 224,
+        RowNum: 228,
     },
     {
         StoreCode1: '00001',
@@ -20022,7 +20378,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 225,
+        RowNum: 229,
     },
     {
         StoreCode1: '00001',
@@ -20111,7 +20467,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 226,
+        RowNum: 230,
     },
     {
         StoreCode1: '00001',
@@ -20200,7 +20556,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 227,
+        RowNum: 231,
     },
     {
         StoreCode1: '00001',
@@ -20289,7 +20645,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 228,
+        RowNum: 232,
     },
     {
         StoreCode1: '00001',
@@ -20378,7 +20734,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 229,
+        RowNum: 233,
     },
     {
         StoreCode1: '00001',
@@ -20467,7 +20823,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 230,
+        RowNum: 234,
     },
     {
         StoreCode1: '00001',
@@ -20556,7 +20912,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 231,
+        RowNum: 235,
     },
     {
         StoreCode1: '00001',
@@ -20645,7 +21001,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 232,
+        RowNum: 236,
     },
     {
         StoreCode1: '00001',
@@ -20734,7 +21090,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 233,
+        RowNum: 237,
     },
     {
         StoreCode1: '00001',
@@ -20823,7 +21179,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 234,
+        RowNum: 238,
     },
     {
         StoreCode1: '00001',
@@ -20912,7 +21268,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 235,
+        RowNum: 239,
     },
     {
         StoreCode1: '00001',
@@ -21001,7 +21357,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 236,
+        RowNum: 240,
     },
     {
         StoreCode1: '00001',
@@ -21090,7 +21446,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 237,
+        RowNum: 241,
     },
     {
         StoreCode1: '00001',
@@ -21179,7 +21535,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 238,
+        RowNum: 242,
     },
     {
         StoreCode1: '00001',
@@ -21268,7 +21624,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 239,
+        RowNum: 243,
     },
     {
         StoreCode1: '00001',
@@ -21357,7 +21713,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 240,
+        RowNum: 244,
     },
     {
         StoreCode1: '00001',
@@ -21446,7 +21802,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 241,
+        RowNum: 245,
     },
     {
         StoreCode1: '00001',
@@ -21535,7 +21891,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 242,
+        RowNum: 246,
     },
     {
         StoreCode1: '00001',
@@ -21624,7 +21980,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 243,
+        RowNum: 247,
     },
     {
         StoreCode1: '00001',
@@ -21713,7 +22069,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 244,
+        RowNum: 248,
     },
     {
         StoreCode1: '00001',
@@ -21802,7 +22158,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 245,
+        RowNum: 249,
     },
     {
         StoreCode1: '00001',
@@ -21891,7 +22247,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 246,
+        RowNum: 250,
     },
     {
         StoreCode1: '00001',
@@ -21980,7 +22336,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 247,
+        RowNum: 251,
     },
     {
         StoreCode1: '00001',
@@ -22069,7 +22425,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 248,
+        RowNum: 252,
     },
     {
         StoreCode1: '00001',
@@ -22158,7 +22514,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 249,
+        RowNum: 253,
     },
     {
         StoreCode1: '00001',
@@ -22247,7 +22603,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 250,
+        RowNum: 254,
     },
     {
         StoreCode1: '00001',
@@ -22336,7 +22692,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 251,
+        RowNum: 255,
     },
     {
         StoreCode1: '00001',
@@ -22425,7 +22781,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 252,
+        RowNum: 256,
     },
     {
         StoreCode1: '00001',
@@ -22514,7 +22870,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 253,
+        RowNum: 257,
     },
     {
         StoreCode1: '00001',
@@ -22603,7 +22959,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 254,
+        RowNum: 258,
     },
     {
         StoreCode1: '00001',
@@ -22692,7 +23048,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 255,
+        RowNum: 259,
     },
     {
         StoreCode1: '00001',
@@ -22781,7 +23137,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 256,
+        RowNum: 260,
     },
     {
         StoreCode1: '00001',
@@ -22870,7 +23226,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 257,
+        RowNum: 261,
     },
     {
         StoreCode1: '00001',
@@ -22959,7 +23315,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 258,
+        RowNum: 262,
     },
     {
         StoreCode1: '00001',
@@ -23048,7 +23404,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 259,
+        RowNum: 263,
     },
     {
         StoreCode1: '00001',
@@ -23137,7 +23493,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 260,
+        RowNum: 264,
     },
     {
         StoreCode1: '00001',
@@ -23226,7 +23582,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 261,
+        RowNum: 265,
     },
     {
         StoreCode1: '00001',
@@ -23315,7 +23671,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 262,
+        RowNum: 266,
     },
     {
         StoreCode1: '00001',
@@ -23404,7 +23760,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 263,
+        RowNum: 267,
     },
     {
         StoreCode1: '00001',
@@ -23493,7 +23849,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 264,
+        RowNum: 268,
     },
     {
         StoreCode1: '00001',
@@ -23582,7 +23938,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 265,
+        RowNum: 269,
     },
     {
         StoreCode1: '00001',
@@ -23671,7 +24027,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 266,
+        RowNum: 270,
     },
     {
         StoreCode1: '00001',
@@ -23760,7 +24116,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 267,
+        RowNum: 271,
     },
     {
         StoreCode1: '00001',
@@ -23849,7 +24205,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 268,
+        RowNum: 272,
     },
     {
         StoreCode1: '00001',
@@ -23938,7 +24294,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 269,
+        RowNum: 273,
     },
     {
         StoreCode1: '00001',
@@ -24027,7 +24383,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 270,
+        RowNum: 274,
     },
     {
         StoreCode1: '00001',
@@ -24116,7 +24472,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 271,
+        RowNum: 275,
     },
     {
         StoreCode1: '00001',
@@ -24205,7 +24561,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 272,
+        RowNum: 276,
     },
     {
         StoreCode1: '00001',
@@ -24294,7 +24650,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 273,
+        RowNum: 277,
     },
     {
         StoreCode1: '00001',
@@ -24383,7 +24739,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 274,
+        RowNum: 278,
     },
     {
         StoreCode1: '00001',
@@ -24472,7 +24828,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 275,
+        RowNum: 279,
     },
     {
         StoreCode1: '00001',
@@ -24561,7 +24917,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 276,
+        RowNum: 280,
     },
     {
         StoreCode1: '00001',
@@ -24650,7 +25006,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 277,
+        RowNum: 281,
     },
     {
         StoreCode1: '00001',
@@ -24739,7 +25095,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 278,
+        RowNum: 282,
     },
     {
         StoreCode1: '00001',
@@ -24828,7 +25184,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 279,
+        RowNum: 283,
     },
     {
         StoreCode1: '00001',
@@ -24917,7 +25273,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 280,
+        RowNum: 284,
     },
     {
         StoreCode1: '00001',
@@ -25006,7 +25362,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 281,
+        RowNum: 285,
     },
     {
         StoreCode1: '00001',
@@ -25095,7 +25451,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 282,
+        RowNum: 286,
     },
     {
         StoreCode1: '00001',
@@ -25184,7 +25540,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 283,
+        RowNum: 287,
     },
     {
         StoreCode1: '00001',
@@ -25273,7 +25629,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 284,
+        RowNum: 288,
     },
     {
         StoreCode1: '00001',
@@ -25362,7 +25718,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 285,
+        RowNum: 289,
     },
     {
         StoreCode1: '00001',
@@ -25451,7 +25807,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 286,
+        RowNum: 290,
     },
     {
         StoreCode1: '00001',
@@ -25540,7 +25896,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 287,
+        RowNum: 291,
     },
     {
         StoreCode1: '00001',
@@ -25629,7 +25985,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 288,
+        RowNum: 292,
     },
     {
         StoreCode1: '00001',
@@ -25718,7 +26074,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 289,
+        RowNum: 293,
     },
     {
         StoreCode1: '00001',
@@ -25807,7 +26163,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 290,
+        RowNum: 294,
     },
     {
         StoreCode1: '00001',
@@ -25896,7 +26252,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 291,
+        RowNum: 295,
     },
     {
         StoreCode1: '00001',
@@ -25985,7 +26341,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 292,
+        RowNum: 296,
     },
     {
         StoreCode1: '00001',
@@ -26074,7 +26430,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 293,
+        RowNum: 297,
     },
     {
         StoreCode1: '00001',
@@ -26163,7 +26519,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 294,
+        RowNum: 298,
     },
     {
         StoreCode1: '00001',
@@ -26252,7 +26608,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 295,
+        RowNum: 299,
     },
     {
         StoreCode1: '00001',
@@ -26341,7 +26697,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 296,
+        RowNum: 300,
     },
     {
         StoreCode1: '00001',
@@ -26430,7 +26786,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 297,
+        RowNum: 301,
     },
     {
         StoreCode1: '00001',
@@ -26519,7 +26875,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 298,
+        RowNum: 302,
     },
     {
         StoreCode1: '00001',
@@ -26608,7 +26964,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 299,
+        RowNum: 303,
     },
     {
         StoreCode1: '00001',
@@ -26697,7 +27053,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 300,
+        RowNum: 304,
     },
     {
         StoreCode1: '00001',
@@ -26786,7 +27142,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 301,
+        RowNum: 305,
     },
     {
         StoreCode1: '00001',
@@ -26875,7 +27231,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 302,
+        RowNum: 306,
     },
     {
         StoreCode1: '00001',
@@ -26964,7 +27320,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 303,
+        RowNum: 307,
     },
     {
         StoreCode1: '00001',
@@ -27053,7 +27409,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 304,
+        RowNum: 308,
     },
     {
         StoreCode1: '00001',
@@ -27142,7 +27498,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 305,
+        RowNum: 309,
     },
     {
         StoreCode1: '00001',
@@ -27231,7 +27587,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 306,
+        RowNum: 310,
     },
     {
         StoreCode1: '00001',
@@ -27320,7 +27676,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 307,
+        RowNum: 311,
     },
     {
         StoreCode1: '00001',
@@ -27409,7 +27765,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 308,
+        RowNum: 312,
     },
     {
         StoreCode1: '00001',
@@ -27498,7 +27854,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 309,
+        RowNum: 313,
     },
     {
         StoreCode1: '00001',
@@ -27587,7 +27943,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 310,
+        RowNum: 314,
     },
     {
         StoreCode1: '00001',
@@ -27676,7 +28032,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 311,
+        RowNum: 315,
     },
     {
         StoreCode1: '00001',
@@ -27765,7 +28121,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 312,
+        RowNum: 316,
     },
     {
         StoreCode1: '00001',
@@ -27854,7 +28210,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 313,
+        RowNum: 317,
     },
     {
         StoreCode1: '00001',
@@ -27943,7 +28299,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 314,
+        RowNum: 318,
     },
     {
         StoreCode1: '00001',
@@ -28032,7 +28388,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '172049051012019972',
         RESERVATION_CODE: '8PKMMPHO2GXM0D2',
         QR_CODE: 0,
-        RowNum: 315,
+        RowNum: 319,
     },
     {
         StoreCode1: '00001',
@@ -28121,7 +28477,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '172049053402243476',
         RESERVATION_CODE: 'YT5N47WEBYOKV0C',
         QR_CODE: 0,
-        RowNum: 316,
+        RowNum: 320,
     },
     {
         StoreCode1: '00001',
@@ -28210,7 +28566,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '172049049400017203',
         RESERVATION_CODE: '61K1KI51SBNL76Q',
         QR_CODE: 0,
-        RowNum: 317,
+        RowNum: 321,
     },
     {
         StoreCode1: '00001',
@@ -28299,7 +28655,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 318,
+        RowNum: 322,
     },
     {
         StoreCode1: '00001',
@@ -28388,7 +28744,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 319,
+        RowNum: 323,
     },
     {
         StoreCode1: '00001',
@@ -28477,7 +28833,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 320,
+        RowNum: 324,
     },
     {
         StoreCode1: '00001',
@@ -28566,7 +28922,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 321,
+        RowNum: 325,
     },
     {
         StoreCode1: '00001',
@@ -28655,7 +29011,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 322,
+        RowNum: 326,
     },
     {
         StoreCode1: '00001',
@@ -28744,7 +29100,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 323,
+        RowNum: 327,
     },
     {
         StoreCode1: '00001',
@@ -28833,7 +29189,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 324,
+        RowNum: 328,
     },
     {
         StoreCode1: '00001',
@@ -28922,7 +29278,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 325,
+        RowNum: 329,
     },
     {
         StoreCode1: '00001',
@@ -29011,7 +29367,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 326,
+        RowNum: 330,
     },
     {
         StoreCode1: '00001',
@@ -29100,7 +29456,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 327,
+        RowNum: 331,
     },
     {
         StoreCode1: '00001',
@@ -29189,7 +29545,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 328,
+        RowNum: 332,
     },
     {
         StoreCode1: '00001',
@@ -29278,7 +29634,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 329,
+        RowNum: 333,
     },
     {
         StoreCode1: '00001',
@@ -29367,7 +29723,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 330,
+        RowNum: 334,
     },
     {
         StoreCode1: '00001',
@@ -29456,7 +29812,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 331,
+        RowNum: 335,
     },
     {
         StoreCode1: '00001',
@@ -29545,7 +29901,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 332,
+        RowNum: 336,
     },
     {
         StoreCode1: '00001',
@@ -29634,7 +29990,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 333,
+        RowNum: 337,
     },
     {
         StoreCode1: '00001',
@@ -29723,7 +30079,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 334,
+        RowNum: 338,
     },
     {
         StoreCode1: '00001',
@@ -29812,7 +30168,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 335,
+        RowNum: 339,
     },
     {
         StoreCode1: '00001',
@@ -29901,7 +30257,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 336,
+        RowNum: 340,
     },
     {
         StoreCode1: '00001',
@@ -29990,7 +30346,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 337,
+        RowNum: 341,
     },
     {
         StoreCode1: '00001',
@@ -30079,7 +30435,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 338,
+        RowNum: 342,
     },
     {
         StoreCode1: '00001',
@@ -30168,7 +30524,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 339,
+        RowNum: 343,
     },
     {
         StoreCode1: '00001',
@@ -30257,7 +30613,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 340,
+        RowNum: 344,
     },
     {
         StoreCode1: '00001',
@@ -30346,7 +30702,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 341,
+        RowNum: 345,
     },
     {
         StoreCode1: '00001',
@@ -30435,7 +30791,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 342,
+        RowNum: 346,
     },
     {
         StoreCode1: '00001',
@@ -30524,7 +30880,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 343,
+        RowNum: 347,
     },
     {
         StoreCode1: '00001',
@@ -30613,7 +30969,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 344,
+        RowNum: 348,
     },
     {
         StoreCode1: '00001',
@@ -30702,7 +31058,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 345,
+        RowNum: 349,
     },
     {
         StoreCode1: '00001',
@@ -30791,7 +31147,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 346,
+        RowNum: 350,
     },
     {
         StoreCode1: '00001',
@@ -30880,7 +31236,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 347,
+        RowNum: 351,
     },
     {
         StoreCode1: '00001',
@@ -30969,7 +31325,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 348,
+        RowNum: 352,
     },
     {
         StoreCode1: '00001',
@@ -31058,7 +31414,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 349,
+        RowNum: 353,
     },
     {
         StoreCode1: '00001',
@@ -31147,7 +31503,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 350,
+        RowNum: 354,
     },
     {
         StoreCode1: '00001',
@@ -31236,7 +31592,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 351,
+        RowNum: 355,
     },
     {
         StoreCode1: '00001',
@@ -31325,7 +31681,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 352,
+        RowNum: 356,
     },
     {
         StoreCode1: '00001',
@@ -31414,7 +31770,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 353,
+        RowNum: 357,
     },
     {
         StoreCode1: '00001',
@@ -31503,7 +31859,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 354,
+        RowNum: 358,
     },
     {
         StoreCode1: '00001',
@@ -31592,7 +31948,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 355,
+        RowNum: 359,
     },
     {
         StoreCode1: '00001',
@@ -31681,7 +32037,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 356,
+        RowNum: 360,
     },
     {
         StoreCode1: '00001',
@@ -31770,7 +32126,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 357,
+        RowNum: 361,
     },
     {
         StoreCode1: '00001',
@@ -31859,7 +32215,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 358,
+        RowNum: 362,
     },
     {
         StoreCode1: '00001',
@@ -31948,7 +32304,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 359,
+        RowNum: 363,
     },
     {
         StoreCode1: '00001',
@@ -32037,7 +32393,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 360,
+        RowNum: 364,
     },
     {
         StoreCode1: '00001',
@@ -32126,7 +32482,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 361,
+        RowNum: 365,
     },
     {
         StoreCode1: '00001',
@@ -32215,7 +32571,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 362,
+        RowNum: 366,
     },
     {
         StoreCode1: '00001',
@@ -32304,7 +32660,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 363,
+        RowNum: 367,
     },
     {
         StoreCode1: '00001',
@@ -32393,7 +32749,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 364,
+        RowNum: 368,
     },
     {
         StoreCode1: '00001',
@@ -32482,7 +32838,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 365,
+        RowNum: 369,
     },
     {
         StoreCode1: '00001',
@@ -32571,7 +32927,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 366,
+        RowNum: 370,
     },
     {
         StoreCode1: '00001',
@@ -32660,7 +33016,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 367,
+        RowNum: 371,
     },
     {
         StoreCode1: '00001',
@@ -32749,7 +33105,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 368,
+        RowNum: 372,
     },
     {
         StoreCode1: '00001',
@@ -32838,7 +33194,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 369,
+        RowNum: 373,
     },
     {
         StoreCode1: '00001',
@@ -32927,7 +33283,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 370,
+        RowNum: 374,
     },
     {
         StoreCode1: '00001',
@@ -33016,7 +33372,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 371,
+        RowNum: 375,
     },
     {
         StoreCode1: '00001',
@@ -33105,7 +33461,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 372,
+        RowNum: 376,
     },
     {
         StoreCode1: '00001',
@@ -33194,7 +33550,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 373,
+        RowNum: 377,
     },
     {
         StoreCode1: '00001',
@@ -33283,7 +33639,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: {},
         RESERVATION_CODE: {},
         QR_CODE: 0,
-        RowNum: 374,
+        RowNum: 378,
     },
     {
         StoreCode1: '00001',
@@ -33372,7 +33728,7 @@ export const salesRangeDates = [
         TRANSACTION_ID: '0',
         RESERVATION_CODE: '0',
         QR_CODE: 0,
-        RowNum: 375,
+        RowNum: 379,
     },
 ];
 
@@ -33796,5 +34152,40 @@ export const salesByItemAndRangeDates = [
         매출금액: 555555,
         매출수량: 5,
         RowNum: 70,
+    },
+];
+
+export const billCancels = [
+    {
+        modificatonDate: '2024-09-06T11:51:14',
+        saleAmount: -2160000,
+        quantity: -1,
+        itemName: 'Mì cắt (칼국수)',
+        storeName: 'HYOJUNG',
+        RowNum: 1,
+    },
+    {
+        modificatonDate: '2024-09-06T11:51:14',
+        saleAmount: -2160000,
+        quantity: -1,
+        itemName: 'Mì cắt (칼국수)',
+        storeName: 'HYOJUNG',
+        RowNum: 1,
+    },
+    {
+        modificatonDate: '2024-09-06T11:52:14',
+        saleAmount: -2160000,
+        quantity: -1,
+        itemName: 'Mì cắt (칼국수)',
+        storeName: 'HYOJUNG',
+        RowNum: 1,
+    },
+    {
+        modificatonDate: '2024-09-06T11:56:14',
+        saleAmount: -2160000,
+        quantity: -1,
+        itemName: 'Mì cắt (칼국수)',
+        storeName: 'HYOJUNG',
+        RowNum: 1,
     },
 ];

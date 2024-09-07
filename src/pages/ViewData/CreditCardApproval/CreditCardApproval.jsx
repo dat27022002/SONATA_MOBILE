@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './CreditCardApprovalStyles';
-import { GlobalStyle, imageRequire } from '../../../config';
+import { imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
     RowTableSummary,
@@ -12,39 +12,35 @@ import {
     DateRangePicker,
     BtnSearch,
     ViewSaleCurrent,
-    BarChartCustom,
     BtnFilter,
     ViewContainer,
+    Loading,
 } from '../../../components';
+import { getCreditCardApproval } from './CreditCardApprovalLogic';
+
+const listStore = ['hyojung'];
 
 const CreditCardApproval = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const today = new Date();
+    const today2 = new Date();
+    const firstDateWeek = new Date(today2.setDate(today2.getDate() - today2.getDay()));
+    const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
+    const firstDateWeekFormat = getFormatedDate(firstDateWeek, 'YYYY-MM-DD');
 
-    const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
-    const [startDate, setStartDate] = useState(todayFormat);
+    const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [type, setType] = useState('All');
-    const [POS, setPOS] = useState('All');
+    const [store, setStore] = useState('hyojung');
 
-    const dataTableDetail = [];
+    const [dataForTable, setDataForTable] = useState([]);
+    const [loading, setLoading] = useState(false);
+
     const headerTable = [t('PaymentDate'), t('Card'), t('Type'), t('SalesAmount')];
-
-    const dataChart = {
-        labels: dataTableDetail.map((item) => item.Date.substring(5)),
-        datasets: [
-            {
-                data: dataTableDetail.map((item) => item['Sales amount']),
-                colors: dataTableDetail.map(() => () => GlobalStyle.thirdTextColor),
-            },
-        ],
-    };
+    const rowsWidth = [1.2, -1, -1, 1];
 
     listTypes = ['All', 'Approval', 'Cancel approval'];
     listPOSs = ['All', 'POS1', 'POS2', 'POS3'];
-
-    const handleSearch = () => {};
 
     const handleChooseType = (item) => {
         setType(item);
@@ -53,6 +49,27 @@ const CreditCardApproval = () => {
     const handleChoosePOS = (item) => {
         setPOS(item);
     };
+
+    const handleChooseStore = (value) => {
+        setStore(value);
+    };
+
+    const handleSearch = () => {
+        setLoading(true);
+        getCreditCardApproval(startDate, endDate, store)
+            .then((result) => {
+                setLoading(false);
+                setDataForTable(result.dataTable);
+            })
+            .catch((err) => {
+                setLoading(false);
+                console.log(err);
+            });
+    };
+
+    useEffect(() => {
+        handleSearch();
+    }, []);
 
     return (
         <ViewContainer>
@@ -73,13 +90,28 @@ const CreditCardApproval = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title={t('Store')} sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal={t('Store')}
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
                 <RowTableSummary title={t('Type')} sizeRowFirst={100}>
-                    <BtnFilter title={type} listOptions={listTypes} titleModal="Type" handleFilter={handleChooseType} />
+                    <BtnFilter
+                        title={type}
+                        listOptions={listTypes}
+                        titleModal={t('Type')}
+                        handleFilter={handleChooseType}
+                    />
                 </RowTableSummary>
                 <RowTableSummary title={t('POS')} sizeRowFirst={100}>
-                    <BtnFilter title={POS} listOptions={listPOSs} titleModal="POS" handleFilter={handleChoosePOS} />
+                    <BtnFilter
+                        title={POS}
+                        listOptions={listPOSs}
+                        titleModal={t('POS')}
+                        handleFilter={handleChoosePOS}
+                    />
                 </RowTableSummary>
             </View>
 
@@ -87,10 +119,14 @@ const CreditCardApproval = () => {
 
             <ViewSaleCurrent title={t('DaySales')} saleAmount={0} quantity={0} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent={t('NoData')} />
+            <TableDetail
+                data={dataForTable}
+                headerTable={headerTable}
+                noDataContent={t('NoData')}
+                rowsWidth={rowsWidth}
+            />
 
-            {/* chart */}
-            <BarChartCustom dataChart={dataChart} />
+            {loading && <Loading />}
         </ViewContainer>
     );
 };

@@ -6,7 +6,7 @@ import GlobalStyle from '../../config/GlobalStyle';
 import TextDefaut from '../TextDefaut';
 import styles from './TableDetailStyle';
 
-const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [] }) => {
+const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [], noSummary = false }) => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const isData = data.length == 0 ? false : true;
@@ -45,9 +45,13 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [
                             <View key={index} style={styleRows(index)}>
                                 <Text
                                     style={[
-                                        styles.textSumary,
+                                        !noSummary ? styles.textSumary : styles.textRowHeader,
                                         {
-                                            color: index == summary.length - 1 ? thirdTextColor : primaryTextColor,
+                                            color: noSummary
+                                                ? primaryTextColor
+                                                : index == summary.length - 1
+                                                ? thirdTextColor
+                                                : primaryTextColor,
                                         },
                                     ]}
                                 >

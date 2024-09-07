@@ -65,3 +65,14 @@ export const getSalesByItemAndRangeDate = async (dateStart, dateEnd, nameStore) 
     const res = await getData('getSalesByItem', data);
     return res.data;
 };
+
+export const getBillCanncel = async (dateStart, dateEnd, nameStore) => {
+    const data = {
+        startDate: dateStart,
+        endDate: dateEnd,
+        storeName: nameStore,
+    };
+
+    const res = await getData('getBillCancel', data);
+    return res.data;
+};
