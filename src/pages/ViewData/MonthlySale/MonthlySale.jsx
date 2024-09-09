@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './MonthlySaleStyles';
@@ -19,10 +20,12 @@ import {
 } from '../../../components';
 import { getSummarySalesRangeMonth } from './MonthlySaleLogic';
 
-const listStore = ['hyojung'];
-
 const MonthlySale = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const [listStore, setListStore] = useState(['All']);
 
     const today = new Date();
     const today2 = new Date();
@@ -31,10 +34,11 @@ const MonthlySale = () => {
     const twoMonthsAgoFormat = getFormatedDate(twoMonthsAgo, 'YYYY-MM');
     const [startDate, setStartDate] = useState(twoMonthsAgoFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('hyojung');
+    const [store, setStore] = useState('All');
 
-    const [dataForChart, setdataForChart] = useState([]);
-    const [dataForTable, setdataForTable] = useState([]);
+    const [dataForChart, setDataForChart] = useState([]);
+    const [dataForTable, setDataForTable] = useState([]);
+    const [thisMonthSales, setThisMonthSales] = useState({ revenue: 0, quantity: 0 });
     const [loading, setLoading] = useState(false);
 
     const headerTable = [t('Month'), t('Quantity'), t('SalesAmount'), t('Discount')];
@@ -56,19 +60,14 @@ const MonthlySale = () => {
 
     const handleSearch = () => {
         setLoading(true);
-        getSummarySalesRangeMonth(startDate, endDate)
+        const storeSelected = stores.filter((value) => store === value.storeName)[0];
+        const storeCode = storeSelected.storeCode;
+        getSummarySalesRangeMonth(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
-                const formatedResult = result.map((item) => ({
-                    Month: item.Month,
-                    Quantity: item.Quantity,
-                    'Sales amount': item['Sales amount'].toLocaleString('vi-VN'),
-                    Discount: item.Discount.toLocaleString('vi-VN'),
-                }));
-
-                if (result.length) result.shift(); //remove row total amount
-                setdataForChart(result);
-                setdataForTable(formatedResult);
+                setDataForChart(result.dataChart);
+                setDataForTable(result.dataTable);
+                setThisMonthSales(result.thisMonthSales);
             })
             .catch((err) => {
                 setLoading(false);
@@ -78,6 +77,8 @@ const MonthlySale = () => {
 
     useEffect(() => {
         handleSearch();
+        const storeNames = stores.map((value) => value.storeName);
+        setListStore(storeNames);
     }, []);
 
     return (
@@ -113,8 +114,8 @@ const MonthlySale = () => {
 
             <ViewSaleCurrent
                 title={t('MonthlySalesList')}
-                saleAmount={dataForTable.length ? dataForTable[0]['Sales amount'] : 0}
-                quantity={dataForTable.length ? dataForTable[0]?.Quantity : 0}
+                saleAmount={thisMonthSales.revenue}
+                quantity={thisMonthSales.quantity}
             />
 
             <TableDetail data={dataForTable} headerTable={headerTable} rowsWidth={rowsWidth} />

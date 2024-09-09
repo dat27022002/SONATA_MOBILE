@@ -1,13 +1,26 @@
-import { getSalesByRangeDate } from '../../../services/searchServices';
+import { getSalesByRangeDateAndStore } from '../../../services/searchServices';
+import { getSalesThisMonth } from '../ViewDataLogic';
 
-export const getSummarySalesRangeMonth = async (dateStart, dateEnd) => {
+export const getSummarySalesRangeMonth = async (dateStart, dateEnd, storeCode) => {
     const formatedStartDate = `${dateStart}-01`;
     const [yearEnd, monthEnd] = dateEnd.split('-');
     const lastDayEnd = new Date(yearEnd, monthEnd, 0).getDate();
     const formatedEndDate = `${dateEnd}-${lastDayEnd}`;
-    //console.log(formatedStartDate, ':', formatedEndDate);
 
-    const response = await getSalesByRangeDate(formatedStartDate, formatedEndDate, 'HYOJUNG');
+    const [response, thisMonthSales] = await Promise.all([
+        getSalesByRangeDateAndStore(formatedStartDate, formatedEndDate, storeCode),
+        getSalesThisMonth(storeCode),
+    ]);
+
+    //case there no revenue
+    if (response[0].Index == 0)
+        return {
+            dataTable: [],
+            dataChart: [],
+            thisMonthSales: { revenue: 0, quantity: 0 },
+        };
+    //console.log('getSalesByRangeDate: ', JSON.stringify(response.slice(0, 4), null, 2));
+
     const listSale = response.map((value) => ({
         date: value.일자,
         totalAmout: value.합계금액,
@@ -65,5 +78,25 @@ export const getSummarySalesRangeMonth = async (dateStart, dateEnd) => {
     summarySalesArr.unshift(totalRow);
 
     //console.log('getSalesByRangeMonthView: ', JSON.stringify(summarySalesArrResult, null, 2));
-    return summarySalesArr;
+
+    const formatedSummaryMonthlyArr = summarySalesArr.map((item) => ({
+        Month: item.Month,
+        Quantity: item.Quantity,
+        'Sales amount': item['Sales amount'].toLocaleString('vi-VN'),
+        Discount: item.Discount.toLocaleString('vi-VN'),
+    }));
+
+    summarySalesArr.shift(); //remove row total to draw chart because chart has no row total
+
+    // //tính toán tổng doanh thu cho tuần hiện tại
+
+    const finalResult = {
+        dataTable: formatedSummaryMonthlyArr,
+        dataChart: summarySalesArr,
+        thisMonthSales: thisMonthSales,
+    };
+
+    //console.log('result: ', JSON.stringify(result, null, 2));
+
+    return finalResult;
 };
