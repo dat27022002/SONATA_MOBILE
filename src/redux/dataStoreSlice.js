@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const dataStoreSlice = createSlice({
     name: 'dataStore',
     initialState: {
-        stores: [{ storeCode: null, storeName: 'All' }],
+        stores: [{ storeCode: 'All', storeName: 'All' }],
     },
     reducers: {
         updateStores: (state, action) => {

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
 import { getFormatedDate } from 'react-native-modern-datepicker';
+import { useSelector } from 'react-redux';
 
 import styles from './DaySaleStyles';
 import { GlobalStyle, imageRequire } from '../../../config';
@@ -19,10 +20,12 @@ import {
 } from '../../../components';
 import { getDailySales } from './DailySaleLogic';
 
-const listStore = ['hyojung'];
-
 const DaySale = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const [listStore, setListStore] = useState(['All']);
 
     const today = new Date();
     const today2 = new Date();
@@ -32,7 +35,7 @@ const DaySale = () => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('hyojung');
+    const [store, setStore] = useState('All');
 
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
@@ -58,7 +61,9 @@ const DaySale = () => {
 
     const handleSearch = () => {
         setLoading(true);
-        getDailySales(startDate, endDate, store)
+        const storeSelected = stores.filter((value) => store === value.storeName)[0];
+        const storeCode = storeSelected.storeCode;
+        getDailySales(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
                 setDataForChart(result.dataChart);
@@ -73,6 +78,8 @@ const DaySale = () => {
 
     useEffect(() => {
         handleSearch();
+        const storeNames = stores.map((value) => value.storeName);
+        setListStore(storeNames);
     }, []);
 
     return (

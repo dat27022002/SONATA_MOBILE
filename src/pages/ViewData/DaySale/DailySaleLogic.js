@@ -1,11 +1,11 @@
-import { getSalesByRangeDate } from '../../../services/searchServices';
+import { getSalesByRangeDate, getSalesByRangeDateAndStore } from '../../../services/searchServices';
 import { salesRangeDates } from '../DataFake';
 import { calculateTodaySales } from '../ViewDataLogic';
 
-export const getDailySales = async (dateStart, dateEnd, store) => {
-    //console.log(dateStart, ':', dateEnd);
+export const getDailySales = async (dateStart, dateEnd, storeCode) => {
+    //console.log(dateStart, ':', dateEnd, ':', storeCode);
 
-    const response = await getSalesByRangeDate(dateStart, dateEnd, 'HYOJUNG');
+    const response = await getSalesByRangeDateAndStore(dateStart, dateEnd, storeCode);
     //const response = salesRangeDates;
 
     //case there no revenue
@@ -84,7 +84,7 @@ export const getDailySales = async (dateStart, dateEnd, store) => {
         thisDaySales: calculateTodaySales(listSaleConvertEnglish),
     };
 
-    console.log('result: ', JSON.stringify(result, null, 2));
+    //console.log('result: ', JSON.stringify(result, null, 2));
 
     return result;
 };
