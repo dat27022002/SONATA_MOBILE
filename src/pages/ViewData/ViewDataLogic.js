@@ -1,4 +1,5 @@
 import { getSalesByRangeDateAndStore } from '../../services/searchServices';
+import { getFormatedDate } from 'react-native-modern-datepicker';
 
 export const calculateTodaySales = (listSale) => {
     // Get today's date without time
@@ -19,6 +20,34 @@ export const calculateTodaySales = (listSale) => {
     });
 
     return { revenue: totalAmountToday.toLocaleString('vi-VN'), quantity: quantityToday };
+};
+
+export const getSalesThisDay = async (storeCode) => {
+    const today = new Date();
+    const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
+
+    const result = await getSalesByRangeDateAndStore(todayFormat, todayFormat, storeCode);
+
+    const thisDaySales = { quantity: 0, revenue: 0 };
+
+    thisDaySales.quantity = 0;
+    thisDaySales.revenue = 0;
+
+    if (result[0].Index == 0) return thisDaySales;
+
+    const listSale = result.map((value) => ({
+        totalAmount: value.합계금액,
+    }));
+
+    // Calculate totals for today
+    listSale.forEach((sale) => {
+        thisDaySales.revenue += sale.totalAmount;
+        thisDaySales.quantity += 1;
+    });
+
+    thisDaySales.revenue = thisDaySales.revenue.toLocaleString('vi-VN');
+
+    return thisDaySales;
 };
 
 export const getSalesThisMonth = async (storeCode) => {

@@ -17,7 +17,7 @@ export const getSummarySalesRangeMonth = async (dateStart, dateEnd, storeCode) =
         return {
             dataTable: [],
             dataChart: [],
-            thisMonthSales: { revenue: 0, quantity: 0 },
+            thisMonthSales: thisMonthSales,
         };
     //console.log('getSalesByRangeDate: ', JSON.stringify(response.slice(0, 4), null, 2));
 
