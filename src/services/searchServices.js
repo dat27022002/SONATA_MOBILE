@@ -76,3 +76,14 @@ export const getBillCanncel = async (dateStart, dateEnd, nameStore) => {
     const res = await getData('getBillCancel', data);
     return res.data;
 };
+
+export const getStores = async () => {
+    const formData = {
+        userCode: '',
+        userType: '',
+        data: {},
+    };
+
+    const res = await httpRequest.post('', formData, { headers: { fun_c: 'getStores' } });
+    return res.data.data;
+};

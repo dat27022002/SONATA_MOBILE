@@ -1,4 +1,4 @@
-import { getSalesByDate, getSalesByMonth } from '../../services/searchServices';
+import { getSalesByDate, getSalesByMonth, getStores } from '../../services/searchServices';
 import i18n from '../../utils/i18next';
 
 export const paymentDetail = () => [
@@ -89,4 +89,21 @@ export const getSaleMonthlySummary = async (year, month) => {
 
     summaryMonthlySales.revenue = summaryMonthlySales.revenue.toLocaleString('vi-VN');
     return summaryMonthlySales;
+};
+
+export const getlistStore = async () => {
+    const stores = await getStores();
+
+    const storesConvertEnglish = stores.map((value) => ({ storeCode: value.점포코드, storeName: value.상호 }));
+    storesConvertEnglish.sort((a, b) => {
+        if (a.storeName < b.storeName) {
+            return -1;
+        }
+        if (a.storeName > b.storeName) {
+            return 1;
+        }
+        return 0;
+    });
+
+    return storesConvertEnglish;
 };

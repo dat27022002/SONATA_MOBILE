@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 
 import styles from './HomeStyles';
 import { GlobalStyle, imageRequire } from '../../config';
 import { TextDefaut, HeaderSecondnary, IconImage, Loading } from '../../components';
-import { getSummaeySaleDaily, paymentDetail, getSaleMonthlySummary, summaryMonthlySales } from './HomeLogic';
+import {
+    getSummaeySaleDaily,
+    paymentDetail,
+    getSaleMonthlySummary,
+    summaryMonthlySales,
+    getlistStore,
+} from './HomeLogic';
+import { updateStores } from '../../redux/dataStoreSlice';
 
 const Home = ({ navigation }) => {
     const { t } = useTranslation('translation', { keyPrefix: 'Home' });
+
+    const dispatch = useDispatch();
 
     const [dailySalesSummary, setDailySalesSummary] = useState(paymentDetail());
     const [summaryMonthly, setSummaryMonthly] = useState(summaryMonthlySales);
@@ -28,10 +38,22 @@ const Home = ({ navigation }) => {
         const currentMonth = currentDate.getMonth() + 1; // Lấy tháng hiện tại (tháng bắt đầu từ 0, nên cần +1)
         const currentYear = currentDate.getFullYear(); // Lấy năm hiện tại
 
-        getSaleMonthlySummary(currentYear, currentMonth).then((result) => {
-            setLoading(false);
-            setSummaryMonthly(result);
-        });
+        getSaleMonthlySummary(currentYear, currentMonth)
+            .then((result) => {
+                setLoading(false);
+                setSummaryMonthly(result);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        getlistStore()
+            .then((result) => {
+                dispatch(updateStores(result));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }, []);
 
     return (
