@@ -1,6 +1,6 @@
-import { getSalesByRangeDate } from '../../../services/searchServices';
+import { getSalesByRangeDateAndStore } from '../../../services/searchServices';
 import { salesRangeDates } from '../DataFake';
-import { calculateTodaySales } from '../ViewDataLogic';
+import { getSalesThisDay } from '../ViewDataLogic';
 
 const listTime = [
     '09:00 ~ 09:59',
@@ -27,10 +27,13 @@ function getTimePeriod(date) {
     return 'Unknown';
 }
 
-export const getTimeBaseSales = async (dateStart, dateEnd) => {
+export const getTimeBaseSales = async (dateStart, dateEnd, storeCode) => {
     //console.log(dateStart, ':', dateEnd);
 
-    const response = await getSalesByRangeDate(dateStart, dateEnd, 'HYOJUNG');
+    const [response, thisDaySales] = await Promise.all([
+        getSalesByRangeDateAndStore(dateStart, dateEnd, storeCode),
+        getSalesThisDay(storeCode),
+    ]);
     //const response = salesRangeDates;
 
     //case there no revenue
@@ -38,7 +41,7 @@ export const getTimeBaseSales = async (dateStart, dateEnd) => {
         return {
             dataTable: [],
             dataChart: [],
-            thisWeekSales: { revenue: 0, quantity: 0 },
+            thisWeekSales: thisDaySales,
         };
     //console.log('getSalesByRangeDate: ', JSON.stringify(response.slice(0, 4), null, 2));
 
@@ -103,7 +106,7 @@ export const getTimeBaseSales = async (dateStart, dateEnd) => {
     const result = {
         dataTable: formatedResultTemp,
         dataChart: resultTemp,
-        thisDaySales: calculateTodaySales(listSaleConvertEnglish),
+        thisDaySales: thisDaySales,
     };
 
     //console.log('result: ', JSON.stringify(result, null, 2));

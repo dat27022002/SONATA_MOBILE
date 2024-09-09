@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './TimeBaseStyles';
@@ -19,17 +20,19 @@ import {
 } from '../../../components';
 import { getTimeBaseSales } from './TimeBaseLogic';
 
-const listStore = ['hyojung'];
-
 const TimeBase = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const [listStore, setListStore] = useState(['All']);
 
     const today = new Date();
     const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
 
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('hyojung');
+    const [store, setStore] = useState('All');
 
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
@@ -55,7 +58,9 @@ const TimeBase = () => {
 
     const handleSearch = () => {
         setLoading(true);
-        getTimeBaseSales(startDate, endDate)
+        const storeSelected = stores.filter((value) => store === value.storeName)[0];
+        const storeCode = storeSelected?.storeCode;
+        getTimeBaseSales(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
                 setDataForChart(result.dataChart);
@@ -70,6 +75,8 @@ const TimeBase = () => {
 
     useEffect(() => {
         handleSearch();
+        const storeNames = stores.map((value) => value.storeName);
+        setListStore(storeNames);
     }, []);
 
     return (
