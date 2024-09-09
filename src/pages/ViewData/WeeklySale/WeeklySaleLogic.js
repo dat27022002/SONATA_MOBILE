@@ -1,5 +1,6 @@
-import { getSalesByRangeDate } from '../../../services/searchServices';
+import { getSalesByRangeDateAndStore } from '../../../services/searchServices';
 import i18n from '../../../utils/i18next';
+import { getSalesThisWeek } from '../ViewDataLogic';
 
 const weekDaysLanguage = () => [
     i18n.t('Sun'),
@@ -11,14 +12,6 @@ const weekDaysLanguage = () => [
     i18n.t('Sat'),
 ];
 const weekDays = weekDaysLanguage();
-
-// Hàm lấy ngày đầu tuần và cuối tuần
-function getWeekRange() {
-    const current = new Date();
-    const firstDay = new Date(current.setDate(current.getDate() - current.getDay()));
-    const lastDay = new Date();
-    return [firstDay, lastDay];
-}
 
 function countWeekdaysInRange(startDate, endDate, targetDay) {
     // Chuyển đổi ngày vào đối tượng Date
@@ -45,17 +38,20 @@ function countWeekdaysInRange(startDate, endDate, targetDay) {
     return count;
 }
 
-export const getWeeklySales = async (dateStart, dateEnd) => {
+export const getWeeklySales = async (dateStart, dateEnd, storeCode) => {
     //console.log(dateStart, ':', dateEnd);
 
-    const response = await getSalesByRangeDate(dateStart, dateEnd, 'HYOJUNG');
+    const [response, thisMonthSales] = await Promise.all([
+        getSalesByRangeDateAndStore(dateStart, dateEnd, storeCode),
+        getSalesThisWeek(storeCode),
+    ]);
 
     //case there no revenue
     if (response[0].Index == 0)
         return {
             dataTable: [],
             dataChart: [],
-            thisWeekSales: { revenue: 0, quantity: 0 },
+            thisWeekSales: thisMonthSales,
         };
     //console.log('getSalesByRangeDate: ', JSON.stringify(response.slice(0, 4), null, 2));
 
@@ -107,7 +103,7 @@ export const getWeeklySales = async (dateStart, dateEnd) => {
         Ratio: item['Business day'] / countWeekdaysInRange(dateStart, dateEnd, item['Day of the week']),
     }));
 
-    console.log('SummarySalesWeeklyArr: ', JSON.stringify(SummarySalesWeeklyArr, null, 2));
+    //console.log('SummarySalesWeeklyArr: ', JSON.stringify(SummarySalesWeeklyArr, null, 2));
 
     // Sắp xếp theo thứ tự các thứ
     SummarySalesWeeklyArr.sort((a, b) => {
@@ -150,23 +146,10 @@ export const getWeeklySales = async (dateStart, dateEnd) => {
 
     //tính toán tổng doanh thu cho tuần hiện tại
 
-    // Lọc dữ liệu theo tuần hiện tại
-    const currentWeekRange = getWeekRange();
-    const currentWeekSales = listSaleConvertEnglish.filter((sale) => {
-        const saleDate = new Date(sale.date);
-        return saleDate >= currentWeekRange[0] && saleDate <= currentWeekRange[1];
-    });
-
-    //console.log('currentWeekSales: ', JSON.stringify(currentWeekSales, null, 2));
-
-    // Tính tổng Quantity và Sales amount cho tuần hiện tại
-    const totalQuantityThisWeek = currentWeekSales.reduce((acc, item) => acc + 1, 0);
-    const totalSalesAmountThisWeek = currentWeekSales.reduce((acc, item) => acc + item.totalAmout, 0);
-
     const result = {
         dataTable: formatedSummarySalesWeeklyArr,
         dataChart: SummarySalesWeeklyArr,
-        thisWeekSales: { revenue: totalSalesAmountThisWeek.toLocaleString('vi-VN'), quantity: totalQuantityThisWeek },
+        thisWeekSales: thisMonthSales,
     };
 
     //console.log('result: ', JSON.stringify(result, null, 2));

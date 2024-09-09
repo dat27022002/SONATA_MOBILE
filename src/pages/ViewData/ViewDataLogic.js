@@ -22,32 +22,44 @@ export const calculateTodaySales = (listSale) => {
     return { revenue: totalAmountToday.toLocaleString('vi-VN'), quantity: quantityToday };
 };
 
+const calculateTotalSales = (sales) => {
+    const result = { quantity: 0, revenue: 0 };
+
+    if (sales[0].Index == 0) return result;
+
+    const listSale = sales.map((value) => ({
+        totalAmount: value.합계금액,
+    }));
+
+    // Calculate totals for today
+    listSale.forEach((sale) => {
+        result.revenue += sale.totalAmount;
+        result.quantity += 1;
+    });
+
+    result.revenue = result.revenue.toLocaleString('vi-VN');
+
+    return result;
+};
+
 export const getSalesThisDay = async (storeCode) => {
     const today = new Date();
     const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
 
     const result = await getSalesByRangeDateAndStore(todayFormat, todayFormat, storeCode);
 
-    const thisDaySales = { quantity: 0, revenue: 0 };
+    return calculateTotalSales(result);
+};
 
-    thisDaySales.quantity = 0;
-    thisDaySales.revenue = 0;
+export const getSalesThisWeek = async (storeCode) => {
+    const today = new Date();
 
-    if (result[0].Index == 0) return thisDaySales;
+    const today2 = new Date();
+    const firstDateWeek = new Date(today2.setDate(today2.getDate() - today2.getDay()));
 
-    const listSale = result.map((value) => ({
-        totalAmount: value.합계금액,
-    }));
+    const result = await getSalesByRangeDateAndStore(firstDateWeek, today, storeCode);
 
-    // Calculate totals for today
-    listSale.forEach((sale) => {
-        thisDaySales.revenue += sale.totalAmount;
-        thisDaySales.quantity += 1;
-    });
-
-    thisDaySales.revenue = thisDaySales.revenue.toLocaleString('vi-VN');
-
-    return thisDaySales;
+    return calculateTotalSales(result);
 };
 
 export const getSalesThisMonth = async (storeCode) => {
@@ -60,24 +72,5 @@ export const getSalesThisMonth = async (storeCode) => {
     const now = new Date();
     const result = await getSalesByRangeDateAndStore(startOfMonth, now, storeCode);
 
-    const thisMonthSales = { quantity: 0, revenue: 0 };
-
-    thisMonthSales.quantity = 0;
-    thisMonthSales.revenue = 0;
-
-    if (result[0].Index == 0) return thisMonthSales;
-
-    const listSale = result.map((value) => ({
-        totalAmount: value.합계금액,
-    }));
-
-    //console.log('dailySalesSummaryTemp', JSON.stringify(result, null, 2));
-
-    listSale.forEach((item) => {
-        thisMonthSales.revenue += item.totalAmount;
-        thisMonthSales.quantity++;
-    });
-
-    thisMonthSales.revenue = thisMonthSales.revenue.toLocaleString('vi-VN');
-    return thisMonthSales;
+    return calculateTotalSales(result);
 };
