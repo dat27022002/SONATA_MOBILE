@@ -2,7 +2,6 @@ import { imageRequire, route } from '../../config';
 import i18n from '../../utils/i18next';
 
 export const listMenuSearchData = () => [
-    { icon: imageRequire.TableStatus, to: route.ViewData.TABLESTATUS, name: i18n.t('Menu.TableStatus') },
     { icon: imageRequire.DaySale, to: route.ViewData.DAYSALE, name: i18n.t('Menu.DaySalesList') },
     { icon: imageRequire.MonthlySale, to: route.ViewData.MONTHLYSALE, name: i18n.t('Menu.MonthlySalesList') },
     { icon: imageRequire.WeeklySale, to: route.ViewData.WEEKLYSALE, name: i18n.t('Menu.WeeklySales') },
@@ -12,18 +11,11 @@ export const listMenuSearchData = () => [
     { icon: imageRequire.ItemRank, to: route.ViewData.ITEMRANK, name: i18n.t('Menu.ItemRank') },
     { icon: imageRequire.OrderCancelList, to: route.ViewData.ORDERCANCELLIST, name: i18n.t('Menu.OrderCancelList') },
     {
-        icon: imageRequire.CashReceiptApproval,
-        to: route.ViewData.CASHRECEIPTAPPROVAL,
-        name: i18n.t('Menu.CashReceiptApproval'),
-    },
-    {
-        icon: imageRequire.CreditCardApproval,
-        to: route.ViewData.CREDITCARDAPPROVAL,
-        name: i18n.t('Menu.CreditCardApproval'),
+        icon: imageRequire.ApproveElectronicInvoice,
+        to: route.ViewData.APPROVEELECTRONICINVOICE,
+        name: i18n.t('Menu.ApproveElectronicInvoice'),
     },
     { icon: imageRequire.RefundHistory, to: route.ViewData.REFUNDHISTORY, name: i18n.t('Menu.RefundHistory') },
-    { icon: imageRequire.InventoryStatus, to: route.ViewData.INVENTORYSTATUS, name: i18n.t('Menu.InventoryStatus') },
-    { icon: imageRequire.RealTimeSale, to: route.ViewData.REALTIMESALE, name: i18n.t('Menu.RealTimeSales') },
 ];
 
 export const listMenuConfig = () => [

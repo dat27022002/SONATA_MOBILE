@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
-import styles from './CreditCardApprovalStyles';
+import styles from './ApproveElectronicInvoiceStyles';
 import { imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
@@ -17,9 +17,9 @@ import {
     ViewContainer,
     Loading,
 } from '../../../components';
-import { getCreditCardApproval } from './CreditCardApprovalLogic';
+import { getApproveElectronicInvoice } from './ApproveElectronicInvoiceLogic';
 
-const CreditCardApproval = () => {
+const ApproveElectronicInvoice = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const { stores } = useSelector((state) => state.dataStore);
@@ -57,7 +57,7 @@ const CreditCardApproval = () => {
         setLoading(true);
         const storeSelected = stores.filter((value) => store === value.storeName)[0];
         const storeCode = storeSelected?.storeCode;
-        getCreditCardApproval(startDate, endDate, storeCode)
+        getApproveElectronicInvoice(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
                 setDataForTable(result.dataTable);
@@ -78,7 +78,7 @@ const CreditCardApproval = () => {
         <ViewContainer>
             <HeaderSecondnary
                 urlImage={imageRequire.CreditCardApproval}
-                title={t('CreditCardApproval')}
+                title={t('ApproveElectronicInvoice')}
                 iconRight={'reload'}
                 line="lineSolidOrange3"
                 ionicon
@@ -126,4 +126,4 @@ const CreditCardApproval = () => {
     );
 };
 
-export default CreditCardApproval;
+export default ApproveElectronicInvoice;

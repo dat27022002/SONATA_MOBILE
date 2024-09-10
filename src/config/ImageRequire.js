@@ -3,7 +3,7 @@ const imageRequire = {
     MonthlySale: require('../assets/IconImage/MonthlySale.png'),
     AddItem: require('../assets/IconImage/AddItem.png'),
     BarcodeScan: require('../assets/IconImage/BarcodeScan.png'),
-    CashReceiptApproval: require('../assets/IconImage/CashReceiptApproval.png'),
+    ApproveElectronicInvoice: require('../assets/IconImage/CashReceiptApproval.png'),
     ChangeAdminPassword: require('../assets/IconImage/ChangeAdminPassword.png'),
     ChangeRefundPassword: require('../assets/IconImage/ChangeRefundPassword.png'),
     CreditCardApproval: require('../assets/IconImage/CreditCardApproval.png'),

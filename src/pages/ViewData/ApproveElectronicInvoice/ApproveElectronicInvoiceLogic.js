@@ -11,7 +11,7 @@ const getTypeCard = (value) => {
     return 'Unknown';
 };
 
-export const getCreditCardApproval = async (dateStart, dateEnd, storeCode) => {
+export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode) => {
     //console.log(dateStart, ':', dateEnd);
 
     const [response, thisDaySales] = await Promise.all([

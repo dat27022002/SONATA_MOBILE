@@ -4,7 +4,6 @@ const route = {
     LOGIN: 'Login',
     MENU: 'Menu',
     ViewData: {
-        TABLESTATUS: 'TableStatus',
         DAYSALE: 'DaySale',
         MONTHLYSALE: 'MonthlySale',
         WEEKLYSALE: 'WeeklySale',
@@ -13,11 +12,8 @@ const route = {
         SALEBYITEM: 'SaleByItem',
         ITEMRANK: 'ItemRank',
         ORDERCANCELLIST: 'OrderCancelList',
-        CASHRECEIPTAPPROVAL: 'CashReceiptApproval',
-        CREDITCARDAPPROVAL: 'CreditCardApproval',
+        APPROVEELECTRONICINVOICE: 'ApproveElectronicInvoice',
         REFUNDHISTORY: 'RefundHistory',
-        INVENTORYSTATUS: 'InventoryStatus',
-        REALTIMESALE: 'RealTimeSale',
     },
     KIOSKConfigure: {
         ADDITEM: 'AddItem',

@@ -42,8 +42,8 @@ const DaySale = () => {
     const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
     const [loading, setLoading] = useState(false);
 
-    const headerTable = [t('Date'), t('Quantity'), t('Guest'), t('CustomerPrice'), t('SalesAmount')];
-    const rowsWidth = [1.2, -1, -1, -1, 1.5];
+    const headerTable = [t('Date'), t('Quantity'), t('Guest'), t('SalesAmount')];
+    const rowsWidth = [1.2, -1, -1, 1.5];
 
     const dataChart = {
         labels: dataForChart.slice(1).map((item) => item.Date.substring(5)),

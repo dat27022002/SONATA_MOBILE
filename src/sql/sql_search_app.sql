@@ -113,9 +113,3 @@ WITH TblView AS (
 SELECT * 
 FROM TblView 
 WHERE  RowNum >= @next  AND RowNum <= @to  
-
-
-
-
-
-  

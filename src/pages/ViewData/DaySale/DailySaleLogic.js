@@ -29,7 +29,7 @@ export const getDailySales = async (dateStart, dateEnd, storeCode) => {
     const summarySalesDaily = listSaleConvertEnglish.reduce((acc, curr) => {
         const date = curr.date.split('T')[0]; // Lấy ngày mà không lấy phần thời gian
         if (!acc[date]) {
-            acc[date] = { Date: date, Quantity: 0, Guest: 0, 'Customer price': 0, 'Sales amount': 0 };
+            acc[date] = { Date: date, Quantity: 0, Guest: 0, 'Sales amount': 0 };
         }
         acc[date]['Quantity'] += 1;
         acc[date]['Guest'] += 1;
@@ -43,7 +43,6 @@ export const getDailySales = async (dateStart, dateEnd, storeCode) => {
         Date: item['Date'],
         Quantity: item['Quantity'],
         Guest: item['Guest'],
-        'Customer price': 0,
         'Sales amount': item['Sales amount'],
     }));
     //console.log('summarySalesDailyArr: ', JSON.stringify(summarySalesDailyArr, null, 2));
@@ -61,7 +60,6 @@ export const getDailySales = async (dateStart, dateEnd, storeCode) => {
         Date: 'Total Amount',
         Quantity: totalQuantity,
         Guest: totalQuantity,
-        'Customer price': 0,
         'Sales amount': totalSalesAmount,
     };
 
@@ -73,7 +71,6 @@ export const getDailySales = async (dateStart, dateEnd, storeCode) => {
         Date: item['Date'],
         Quantity: item['Quantity'],
         Guest: item['Guest'],
-        'Customer price': 0,
         'Sales amount': item['Sales amount'].toLocaleString('vi-VN'),
     }));
 

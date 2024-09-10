@@ -58,7 +58,7 @@ const Menu = ({ navigation }) => {
                 iconFontAwesome6
                 handleClickRightBtn={handleClickRightBtn}
             />
-            <View style={[styles.containerList, { height: 285 }]}>
+            <View style={[styles.containerList, { height: 225 }]}>
                 <FlatList
                     data={listMenuSearchData()}
                     renderItem={renderItem}
