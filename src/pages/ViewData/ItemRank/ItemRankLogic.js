@@ -1,10 +1,10 @@
 import { getSalesByItemAndRangeDate } from '../../../services/searchServices';
 import { salesByItemAndRangeDates } from '../DataFake';
 
-export const getItemRank = async (dateStart, dateEnd, store) => {
+export const getItemRank = async (dateStart, dateEnd, storeCode) => {
     //console.log(dateStart, ':', dateEnd);
 
-    const response = await getSalesByItemAndRangeDate(dateStart, dateEnd, store);
+    const response = await getSalesByItemAndRangeDate(dateStart, dateEnd, storeCode);
     //const response = salesByItemAndRangeDates;
 
     //case there no revenue

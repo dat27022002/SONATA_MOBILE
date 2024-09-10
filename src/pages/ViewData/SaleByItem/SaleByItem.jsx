@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './SaleByItemStyles';
@@ -22,12 +23,16 @@ const listStore = ['hyojung'];
 const SaleByItem = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const [listStore, setListStore] = useState(['All']);
+
     const today = new Date();
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
 
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('hyojung');
+    const [store, setStore] = useState('All');
 
     const [dataForTable, setDataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -41,7 +46,9 @@ const SaleByItem = () => {
 
     const handleSearch = () => {
         setLoading(true);
-        getSalesByItem(startDate, endDate, store)
+        const storeSelected = stores.filter((value) => store === value.storeName)[0];
+        const storeCode = storeSelected?.storeCode;
+        getSalesByItem(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
                 setDataForTable(result.dataTable);
@@ -54,6 +61,8 @@ const SaleByItem = () => {
 
     useEffect(() => {
         handleSearch();
+        const storeNames = stores.map((value) => value.storeName);
+        setListStore(storeNames);
     }, []);
 
     return (

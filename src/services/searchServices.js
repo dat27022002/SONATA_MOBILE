@@ -67,11 +67,12 @@ export const getSalesByRangeDateAndStore = async (dateStart, dateEnd, storeCode)
     return res.data;
 };
 
-export const getSalesByItemAndRangeDate = async (dateStart, dateEnd, nameStore) => {
+export const getSalesByItemAndRangeDate = async (dateStart, dateEnd, storeCode) => {
     const data = {
-        startDate: dateStart,
-        endDate: dateEnd,
-        storeName: nameStore,
+        daystart: dateStart,
+        dayend: dateEnd,
+        notStore: storeCode === 'All' ? '1' : '0',
+        storeCode: storeCode,
     };
 
     const res = await getData('getSalesByItem', data);
