@@ -1,10 +1,10 @@
 import { getBillCanncel } from '../../../services/searchServices';
 import { billCancels } from '../DataFake';
 
-export const getRefundHistory = async (dateStart, dateEnd, store) => {
+export const getRefundHistory = async (dateStart, dateEnd, storeCode) => {
     //console.log(dateStart, ':', dateEnd);
 
-    const response = await getBillCanncel(dateStart, dateEnd, 'HYOJUNG');
+    const response = await getBillCanncel(dateStart, dateEnd, storeCode);
     //const response = billCancels;
 
     //case there no revenue

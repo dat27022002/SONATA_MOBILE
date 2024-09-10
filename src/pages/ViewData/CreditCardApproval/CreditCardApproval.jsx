@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './CreditCardApprovalStyles';
@@ -18,10 +19,12 @@ import {
 } from '../../../components';
 import { getCreditCardApproval } from './CreditCardApprovalLogic';
 
-const listStore = ['hyojung'];
-
 const CreditCardApproval = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const [listStore, setListStore] = useState(['All']);
 
     const today = new Date();
     const today2 = new Date();
@@ -31,8 +34,7 @@ const CreditCardApproval = () => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('hyojung');
-    const [type, setType] = useState('All');
+    const [store, setStore] = useState('All');
     const [POS, setPOS] = useState('All');
 
     const [dataForTable, setDataForTable] = useState([]);
@@ -41,12 +43,7 @@ const CreditCardApproval = () => {
     const headerTable = [t('PaymentDate'), t('Card'), t('SalesAmount')];
     const rowsWidth = [1.2, 1, 1.5];
 
-    listTypes = ['All', 'Approval', 'Cancel approval'];
     listPOSs = ['All', 'POS1', 'POS2', 'POS3'];
-
-    const handleChooseType = (item) => {
-        setType(item);
-    };
 
     const handleChoosePOS = (item) => {
         setPOS(item);
@@ -58,7 +55,9 @@ const CreditCardApproval = () => {
 
     const handleSearch = () => {
         setLoading(true);
-        getCreditCardApproval(startDate, endDate, store)
+        const storeSelected = stores.filter((value) => store === value.storeName)[0];
+        const storeCode = storeSelected?.storeCode;
+        getCreditCardApproval(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
                 setDataForTable(result.dataTable);
@@ -71,6 +70,8 @@ const CreditCardApproval = () => {
 
     useEffect(() => {
         handleSearch();
+        const storeNames = stores.map((value) => value.storeName);
+        setListStore(storeNames);
     }, []);
 
     return (
@@ -99,14 +100,6 @@ const CreditCardApproval = () => {
                         handleFilter={handleChooseStore}
                     />
                 </RowTableSummary>
-                {/* <RowTableSummary title={t('Type')} sizeRowFirst={100}>
-                    <BtnFilter
-                        title={type}
-                        listOptions={listTypes}
-                        titleModal={t('Type')}
-                        handleFilter={handleChooseType}
-                    />
-                </RowTableSummary> */}
                 <RowTableSummary title={t('POS')} sizeRowFirst={100}>
                     <BtnFilter
                         title={POS}

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './RefundHistoryStyles';
-import { GlobalStyle, imageRequire } from '../../../config';
+import { imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
     RowTableSummary,
@@ -17,10 +18,12 @@ import {
 } from '../../../components';
 import { getRefundHistory } from './RefundLogic';
 
-const listStore = ['hyojung'];
-
 const RefundHistory = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const [listStore, setListStore] = useState(['All']);
 
     const today = new Date();
     const today2 = new Date();
@@ -44,7 +47,9 @@ const RefundHistory = () => {
 
     const handleSearch = () => {
         setLoading(true);
-        getRefundHistory(startDate, endDate, store)
+        const storeSelected = stores.filter((value) => store === value.storeName)[0];
+        const storeCode = storeSelected?.storeCode;
+        getRefundHistory(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
                 setDataForTable(result.dataTable);
@@ -57,6 +62,8 @@ const RefundHistory = () => {
 
     useEffect(() => {
         handleSearch();
+        const storeNames = stores.map((value) => value.storeName);
+        setListStore(storeNames);
     }, []);
 
     return (

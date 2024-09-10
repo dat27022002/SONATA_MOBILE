@@ -1,6 +1,6 @@
-import { getSalesByRangeDate } from '../../../services/searchServices';
+import { getSalesByRangeDateAndStore } from '../../../services/searchServices';
 import { salesRangeDates } from '../DataFake';
-import { calculateTodaySales } from '../ViewDataLogic';
+import { getSalesThisDay } from '../ViewDataLogic';
 
 const getTypeCard = (value) => {
     if (!isNaN(value)) {
@@ -11,17 +11,20 @@ const getTypeCard = (value) => {
     return 'Unknown';
 };
 
-export const getCreditCardApproval = async (dateStart, dateEnd, store) => {
+export const getCreditCardApproval = async (dateStart, dateEnd, storeCode) => {
     //console.log(dateStart, ':', dateEnd);
 
-    const response = await getSalesByRangeDate(dateStart, dateEnd, 'HYOJUNG');
+    const [response, thisDaySales] = await Promise.all([
+        getSalesByRangeDateAndStore(dateStart, dateEnd, storeCode),
+        getSalesThisDay(storeCode),
+    ]);
     //const response = salesRangeDates;
 
     //case there no revenue
     if (response[0].Index == 0)
         return {
             dataTable: [],
-            thisDaySales: { revenue: 0, quantity: 0 },
+            thisDaySales: thisDaySales,
         };
     //console.log('getSalesByRangeDate: ', JSON.stringify(response.slice(0, 4), null, 2));
 
@@ -66,7 +69,7 @@ export const getCreditCardApproval = async (dateStart, dateEnd, store) => {
 
     const result = {
         dataTable: formatedResult,
-        thisDaySales: calculateTodaySales(listSaleConvertEnglish),
+        thisDaySales: thisDaySales,
     };
 
     // console.log('result: ', JSON.stringify(result, null, 2));
