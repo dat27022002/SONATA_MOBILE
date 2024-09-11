@@ -1,4 +1,7 @@
-import { getSalesByDate, getSalesByMonth, getStores, getPOSs } from '../../services/searchServices';
+import { getFormatedDate } from 'react-native-modern-datepicker';
+
+import { getStores, getPOSs, getSalesByRangeDateAndStore } from '../../services/searchServices';
+import { getSalesThisMonth } from '../ViewData/ViewDataLogic';
 import i18n from '../../utils/i18next';
 
 export const paymentDetail = () => [
@@ -9,8 +12,11 @@ export const paymentDetail = () => [
     { type: i18n.t('Home.Total'), quantity: 0, revenue: 0 },
 ];
 
-export const getSummaeySaleDaily = async (date) => {
-    const result = await getSalesByDate(date);
+export const getSummarySaleDaily = async (storeCode) => {
+    const today = new Date();
+    const todayFormat = getFormatedDate(today, 'YYYY-MM-DD');
+
+    const result = await getSalesByRangeDateAndStore(todayFormat, todayFormat, storeCode);
 
     const newDailySalesSummary = [...paymentDetail()];
     newDailySalesSummary[0].quantity = 0;
@@ -68,27 +74,9 @@ export const getSummaeySaleDaily = async (date) => {
 
 export const summaryMonthlySales = { quantity: 0, revenue: 0 };
 
-export const getSaleMonthlySummary = async (year, month) => {
-    const result = await getSalesByMonth(year.toString(), month.toString());
-
-    summaryMonthlySales.quantity = 0;
-    summaryMonthlySales.revenue = 0;
-
-    if (result[0].Index == 0) return summaryMonthlySales;
-
-    const listSale = result.map((value) => ({
-        totalAmount: value.합계금액,
-    }));
-
-    //console.log('dailySalesSummaryTemp', JSON.stringify(result, null, 2));
-
-    listSale.forEach((item) => {
-        summaryMonthlySales.revenue += item.totalAmount;
-        summaryMonthlySales.quantity++;
-    });
-
-    summaryMonthlySales.revenue = summaryMonthlySales.revenue.toLocaleString('vi-VN');
-    return summaryMonthlySales;
+export const getSaleMonthlySummary = async (storeCode) => {
+    const result = await getSalesThisMonth(storeCode);
+    return result;
 };
 
 export const getlistStore = async () => {

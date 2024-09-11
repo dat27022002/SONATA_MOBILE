@@ -7,7 +7,7 @@ import styles from './HomeStyles';
 import { GlobalStyle, imageRequire } from '../../config';
 import { TextDefaut, HeaderSecondnary, IconImage, Loading } from '../../components';
 import {
-    getSummaeySaleDaily,
+    getSummarySaleDaily,
     paymentDetail,
     getSaleMonthlySummary,
     summaryMonthlySales,
@@ -24,27 +24,24 @@ const Home = ({ navigation }) => {
     const [dailySalesSummary, setDailySalesSummary] = useState(paymentDetail());
     const [summaryMonthly, setSummaryMonthly] = useState(summaryMonthlySales);
     const [loading, setLoading] = useState(false);
+    const [store, setStore] = useState('00001');
 
     const { primaryTextColor, thirdTextColor } = GlobalStyle;
 
     useEffect(() => {
         setLoading(true);
-        const today = new Date();
-        const formattedDate = today.toISOString().split('T')[0];
-        getSummaeySaleDaily(formattedDate).then((result) => {
+
+        getSummarySaleDaily(store).then((result) => {
             setDailySalesSummary(result);
         });
 
-        const currentDate = new Date(); // Lấy ngày hiện tại
-        const currentMonth = currentDate.getMonth() + 1; // Lấy tháng hiện tại (tháng bắt đầu từ 0, nên cần +1)
-        const currentYear = currentDate.getFullYear(); // Lấy năm hiện tại
-
-        getSaleMonthlySummary(currentYear, currentMonth)
+        getSaleMonthlySummary(store)
             .then((result) => {
                 setLoading(false);
                 setSummaryMonthly(result);
             })
             .catch((err) => {
+                setLoading(false);
                 console.log(err);
             });
 

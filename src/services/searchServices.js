@@ -25,25 +25,6 @@ const getData = async (action, data) => {
     return res.data;
 };
 
-export const getSalesByDate = async (date) => {
-    const data = {
-        date: date,
-    };
-
-    const res = await getData('getSalesByDate', data);
-    return res.data;
-};
-
-export const getSalesByMonth = async (year, month) => {
-    const data = {
-        year: year,
-        month: month,
-    };
-
-    const res = await getData('getSalesByMonth', data);
-    return res.data;
-};
-
 export const getSalesByRangeDateAndStore = async (dateStart, dateEnd, storeCode) => {
     const data = {
         daystart: dateStart,

@@ -33,7 +33,7 @@ const RefundHistory = () => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('hyojung');
+    const [store, setStore] = useState('All');
 
     const [dataForTable, setDataForTable] = useState([]);
     const [loading, setLoading] = useState(false);

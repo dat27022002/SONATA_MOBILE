@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './OrderCancelListStyles';
-import { GlobalStyle, imageRequire } from '../../../config';
+import { imageRequire } from '../../../config';
 import {
     HeaderSecondnary,
     RowTableSummary,
@@ -13,38 +14,39 @@ import {
     BtnSearch,
     BtnFilter,
     ViewContainer,
+    Loading,
 } from '../../../components';
 
 const OrderCancelList = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
+
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const [listStore, setListStore] = useState(['All']);
 
     const today = new Date();
 
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [POS, setPOS] = useState('All');
+    const [store, setStore] = useState('All');
 
-    const dataTableDetail = [];
-    const headerTable = [t('Pos'), t('CancelDate'), t('Item'), t('Quantity')];
+    const [dataForTable, setDataForTable] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-    const dataChart = {
-        labels: dataTableDetail.map((item) => item.Date.substring(5)),
-        datasets: [
-            {
-                data: dataTableDetail.map((item) => item['Sales amount']),
-                colors: dataTableDetail.map(() => () => GlobalStyle.thirdTextColor),
-            },
-        ],
-    };
+    const headerTable = [t('CancelDate'), t('Item'), t('Quantity')];
 
-    listPOSs = ['All', 'POS1', 'POS2', 'POS3'];
-
-    const handleChoosePOS = (item) => {
-        setPOS(item);
+    const handleChooseStore = (value) => {
+        setStore(value);
     };
 
     const handleSearch = () => {};
+
+    useEffect(() => {
+        handleSearch();
+        const storeNames = stores.map((value) => value.storeName);
+        setListStore(storeNames);
+    }, []);
 
     return (
         <ViewContainer>
@@ -65,16 +67,20 @@ const OrderCancelList = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title={t('Store')} sizeRowFirst={100}>
-                    <BtnFilter title={'hyojung'} />
-                </RowTableSummary>
-                <RowTableSummary title={t('POS')} sizeRowFirst={100}>
-                    <BtnFilter title={POS} listOptions={listPOSs} titleModal="POS" handleFilter={handleChoosePOS} />
+                    <BtnFilter
+                        title={store}
+                        listOptions={listStore}
+                        titleModal={t('Store')}
+                        handleFilter={handleChooseStore}
+                    />
                 </RowTableSummary>
             </View>
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <TableDetail data={dataTableDetail} headerTable={headerTable} noDataContent={t('NoCancellation')} />
+            <TableDetail data={dataForTable} headerTable={headerTable} noDataContent={t('NoCancellation')} />
+
+            {loading && <Loading />}
         </ViewContainer>
     );
 };

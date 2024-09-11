@@ -28,6 +28,7 @@ const ApproveElectronicInvoice = () => {
 
     const [listStore, setListStore] = useState(['All']);
     const [listPOS, setListPOS] = useState(['All']);
+
     const today = new Date();
     const today2 = new Date();
     const firstDateWeek = new Date(today2.setDate(today2.getDate() - today2.getDay()));
