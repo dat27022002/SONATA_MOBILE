@@ -19,13 +19,15 @@ import {
 } from '../../../components';
 import { getApproveElectronicInvoice } from './ApproveElectronicInvoiceLogic';
 
+const listType = ['All', 'Have invoice', 'No invoice'];
+
 const ApproveElectronicInvoice = () => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
-    const { stores } = useSelector((state) => state.dataStore);
+    const { stores, POSs } = useSelector((state) => state.dataStore);
 
     const [listStore, setListStore] = useState(['All']);
-
+    const [listPOS, setListPOS] = useState(['All']);
     const today = new Date();
     const today2 = new Date();
     const firstDateWeek = new Date(today2.setDate(today2.getDate() - today2.getDay()));
@@ -36,28 +38,31 @@ const ApproveElectronicInvoice = () => {
     const [endDate, setEndDate] = useState(todayFormat);
     const [store, setStore] = useState('All');
     const [POS, setPOS] = useState('All');
+    const [type, setType] = useState('All');
 
     const [dataForTable, setDataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const headerTable = [t('PaymentDate'), t('Card'), t('SalesAmount')];
-    const rowsWidth = [1.2, 1, 1.5];
+    const headerTable = [t('PaymentDate'), t('InvoiceNo'), t('Type'), t('SalesAmount')];
+    const rowsWidth = [1.8, 1.2, 1, 1.5];
 
-    listPOSs = ['All', 'POS1', 'POS2', 'POS3'];
-
-    const handleChoosePOS = (item) => {
-        setPOS(item);
+    const handleChoosePOS = (value) => {
+        setPOS(value);
     };
 
     const handleChooseStore = (value) => {
         setStore(value);
     };
 
+    const handleChooseType = (value) => {
+        setType(value);
+    };
+
     const handleSearch = () => {
         setLoading(true);
         const storeSelected = stores.filter((value) => store === value.storeName)[0];
         const storeCode = storeSelected?.storeCode;
-        getApproveElectronicInvoice(startDate, endDate, storeCode)
+        getApproveElectronicInvoice(startDate, endDate, storeCode, POS, type)
             .then((result) => {
                 setLoading(false);
                 setDataForTable(result.dataTable);
@@ -72,6 +77,8 @@ const ApproveElectronicInvoice = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
+        const posNames = POSs.map((value) => value.posName);
+        setListPOS(posNames);
     }, []);
 
     return (
@@ -101,11 +108,14 @@ const ApproveElectronicInvoice = () => {
                     />
                 </RowTableSummary>
                 <RowTableSummary title={t('POS')} sizeRowFirst={100}>
+                    <BtnFilter title={POS} listOptions={listPOS} titleModal={t('POS')} handleFilter={handleChoosePOS} />
+                </RowTableSummary>
+                <RowTableSummary title={t('Type')} sizeRowFirst={100}>
                     <BtnFilter
-                        title={POS}
-                        listOptions={listPOSs}
-                        titleModal={t('POS')}
-                        handleFilter={handleChoosePOS}
+                        title={type}
+                        listOptions={listType}
+                        titleModal={t('Type')}
+                        handleFilter={handleChooseType}
                     />
                 </RowTableSummary>
             </View>

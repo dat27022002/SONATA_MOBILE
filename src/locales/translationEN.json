@@ -112,7 +112,8 @@
         "TotalSales": "Total Sales",
         "StoreName": "Store Name",
         "Payment": "Payment",
-        "IncludeLack": "Include Lack"
+        "IncludeLack": "Include Lack",
+        "InvoiceNo": "Invoice No"
     },
     "KIOSKConfigure": {
         "AddItem": "Add item",

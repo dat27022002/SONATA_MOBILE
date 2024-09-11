@@ -1,4 +1,4 @@
-import { getSalesByDate, getSalesByMonth, getStores } from '../../services/searchServices';
+import { getSalesByDate, getSalesByMonth, getStores, getPOSs } from '../../services/searchServices';
 import i18n from '../../utils/i18next';
 
 export const paymentDetail = () => [
@@ -106,4 +106,21 @@ export const getlistStore = async () => {
     });
 
     return storesConvertEnglish;
+};
+
+export const getlistPOS = async () => {
+    const POSs = await getPOSs();
+
+    const POSsConvertEnglish = POSs.map((value) => ({ posName: value.포스번호 }));
+    POSsConvertEnglish.sort((a, b) => {
+        if (a.posName < b.posName) {
+            return -1;
+        }
+        if (a.posName > b.posName) {
+            return 1;
+        }
+        return 0;
+    });
+
+    return POSsConvertEnglish;
 };

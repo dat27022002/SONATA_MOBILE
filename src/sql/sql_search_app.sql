@@ -113,3 +113,8 @@ WITH TblView AS (
 SELECT * 
 FROM TblView 
 WHERE  RowNum >= @next  AND RowNum <= @to  
+
+
+--lấy danh sách POS
+
+SELECT DISTINCT 포스번호 FROM 매출전표

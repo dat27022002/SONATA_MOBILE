@@ -2,23 +2,13 @@ import { getSalesByRangeDateAndStore } from '../../../services/searchServices';
 import { salesRangeDates } from '../DataFake';
 import { getSalesThisDay } from '../ViewDataLogic';
 
-const getTypeCard = (value) => {
-    if (!isNaN(value)) {
-        if (value === 10) return 'ETC';
-        if (value === 11) return 'Visa';
-        if (value === 12) return 'Master Card';
-    }
-    return 'Unknown';
-};
-
-export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode) => {
-    //console.log(dateStart, ':', dateEnd);
+export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode, posName, typeInvoice) => {
+    //console.log(dateStart, ':', dateEnd, ':', posName, ':', typeInvoice);
 
     const [response, thisDaySales] = await Promise.all([
         getSalesByRangeDateAndStore(dateStart, dateEnd, storeCode),
         getSalesThisDay(storeCode),
     ]);
-    //const response = salesRangeDates;
 
     //case there no revenue
     if (response[0].Index == 0)
@@ -28,21 +18,30 @@ export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode)
         };
     //console.log('getSalesByRangeDate: ', JSON.stringify(response.slice(0, 4), null, 2));
 
-    const responseFilter = response.filter((value) => value.신용카드 > 0);
+    const responseFilter = response.filter((value) => {
+        const saleAmountFilter = value.합계금액 > 0;
+        const posFilter = posName == 'All' ? true : value.포스번호 == posName;
+
+        const enumType = { 'Have invoice': true, 'No invoice': false };
+        const typeFilter = typeInvoice == 'All' ? true : value.계산서발행 == enumType[typeInvoice];
+        return saleAmountFilter && posFilter && typeFilter;
+    });
 
     const listSaleConvertEnglish = responseFilter.map((value) => ({
-        date: value.일자,
+        date: value.수정일,
         totalAmount: value.합계금액,
-        card: value.받은돈,
-        POS: value.포스번호,
+        invoiceNo: value.INVOICE_NO,
+        type: value.계산서발행,
     }));
     //console.log('listSaleConvertEnglish: ', JSON.stringify(listSaleConvertEnglish, null, 2));
 
     const tempResult = listSaleConvertEnglish.map((value) => ({
         paymentDate: value.date.replace('T', ' '),
-        card: getTypeCard(value.card),
+        invoiceNo: typeof value.invoiceNo == 'string' ? value.invoiceNo : '',
+        type: value.type ? 'Invoice' : 'No invoice',
         totalAmount: value.totalAmount,
     }));
+    //console.log('tempResult: ', JSON.stringify(tempResult, null, 2));
 
     // Tính tổng Quantity và Sales amount
     const totalSalesAmount = tempResult.reduce((acc, item) => acc + item.totalAmount, 0);
@@ -50,7 +49,8 @@ export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode)
     // Tạo một đối tượng cho tổng
     const totalRow = {
         paymentDate: 'Total Amount',
-        card: '',
+        invoiceNo: '',
+        type: '',
         totalAmount: totalSalesAmount,
     };
 
@@ -60,7 +60,8 @@ export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode)
 
     const formatedResult = tempResult.map((value) => ({
         paymentDate: value.paymentDate,
-        card: value.card,
+        invoiceNo: value.invoiceNo,
+        type: value.type,
         totalAmount: value.totalAmount.toLocaleString('vi-VN'),
     }));
     //console.log('formatedResult: ', JSON.stringify(formatedResult, null, 2));
@@ -72,7 +73,7 @@ export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode)
         thisDaySales: thisDaySales,
     };
 
-    // console.log('result: ', JSON.stringify(result, null, 2));
+    //console.log('result: ', JSON.stringify(result, null, 2));
 
     return result;
 };

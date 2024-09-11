@@ -90,3 +90,14 @@ export const getStores = async () => {
     const res = await httpRequest.post('', formData, { headers: { fun_c: 'getStores' } });
     return res.data.data;
 };
+
+export const getPOSs = async () => {
+    const formData = {
+        userCode: '',
+        userType: '',
+        data: {},
+    };
+
+    const res = await httpRequest.post('', formData, { headers: { fun_c: 'getPOSs' } });
+    return res.data.data;
+};

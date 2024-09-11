@@ -12,8 +12,9 @@ import {
     getSaleMonthlySummary,
     summaryMonthlySales,
     getlistStore,
+    getlistPOS,
 } from './HomeLogic';
-import { updateStores } from '../../redux/dataStoreSlice';
+import { updatePOSs, updateStores } from '../../redux/dataStoreSlice';
 
 const Home = ({ navigation }) => {
     const { t } = useTranslation('translation', { keyPrefix: 'Home' });
@@ -50,6 +51,14 @@ const Home = ({ navigation }) => {
         getlistStore()
             .then((result) => {
                 dispatch(updateStores(result));
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        getlistPOS()
+            .then((result) => {
+                dispatch(updatePOSs(result));
             })
             .catch((err) => {
                 console.log(err);

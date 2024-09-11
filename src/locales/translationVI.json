@@ -112,7 +112,8 @@
         "TotalSales": "Tổng doanh thu",
         "StoreName": "Tên cửa hàng",
         "Payment": "Loại thanh toán",
-        "IncludeLack": "Bao gồm phần thiếu hụt"
+        "IncludeLack": "Bao gồm phần thiếu hụt",
+        "InvoiceNo": "Số hóa đơn"
     },
     "KIOSKConfigure": {
         "AddItem": "Thêm mặt hàng",
