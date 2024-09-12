@@ -13,6 +13,7 @@ const route = {
         ITEMRANK: 'ItemRank',
         ORDERCANCELLIST: 'OrderCancelList',
         APPROVEELECTRONICINVOICE: 'ApproveElectronicInvoice',
+        DETAILSALESINVOICE: 'DetailSalesInvoice',
         REFUNDHISTORY: 'RefundHistory',
     },
     KIOSKConfigure: {

@@ -14,7 +14,8 @@
         "CashReceipts": "Cash Receipts",
         "CreditCard": "Credit Card",
         "OtherPayments": "Other Payments",
-        "Total": "Total"
+        "Total": "Total",
+        "TotalAmount": "Total Amount"
     },
     "Menu": {
         "TableStatus": "Table status",
@@ -113,7 +114,9 @@
         "StoreName": "Store Name",
         "Payment": "Payment",
         "IncludeLack": "Include Lack",
-        "InvoiceNo": "Invoice No"
+        "InvoiceNo": "Invoice No",
+        "OrderList": "Order List",
+        "ReceiptNo": "Receipt No"
     },
     "KIOSKConfigure": {
         "AddItem": "Add item",

@@ -71,6 +71,7 @@ export const getApproveElectronicInvoice = async (dateStart, dateEnd, storeCode,
     const result = {
         dataTable: formatedResult,
         thisDaySales: thisDaySales,
+        fullBillInfors: responseFilter,
     };
 
     //console.log('result: ', JSON.stringify(result, null, 2));

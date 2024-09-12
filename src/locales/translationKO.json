@@ -115,7 +115,9 @@
         "StoreName": "매장 이름",
         "Payment": "결제",
         "IncludeLack": "부족함을 포함하다",
-        "InvoiceNo": "송장 번호"
+        "InvoiceNo": "송장 번호",
+        "OrderList": "주문 목록",
+        "ReceiptNo": "영수증 번호"
     },
     "KIOSKConfigure": {
         "AddItem": "상품 추가",

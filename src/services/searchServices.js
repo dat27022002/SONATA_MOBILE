@@ -82,3 +82,14 @@ export const getPOSs = async () => {
     const res = await httpRequest.post('', formData, { headers: { fun_c: 'getPOSs' } });
     return res.data.data;
 };
+
+export const getSalesItemByStoreCodeAndBillNo = async (storeCode, billNo) => {
+    const formData = {
+        userCode: '',
+        userType: '',
+        data: { billNo: billNo, storeCode: storeCode },
+    };
+
+    const res = await httpRequest.post('', formData, { headers: { fun_c: 'getSalesItemByStoreCodeAndBillNo' } });
+    return res.data.data;
+};

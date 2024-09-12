@@ -1,12 +1,19 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ScrollView, Text, View } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 
 import GlobalStyle from '../../config/GlobalStyle';
 import TextDefaut from '../TextDefaut';
 import styles from './TableDetailStyle';
 
-const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [], noSummary = false }) => {
+const TableDetail = ({
+    data,
+    headerTable = [],
+    noDataContent = '',
+    rowsWidth = [],
+    noSummary = false,
+    onClickRow = () => {},
+}) => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const isData = data.length == 0 ? false : true;
@@ -63,13 +70,13 @@ const TableDetail = ({ data, headerTable = [], noDataContent = '', rowsWidth = [
                     {/* row data */}
                     <ScrollView style={styles.viewScroll}>
                         {dataDetail.map((row, index) => (
-                            <View key={index} style={styles.rowTable}>
+                            <TouchableOpacity key={index} style={styles.rowTable} onPress={() => onClickRow(row)}>
                                 {row.map((item, index) => (
                                     <View key={index} style={styleRows(index)}>
                                         <Text style={styles.textRowHeader}>{item}</Text>
                                     </View>
                                 ))}
-                            </View>
+                            </TouchableOpacity>
                         ))}
                     </ScrollView>
                 </React.Fragment>

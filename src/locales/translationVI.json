@@ -113,7 +113,9 @@
         "StoreName": "Tên cửa hàng",
         "Payment": "Loại thanh toán",
         "IncludeLack": "Bao gồm phần thiếu hụt",
-        "InvoiceNo": "Số hóa đơn"
+        "InvoiceNo": "Số hóa đơn",
+        "OrderList": "Danh sách đơn hàng",
+        "ReceiptNo": "Số biên nhận"
     },
     "KIOSKConfigure": {
         "AddItem": "Thêm mặt hàng",

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getFormatedDate } from 'react-native-modern-datepicker';
 
 import styles from './ApproveElectronicInvoiceStyles';
-import { imageRequire } from '../../../config';
+import { imageRequire, route } from '../../../config';
 import {
     HeaderSecondnary,
     RowTableSummary,
@@ -21,7 +21,7 @@ import { getApproveElectronicInvoice } from './ApproveElectronicInvoiceLogic';
 
 const listType = ['All', 'Have invoice', 'No invoice'];
 
-const ApproveElectronicInvoice = () => {
+const ApproveElectronicInvoice = ({ navigation }) => {
     const { t } = useTranslation('translation', { keyPrefix: 'ViewData' });
 
     const { stores, POSs } = useSelector((state) => state.dataStore);
@@ -42,6 +42,7 @@ const ApproveElectronicInvoice = () => {
     const [type, setType] = useState('All');
 
     const [dataForTable, setDataForTable] = useState([]);
+    const [fullBillInfors, setFullBillInfors] = useState([]);
     const [loading, setLoading] = useState(false);
 
     const headerTable = [t('PaymentDate'), t('InvoiceNo'), t('Type'), t('SalesAmount')];
@@ -67,11 +68,35 @@ const ApproveElectronicInvoice = () => {
             .then((result) => {
                 setLoading(false);
                 setDataForTable(result.dataTable);
+                setFullBillInfors(result.fullBillInfors);
             })
             .catch((err) => {
                 setLoading(false);
                 console.log(err);
             });
+    };
+
+    const handelClickRowTable = (item) => {
+        const paymentDate = item[0].replace(' ', 'T');
+        const billFilter = fullBillInfors.filter((value) => value.수정일 == paymentDate)[0];
+
+        const storeName = stores.filter((value) => String(billFilter.점포코드) == value.storeCode)[0].storeName;
+
+        const dataToSend = {
+            paymentDate: billFilter.수정일.replace('T', ' '),
+            billNo: billFilter.전표번호,
+            invoiceNo: typeof billFilter.invoiceNo == 'string' ? billFilter.invoiceNo : '',
+            storeName: storeName,
+            storeCode: billFilter.점포코드,
+            quantity: billFilter.총수량,
+            cash: billFilter.현금,
+            cashReceipt: billFilter.현금영수증,
+            creditCard: billFilter.신용카드,
+            otherPayment: billFilter.기타지불,
+            totalAmount: billFilter.합계금액,
+        };
+
+        navigation.navigate(route.ViewData.DETAILSALESINVOICE, { data: dataToSend });
     };
 
     useEffect(() => {
@@ -130,6 +155,7 @@ const ApproveElectronicInvoice = () => {
                 headerTable={headerTable}
                 noDataContent={t('NoData')}
                 rowsWidth={rowsWidth}
+                onClickRow={handelClickRowTable}
             />
 
             {loading && <Loading />}
