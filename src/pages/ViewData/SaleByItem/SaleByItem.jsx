@@ -63,6 +63,7 @@ const SaleByItem = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
+        setStore(storeNames[0]);
     }, []);
 
     return (

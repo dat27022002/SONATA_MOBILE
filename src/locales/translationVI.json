@@ -4,7 +4,9 @@
         "CompanyID": "Mã công ty",
         "UserID": "Mã người dùng",
         "Password": "Mật khẩu",
-        "SaveIdAndPassword": "Lưu ID và mật khẩu"
+        "SaveIdAndPassword": "Lưu ID và mật khẩu",
+        "MesseageLoginSuccess": "Đăng nhập thành công",
+        "MesseageLoginFail": "Bạn đã nhập sai thông tin"
     },
     "Home": {
         "MonthlySales": "Doanh thu theo tháng",

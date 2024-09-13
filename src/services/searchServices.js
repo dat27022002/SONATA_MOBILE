@@ -83,6 +83,17 @@ export const getPOSs = async () => {
     return res.data.data;
 };
 
+export const getAccounts = async () => {
+    const formData = {
+        userCode: '',
+        userType: '',
+        data: {},
+    };
+
+    const res = await httpRequest.post('', formData, { headers: { fun_c: 'getAccounts' } });
+    return res.data.data;
+};
+
 export const getSalesItemByStoreCodeAndBillNo = async (storeCode, billNo) => {
     const formData = {
         userCode: '',

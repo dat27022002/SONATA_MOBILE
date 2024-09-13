@@ -61,7 +61,7 @@ const MonthlySale = () => {
     const handleSearch = () => {
         setLoading(true);
         const storeSelected = stores.filter((value) => store === value.storeName)[0];
-        const storeCode = storeSelected.storeCode;
+        const storeCode = storeSelected?.storeCode;
         getSummarySalesRangeMonth(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
@@ -79,6 +79,7 @@ const MonthlySale = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
+        setStore(storeNames[0]);
     }, []);
 
     return (

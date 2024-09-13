@@ -25,7 +25,7 @@ const DaySale = () => {
 
     const { stores } = useSelector((state) => state.dataStore);
 
-    const [listStore, setListStore] = useState(['All']);
+    const [listStore, setListStore] = useState([]);
 
     const today = new Date();
     const today2 = new Date();
@@ -35,7 +35,7 @@ const DaySale = () => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('All');
+    const [store, setStore] = useState(listStore[0]);
 
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
@@ -62,7 +62,7 @@ const DaySale = () => {
     const handleSearch = () => {
         setLoading(true);
         const storeSelected = stores.filter((value) => store === value.storeName)[0];
-        const storeCode = storeSelected.storeCode;
+        const storeCode = storeSelected?.storeCode;
         getDailySales(startDate, endDate, storeCode)
             .then((result) => {
                 setLoading(false);
@@ -80,6 +80,7 @@ const DaySale = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
+        setStore(storeNames[0]);
     }, []);
 
     return (

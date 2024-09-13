@@ -85,7 +85,7 @@ const ApproveElectronicInvoice = ({ navigation }) => {
         const dataToSend = {
             paymentDate: billFilter.수정일.replace('T', ' '),
             billNo: billFilter.전표번호,
-            invoiceNo: typeof billFilter.invoiceNo == 'string' ? billFilter.invoiceNo : '',
+            invoiceNo: typeof billFilter.INVOICE_NO == 'string' ? billFilter.INVOICE_NO : '',
             storeName: storeName,
             storeCode: billFilter.점포코드,
             quantity: billFilter.총수량,
@@ -103,6 +103,7 @@ const ApproveElectronicInvoice = ({ navigation }) => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
+        setStore(storeNames[0]);
         const posNames = POSs.map((value) => value.posName);
         setListPOS(posNames);
     }, []);

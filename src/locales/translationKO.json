@@ -4,7 +4,9 @@
         "CompanyID": "회사 ID",
         "UserID": "사용자 ID",
         "Password": "비밀번호",
-        "SaveIdAndPassword": "ID 및 비밀번호 저장"
+        "SaveIdAndPassword": "ID 및 비밀번호 저장",
+        "MesseageLoginSuccess": "로그인 성공",
+        "MesseageLoginFail": "정보를 잘못 입력하셨습니다"
     },
     "Home": {
         "MonthlySales": "월별 매출",

@@ -4,7 +4,9 @@
         "CompanyID": "CompanyID",
         "UserID": "user ID",
         "Password": "Password",
-        "SaveIdAndPassword": "Save ID and Password"
+        "SaveIdAndPassword": "Save ID and Password",
+        "MesseageLoginSuccess": "Login successful",
+        "MesseageLoginFail": "You have entered incorrect information"
     },
     "Home": {
         "MonthlySales": "Monthly Sales",

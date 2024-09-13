@@ -4,7 +4,7 @@ SELECT *
 FROM 매출전표
 
 
---lấy tên bảng
+--lấy tên cột
 SELECT COLUMN_NAME
 FROM INFORMATION_SCHEMA.COLUMNS
 WHERE TABLE_NAME = '매출전표';
