@@ -10,7 +10,7 @@ const BtnFilter = ({ handleFilter = () => {}, title, listOptions = [], titleModa
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOpenModal = () => {
-        if (listOptions.length == 0) return;
+        if (listOptions.length <= 1) return;
         setIsOpen(!isOpen);
     };
     return (

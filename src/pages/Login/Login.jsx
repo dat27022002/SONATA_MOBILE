@@ -33,9 +33,12 @@ const Login = ({ navigation, ...props }) => {
                     userID: value.사원코드,
                     password: value.비밀번호,
                 }));
-                const user = convertRes.filter((value) => value.userID == userId && value.password == password);
+                const user = convertRes.filter(
+                    (value) => value.userID == userId && value.password == password && value.storeCode == companyId,
+                );
                 if (user.length) {
                     notify.success(t('MesseageLoginSuccess'));
+                    user[0].isCEO = false;
                     dispatch(updateInforUser(user[0]));
                     navigation.navigate(route.HOME);
                 } else {
@@ -82,6 +85,7 @@ const Login = ({ navigation, ...props }) => {
                     />
                     <TextInput
                         placeholder={t('Password')}
+                        secureTextEntry
                         placeholderTextColor="#9d9d9d"
                         style={styles.input}
                         value={password}

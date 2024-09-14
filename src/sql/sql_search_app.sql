@@ -1,5 +1,7 @@
 ﻿use H_HYOJUNG_VIETTEL
 
+use H_DOOKKI
+
 SELECT *
 FROM 매출전표
 
@@ -73,39 +75,19 @@ GO
 
 
 
---lấy doanh thu theo khoảng thời gian ngày
-
-DECLARE @startDate DATE = '2024-01-01';
-DECLARE @endDate DATE = '2024-09-07';
-DECLARE @next int= 1;
-DECLARE @to int = 10000;
-DECLARE @storeCode varchar(5)= '00070';
-
-WITH TblView AS ( 
-    SELECT *
-      ,ROW_NUMBER() OVER (ORDER BY 일자 desc) AS RowNum 
-    FROM 매출전표
-	WHERE  [일자] >= @startDate AND [일자] <= @endDate AND (점포코드 = @storeCode )) 
-SELECT * 
-FROM TblView 
-WHERE  RowNum >= @next  AND RowNum <= @to  
-
-GO
-
-
 -- lấy doanh thu theo khoảng thời gian ngày và cửa hàng
 
-DECLARE @startDate DATE = '2024-01-01';
-DECLARE @endDate DATE = '2024-09-07';
+DECLARE @startDate DATE = '2024-06-01';
+DECLARE @endDate DATE = '2024-09-14';
 DECLARE @next int= 1;
 DECLARE @to int = 10000;
 DECLARE @notStore bit =0;
-DECLARE @storeCode varchar(5)= '00070';
+DECLARE @storeCode varchar(5)= '00005';
 
 WITH TblView AS ( 
     SELECT *
       ,ROW_NUMBER() OVER (ORDER BY 일자 desc) AS RowNum 
-    FROM 매출전표
+    FROM 매출상품
 	WHERE  [일자] >= @startDate AND [일자] <= @endDate 
 	AND ( @notStore=1 OR 점포코드 = @storeCode  )
 	AND 합계금액 >=0) 
@@ -118,3 +100,7 @@ WHERE  RowNum >= @next  AND RowNum <= @to
 --lấy danh sách POS
 
 SELECT DISTINCT 포스번호 FROM 매출전표
+
+--lấy danh sách mã nhân viên
+
+SELECT * FROM 점포코드

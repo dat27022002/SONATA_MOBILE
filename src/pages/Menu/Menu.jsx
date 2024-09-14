@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { View, FlatList, TouchableOpacity, Alert } from 'react-native';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './MenuStyles';
 import { TextDefaut, HeaderSecondnary, IconImage, ModalSelect } from '../../components';
 import { listMenuConfig, listSupport, listMenuSearchData } from './constant';
 import { route, listLanguage } from '../../config';
+import { updateInforUser, updatePOSs, updateStores } from '../../redux/dataStoreSlice';
 
 const Menu = ({ navigation }) => {
     const { t, i18n } = useTranslation('translation', { keyPrefix: 'Menu' });
 
     const [isModalLanguage, setIsModalLanguage] = useState(false);
+
+    const { stores } = useSelector((state) => state.dataStore);
+
+    const dispatch = useDispatch();
 
     const handleClickItemMenu = (screenName) => {
         const routeNames = navigation.getState().routeNames;
@@ -45,6 +51,9 @@ const Menu = ({ navigation }) => {
     );
 
     const handleClickRightBtn = () => {
+        dispatch(updateInforUser({}));
+        dispatch(updatePOSs([]));
+        dispatch(updateStores([]));
         navigation.navigate('Login');
     };
 
@@ -52,7 +61,7 @@ const Menu = ({ navigation }) => {
         <View style={styles.container}>
             <HeaderSecondnary
                 iconLeft={'location'}
-                title={'hyojung'}
+                title={stores[0]?.storeName}
                 iconRight={'arrow-right-to-bracket'}
                 line="lineDashedGray"
                 iconFontAwesome6

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import styles from './HomeStyles';
 import { GlobalStyle, imageRequire } from '../../config';
@@ -19,54 +19,48 @@ import { updatePOSs, updateStores } from '../../redux/dataStoreSlice';
 const Home = ({ navigation }) => {
     const { t } = useTranslation('translation', { keyPrefix: 'Home' });
 
+    const { inforUser } = useSelector((state) => state.dataStore);
+
     const dispatch = useDispatch();
 
     const [dailySalesSummary, setDailySalesSummary] = useState(paymentDetail());
     const [summaryMonthly, setSummaryMonthly] = useState(summaryMonthlySales);
+    const [storeName, setStoreName] = useState('');
     const [loading, setLoading] = useState(false);
-    const [store, setStore] = useState('00001');
 
     const { primaryTextColor, thirdTextColor } = GlobalStyle;
 
+    const handleGetData = async () => {
+        const [listStore, listPOSs, dailySales, MonthlySales] = await Promise.all([
+            getlistStore(),
+            getlistPOS(),
+            getSummarySaleDaily(inforUser.storeCode),
+            getSaleMonthlySummary(inforUser.storeCode),
+        ]);
+
+        setLoading(false);
+        dispatch(updateStores(listStore));
+        dispatch(updatePOSs(listPOSs));
+        setDailySalesSummary(dailySales);
+        setSummaryMonthly(MonthlySales);
+
+        const storeNameFilter = listStore.filter((value) => value.storeCode == inforUser.storeCode);
+        setStoreName(storeNameFilter[0].storeName);
+    };
+
     useEffect(() => {
         setLoading(true);
-
-        getSummarySaleDaily(store).then((result) => {
-            setDailySalesSummary(result);
+        handleGetData().catch((err) => {
+            setLoading(false);
+            console.log(err);
         });
-
-        getSaleMonthlySummary(store)
-            .then((result) => {
-                setLoading(false);
-                setSummaryMonthly(result);
-            })
-            .catch((err) => {
-                setLoading(false);
-                console.log(err);
-            });
-
-        getlistStore()
-            .then((result) => {
-                dispatch(updateStores(result));
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-
-        getlistPOS()
-            .then((result) => {
-                dispatch(updatePOSs(result));
-            })
-            .catch((err) => {
-                console.log(err);
-            });
     }, []);
 
     return (
         <View style={styles.container}>
             <HeaderSecondnary
                 iconLeft={'location'}
-                title={'hyojung'}
+                title={storeName}
                 iconRight={'reload'}
                 line="lineSolidGray3"
                 ionicon

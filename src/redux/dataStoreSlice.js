@@ -9,8 +9,11 @@ const dataStoreSlice = createSlice({
     reducers: {
         updateStores: (state, action) => {
             const stores = action.payload.filter((value) => value.storeCode == state.inforUser.storeCode);
-            //state.stores = [{ storeCode: 'All', storeName: 'All' }, ...action.payload];
-            state.stores = stores;
+            if (state.inforUser.isCEO == true) {
+                state.stores = [{ storeCode: 'All', storeName: 'All' }, ...action.payload];
+            } else {
+                state.stores = stores;
+            }
         },
         updatePOSs: (state, action) => {
             state.POSs = [{ posName: 'All' }, ...action.payload];
