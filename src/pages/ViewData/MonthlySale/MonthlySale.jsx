@@ -34,7 +34,7 @@ const MonthlySale = () => {
     const twoMonthsAgoFormat = getFormatedDate(twoMonthsAgo, 'YYYY-MM');
     const [startDate, setStartDate] = useState(twoMonthsAgoFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('All');
+    const [store, setStore] = useState(stores[0].storeName);
 
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
@@ -79,7 +79,6 @@ const MonthlySale = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
-        setStore(storeNames[0]);
     }, []);
 
     return (

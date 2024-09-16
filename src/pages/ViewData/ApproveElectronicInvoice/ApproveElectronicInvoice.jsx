@@ -37,11 +37,12 @@ const ApproveElectronicInvoice = ({ navigation }) => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('All');
+    const [store, setStore] = useState(stores[0].storeName);
     const [POS, setPOS] = useState('All');
     const [type, setType] = useState('All');
 
     const [dataForTable, setDataForTable] = useState([]);
+    const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
     const [fullBillInfors, setFullBillInfors] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -68,6 +69,7 @@ const ApproveElectronicInvoice = ({ navigation }) => {
             .then((result) => {
                 setLoading(false);
                 setDataForTable(result.dataTable);
+                setThisDaySales(result.thisDaySales);
                 setFullBillInfors(result.fullBillInfors);
             })
             .catch((err) => {
@@ -103,7 +105,6 @@ const ApproveElectronicInvoice = ({ navigation }) => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
-        setStore(storeNames[0]);
         const posNames = POSs.map((value) => value.posName);
         setListPOS(posNames);
     }, []);
@@ -149,7 +150,7 @@ const ApproveElectronicInvoice = ({ navigation }) => {
 
             <BtnSearch handleSearch={handleSearch} />
 
-            <ViewSaleCurrent title={t('DaySales')} saleAmount={0} quantity={0} />
+            <ViewSaleCurrent title={t('DaySales')} saleAmount={thisDaySales.revenue} quantity={thisDaySales.quantity} />
 
             <TableDetail
                 data={dataForTable}

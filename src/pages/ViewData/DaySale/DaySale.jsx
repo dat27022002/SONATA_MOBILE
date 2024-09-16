@@ -35,7 +35,7 @@ const DaySale = () => {
 
     const [startDate, setStartDate] = useState(firstDateWeekFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState(listStore[0]);
+    const [store, setStore] = useState(stores[0].storeName);
 
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
@@ -80,7 +80,6 @@ const DaySale = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
-        setStore(storeNames[0]);
     }, []);
 
     return (

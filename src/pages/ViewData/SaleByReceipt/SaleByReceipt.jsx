@@ -31,7 +31,7 @@ const SaleByReceipt = () => {
     const todayFormat = getFormatedDate(today, 'YYYY/MM/DD');
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('All');
+    const [store, setStore] = useState(stores[0].storeName);
 
     const [dataForTable, setDataForTable] = useState([]);
     const [thisDaySales, setThisDaySales] = useState({ revenue: 0, quantity: 0 });
@@ -64,7 +64,6 @@ const SaleByReceipt = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
-        setStore(storeNames[0]);
     }, []);
 
     return (

@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { Text, TextInput, TouchableOpacity, View, StyleSheet } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import { useTranslation } from 'react-i18next';
-import { showMessage, MessageComponent } from 'react-native-flash-message';
 
 import styles from './LoginStyles';
 import { Loading } from '../../components';
@@ -60,7 +59,6 @@ const Login = ({ navigation, ...props }) => {
     };
 
     const handleChangePassord = (text) => {
-        console.log(text);
         setPassword(text);
     };
 

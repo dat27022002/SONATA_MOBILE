@@ -32,7 +32,7 @@ const TimeBase = () => {
 
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('All');
+    const [store, setStore] = useState(stores[0].storeName);
 
     const [dataForChart, setDataForChart] = useState([]);
     const [dataForTable, setDataForTable] = useState([]);
@@ -77,7 +77,6 @@ const TimeBase = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
-        setStore(storeNames[0]);
     }, []);
 
     return (

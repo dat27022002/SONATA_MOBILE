@@ -32,7 +32,7 @@ const SaleByItem = () => {
 
     const [startDate, setStartDate] = useState(todayFormat);
     const [endDate, setEndDate] = useState(todayFormat);
-    const [store, setStore] = useState('All');
+    const [store, setStore] = useState(stores[0].storeName);
 
     const [dataForTable, setDataForTable] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -63,7 +63,6 @@ const SaleByItem = () => {
         handleSearch();
         const storeNames = stores.map((value) => value.storeName);
         setListStore(storeNames);
-        setStore(storeNames[0]);
     }, []);
 
     return (
