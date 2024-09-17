@@ -17,7 +17,7 @@ const MenuStyles = StyleSheet.create({
         spacing: 10,
     },
     containerItem: {
-        height: 60,
+        height: 80,
         width: 75,
         alignItems: 'center',
         marginHorizontal: 2,
@@ -29,10 +29,11 @@ const MenuStyles = StyleSheet.create({
         paddingHorizontal: GlobalStyle.paddingWidthLayout,
         marginTop: 20,
     },
+
     containerList: {
         paddingHorizontal: GlobalStyle.paddingWidthLayout,
         paddingBottom: 20,
-        marginTop: 20,
+        marginTop: 40,
         borderBottomColor: GlobalStyle.lineColor,
         borderBottomWidth: 0.5,
         borderStyle: 'dashed',

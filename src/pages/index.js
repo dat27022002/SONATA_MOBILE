@@ -13,12 +13,6 @@ import ApproveElectronicInvoice from './ViewData/ApproveElectronicInvoice';
 import DetailSalesInvoice from './ViewData/ApproveElectronicInvoice/DetailSalesInvoice';
 import RefundHistory from './ViewData/RefundHistory';
 import OrderCancelList from './ViewData/OrderCancelList';
-import BarcodeScan from './KIOSKConfigure/BarcodeScan';
-import ChangeRefundPassword from './KIOSKConfigure/ChangeRefundPassword';
-import ChangeAdminPassword from './KIOSKConfigure/ChangeAdminPassword';
-import PrinterPaper from './KIOSKConfigure/PrinterPaper';
-import AddItem from './KIOSKConfigure/AddItem';
-import ItemDetail from './KIOSKConfigure/ItemDetail';
 import ServiceCenter from './Support/ServiceCenter';
 import NFC from './Support/NFC';
 
@@ -38,12 +32,6 @@ export {
     DetailSalesInvoice,
     RefundHistory,
     OrderCancelList,
-    BarcodeScan,
-    ChangeRefundPassword,
-    ChangeAdminPassword,
-    PrinterPaper,
-    AddItem,
     ServiceCenter,
     NFC,
-    ItemDetail,
 };

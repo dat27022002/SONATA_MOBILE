@@ -18,24 +18,8 @@ export const listMenuSearchData = () => [
     { icon: imageRequire.RefundHistory, to: route.ViewData.REFUNDHISTORY, name: i18n.t('Menu.RefundHistory') },
 ];
 
-export const listMenuConfig = () => [
-    { icon: imageRequire.AddItem, to: route.KIOSKConfigure.ADDITEM, name: i18n.t('Menu.AddItem') },
-    { icon: imageRequire.PrinterPaper, to: route.KIOSKConfigure.PRINTERPAPER, name: i18n.t('Menu.PrinterPaper') },
-    {
-        icon: imageRequire.ChangeAdminPassword,
-        to: route.KIOSKConfigure.CHANGEADMINPASSWORD,
-        name: i18n.t('Menu.ChangeAdminPassword'),
-    },
-    {
-        icon: imageRequire.ChangeRefundPassword,
-        to: route.KIOSKConfigure.CHANGEREFUNDPASSWORD,
-        name: i18n.t('Menu.ChangeRefundPassword'),
-    },
-    { icon: imageRequire.BarcodeScan, to: route.KIOSKConfigure.BARCODESCAN, name: i18n.t('Menu.BarcodeScan') },
-];
-
 export const listSupport = () => [
     { icon: imageRequire.ServiceCenter, to: route.Support.SERVICECENTER, name: i18n.t('Menu.ServiceCenter') },
     { icon: imageRequire.Language, to: route.Support.LANGUAGE, name: i18n.t('Menu.Language') },
-    { icon: imageRequire.NFC, to: route.Support.NFC, name: i18n.t('Menu.UPOrderTagSettings') },
+    // { icon: imageRequire.NFC, to: route.Support.NFC, name: i18n.t('Menu.UPOrderTagSettings') },
 ];

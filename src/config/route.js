@@ -16,14 +16,6 @@ const route = {
         DETAILSALESINVOICE: 'DetailSalesInvoice',
         REFUNDHISTORY: 'RefundHistory',
     },
-    KIOSKConfigure: {
-        ADDITEM: 'AddItem',
-        ITEMDETAIL: 'ItemDetail',
-        PRINTERPAPER: 'PrinterPaper',
-        CHANGEADMINPASSWORD: 'ChangeAdminPassword',
-        CHANGEREFUNDPASSWORD: 'ChangeRefundPassword',
-        BARCODESCAN: 'BarcodeScan',
-    },
     Support: { SERVICECENTER: 'ServiceCenter', LANGUAGE: 'Language', NFC: 'NFC' },
 };
 

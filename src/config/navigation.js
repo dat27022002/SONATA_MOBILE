@@ -19,14 +19,8 @@ import {
     DetailSalesInvoice,
     RefundHistory,
     OrderCancelList,
-    BarcodeScan,
-    ChangeRefundPassword,
-    ChangeAdminPassword,
-    PrinterPaper,
     ServiceCenter,
     NFC,
-    AddItem,
-    ItemDetail,
 } from '../pages';
 
 const configHeaderTitle = {
@@ -132,12 +126,6 @@ const configNavigation = [
     { name: route.ViewData.DETAILSALESINVOICE, component: DetailSalesInvoice, options: configOptionsCommon },
     { name: route.ViewData.REFUNDHISTORY, component: RefundHistory, options: configOptionsCommon },
     { name: route.ViewData.ORDERCANCELLIST, component: OrderCancelList, options: configOptionsCommon },
-    { name: route.KIOSKConfigure.BARCODESCAN, component: BarcodeScan, options: configOptionsCommon },
-    { name: route.KIOSKConfigure.CHANGEREFUNDPASSWORD, component: ChangeRefundPassword, options: configOptionsCommon },
-    { name: route.KIOSKConfigure.CHANGEADMINPASSWORD, component: ChangeAdminPassword, options: configOptionsCommon },
-    { name: route.KIOSKConfigure.PRINTERPAPER, component: PrinterPaper, options: configOptionsCommon },
-    { name: route.KIOSKConfigure.ADDITEM, component: AddItem, options: configOptionsCommon },
-    { name: route.KIOSKConfigure.ITEMDETAIL, component: ItemDetail, options: configOptionsCommon },
     { name: route.Support.SERVICECENTER, component: ServiceCenter, options: configOptionsCommon },
     { name: route.Support.NFC, component: NFC, options: configOptionsCommon },
 ];
